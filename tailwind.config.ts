@@ -1,4 +1,7 @@
 export default {
+	content: [
+		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+	],
 	theme: {
 		fontFamily: {
 			heading: "IBM Plex Sans",
