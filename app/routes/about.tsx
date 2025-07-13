@@ -8,14 +8,12 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function About() {
-	return (
-		<div>
-			<h1>About Me</h1>
-			<h6>
-				<a>
-					My full portfolio
-				</a>
-			</h6>
-		</div>
-	);
+	return <>
+		<h1>About Me</h1>
+		<h6>
+			<a className="hoverable-link">
+				My full portfolio
+			</a>
+		</h6>
+	</>
 }
