@@ -1,6 +1,6 @@
-# dependencies
 node_modules
 .react-router
+.vscode
 /.pnp
 .pnp.js
 
