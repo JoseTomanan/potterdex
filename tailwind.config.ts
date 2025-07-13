@@ -1,6 +1,10 @@
 export default {
 	theme: {
-		fontFamily: {},
+		fontFamily: {
+			heading: "IBM Plex Sans",
+			sans: "Inter",
+			mono: "JetBrains Mono",
+		},
 		extend: {
 			colors: {
 				transparent: "transparent",

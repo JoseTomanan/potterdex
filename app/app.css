@@ -1,15 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400");
+
 @import "tailwindcss";
 
+@tailwind/preflight;
+@tailwind utilities;
+
+
+/* ------------------------- THEME ------------------------- */
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--font-heading: "IBM Plex Sans";
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+	--font-mono: "JetBrains Mono";
 }
 
-html,
-body {
-  @apply bg-white dark:bg-gray-950;
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+/* ------------------------- BASE ------------------------- */
+@layer base {
+	:root {
+		--background: #000000;
+		--foreground: #FFFFFF;
+	}
+	
+	html,
+	body {
+		@apply bg-white dark:bg-gray-950;
+	
+		@media (prefers-color-scheme: dark) {
+			color-scheme: dark;
+		}
+	}
+}
+
+
+/* ------------------------ COMPONENTS ------------------------ */
+@layer components {
+
+}
+
+
+/* ------------------------ UTILITIES ------------------------ */
+@layer utilities {
+
 }
