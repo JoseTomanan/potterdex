@@ -111,7 +111,7 @@
 	body {
 		background-color: var(--color-background);
 		color: var(--color-foreground);
-		background-image: url("~/../public/bg.svg");
+		background-image: url("~/../static/bg.svg");
 		background-repeat: no-repeat;
 		background-blend-mode: color-dodge;
 		background-position: top;
@@ -168,6 +168,20 @@
 			&:hover {
 				color: var(--color-sidebar-accent);
 			}
+		}
+	}
+
+	footer {
+		@apply mt-4;
+		@apply pt-24;
+		@apply border-t-1;
+		@apply w-full;
+		font-family: var(--font-mono);
+		text-align: center;
+		color: var(--color-muted);
+
+		& h6 {
+			@apply text-sm;
 		}
 	}
 }
