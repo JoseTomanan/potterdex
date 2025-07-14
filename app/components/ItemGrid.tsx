@@ -1,3 +1,3 @@
-export function Items() {
+export function ItemGrid() {
 	return <></>
 }
