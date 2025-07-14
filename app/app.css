@@ -123,6 +123,7 @@
 @layer components {
 	.hoverable-link {
 		@apply font-medium;
+		@apply text-accent-foreground;
 		
 		&:hover {
 			@apply text-accent;
@@ -130,12 +131,41 @@
 	}
 
 	.about-icon {
-		
+		@apply text-accent-foreground;
+
+		&:hover {
+			@apply text-accent;
+		}
 	}
 }
 
 
 /* ------------------------ UTILITIES ------------------------ */
 @layer utilities {
+	.magic-text {
+		animation: background-pan 6s linear infinite;
+		background: linear-gradient(
+			to right,
+			var(--foreground),
+			var(--primary),
+			var(--secondary),
+			var(--foreground)
+		);
+		background-size: 200%;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		white-space: nowrap;
+	}
+}
+
+
+/* ------------------------ OTHER ------------------------ */
+@keyframes background-pan {
+	from {
+		background-position: 0% center;
+	}
 	
+	to {
+		background-position: 200% center;
+	}
 }
