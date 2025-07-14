@@ -11,7 +11,7 @@ export function NavBar() {
 			</div>
 			<span className="flex-1"/>
 			<div className="flex gap-6 justify-end">
-				<a href="https://pokeapi.co/">PokéAPI</a>
+				<a href="https://potterdb.com/" target="_blank">PotterDB</a>
 				<Link to="/about">About</Link>
 			</div>
 		</nav>

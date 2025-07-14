@@ -10,46 +10,46 @@
 
 /* ------------------------- THEME ------------------------- */
 :root {
-	--background: #0f1310;         /* dark moss/sage black */
-	--foreground: #f0f4ed;         /* sage-tinted near-white */
+	--background: #0c0e1b;
+	--foreground: #d9dcee;
 
-	--card: #1c241d;               /* muted dark sage */
-	--card-foreground: #f8fbf7;    /* clean bright foreground */
+	--card: #16192b;
+	--card-foreground: #e7eaf6;
 
-	--popover: #1c241d;
-	--popover-foreground: #f8fbf7;
+	--popover: #16192b;
+	--popover-foreground: #e7eaf6;
 
-	--primary: #7ec97f;            /* fresh sage green */
-	--primary-foreground: #10130e; /* dark background for contrast */
+	--primary: #4a66c0;
+	--primary-foreground: #eaefff;
 
-	--secondary: #e895bb;          /* soft rose-pink */
-	--secondary-foreground: #10130e;
+	--secondary: #9481bf;
+	--secondary-foreground: #0d0e18;
 
-	--muted: #2e2e35;              /* zinc base */
-	--muted-foreground: #a6aab5;   /* zinc-tinted soft gray */
+	--muted: #25293c;
+	--muted-foreground: #9ba0b8;
 
-	--accent: #6fbfda;             /* muted sky blue */
-	--accent-foreground: #0e0f11;  /* contrast for light accent */
+	--accent: #5ea8cc;
+	--accent-foreground: #0c0e17;
 
-	--destructive: #ef6351;        /* vibrant warm red-orange */
-	--border: #748d7c1a;           /* sage-tinted border, 10% opacity */
-	--input: #748d7c26;            /* sage-tinted input bg, 15% opacity */
-	--ring: #91e1a3;               /* bright minty green (sage adjacent) */
+	--destructive: #e15a5a;
+	--border: #4a66c01a;
+	--input: #4a66c026;
+	--ring: #5f7ccf;
 
-	--chart-1: #80c29f;            /* sage-cyan blend */
-	--chart-2: #b588e6;            /* lavender-violet */
-	--chart-3: #f1c15d;            /* soft golden yellow */
-	--chart-4: #ee8d62;            /* coral-orange */
-	--chart-5: #62c2bd;            /* turquoise-teal */
+	--chart-1: #5f7ccf;
+	--chart-2: #9481bf;
+	--chart-3: #d3a747;
+	--chart-4: #db7561;
+	--chart-5: #59b4c7;
 
-	--sidebar: #182018;            /* rich dark sage */
-	--sidebar-foreground: #eef4ec;
-	--sidebar-primary: #80c29f;    /* desaturated sage-cyan */
-	--sidebar-primary-foreground: #0f1310;
-	--sidebar-accent: #6fbfda;     /* same as global accent */
-	--sidebar-accent-foreground: #f7faf9;
-	--sidebar-border: #748d7c1a;
-	--sidebar-ring: #91e1a3;
+	--sidebar: #12152b;
+	--sidebar-foreground: #d9dcee;
+	--sidebar-primary: #5f7ccf;
+	--sidebar-primary-foreground: #eaefff;
+	--sidebar-accent: #5ea8cc;
+	--sidebar-accent-foreground: #edf2f7;
+	--sidebar-border: #4a66c01a;
+	--sidebar-ring: #5f7ccf;
 }
 
 @theme {
