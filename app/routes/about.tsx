@@ -30,7 +30,7 @@ export default function About() {
 			<p>
 				This is my first project with React; I made this in line with the principle of &ldquo;the best way to learn a framework, is to create something with it&rdquo;.
 				<br/>
-				Hope you're impressed! ☺️
+				Hope you're impressed!
 			</p>
 		</main>
 	);
