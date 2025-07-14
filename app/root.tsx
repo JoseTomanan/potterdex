@@ -41,11 +41,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body>
 				<NavBar />
 				<div className="container mx-auto flex flex-col items-center">
-					{ children }
+					{children}
 					<ScrollRestoration />
 					<Scripts />
-					<Footer />
 				</div>
+				<Footer />
       </body>
     </html>
   );
