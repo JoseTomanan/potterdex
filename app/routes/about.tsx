@@ -1,7 +1,7 @@
 import type { Route } from "./+types/home";
 import { FiArrowUpRight } from "react-icons/fi";
 import { FaLinkedin, FaFacebookSquare, FaGithub } from "react-icons/fa";
-import { AiFillInstagram } from "react-icons/ai";
+import { PiInstagramLogoFill } from "react-icons/pi";
 
 export function meta({}: Route.MetaArgs) {
 	return [
@@ -51,6 +51,6 @@ const socials = [
 	},
 	{
 		href: "https://www.instagram.com/jose.tmnn/",
-		icon: <AiFillInstagram />,
+		icon: <PiInstagramLogoFill />,
 	},
 ];
