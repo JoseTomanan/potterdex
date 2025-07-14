@@ -3,15 +3,15 @@ import { ItemGrid } from "~/components/ItemGrid";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "JOSE'S POKÉDEX" },
+    { title: "POKÉDEX | Search" },
     { name: "description", content: "Pokedex with React" },
   ];
 }
 
 export default function Home() {
   return (
-		<>
+		<main>
 			<ItemGrid />
-		</>
+		</main>
 	);
 }
