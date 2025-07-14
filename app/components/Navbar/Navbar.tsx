@@ -5,7 +5,7 @@ import { SearchBar } from "./SearchBar";
 export function NavBar() {
 	return (
 		<nav className="flex flex-row items-center justify-center px-6 py-4 w-full">
-			<div className="">
+			<div className="flex items-center gap-4">
 				<Logo />
 				<SearchBar />
 			</div>
