@@ -214,6 +214,10 @@
 		-webkit-text-fill-color: transparent;
 		white-space: nowrap;
 	}
+
+	.spinning-logo {
+		animation: spin 16s linear infinite;
+	}
 }
 
 
