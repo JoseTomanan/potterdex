@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400");
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400");
 
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -101,14 +101,22 @@
 @layer base {
 	* {
 		@apply border-border outline-ring/50;
+		box-sizing: border-box;
 	}
 
-	html,
-	body {
+	html {
 		scroll-behavior: smooth;
-		background-color: var(--background);
-		color: var(--foreground);
-		transition: all;
+	}
+
+	body {
+		background-color: var(--color-background);
+		color: var(--color-foreground);
+		background-image: url("~/../public/bg.svg");
+		background-repeat: no-repeat;
+		background-blend-mode: color-dodge;
+		background-position: top;
+		background-size: 125%;
+		/* background-attachment: fixed; */
 	}
 
 	h1 {
@@ -132,18 +140,34 @@
 
 	p {
 		@apply text-base;
-		color: var(--muted-foreground);
+		color: var(--color-muted-foreground);
 		font-weight: 300;
 		text-wrap: pretty;
 	}
 
+	button,
+	a,
+	input,
+	textarea,
+	article,
+	span {
+		transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, gap;
+		transition-duration: 150ms;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
 	nav {
 		@apply bg-sidebar/50;
-		@apply font-light;
+		@apply backdrop-blur-lg;
+		font-weight: 300;
 
-		a {
-			@apply text-sidebar-foreground;
-			@apply hover:text-sidebar-accent;
+		& a {
+			font-family: var(--font-heading);
+			color: var(--color-sidebar-foreground);
+			
+			&:hover {
+				color: var(--color-sidebar-accent);
+			}
 		}
 	}
 }
@@ -152,23 +176,23 @@
 /* ------------------------ COMPONENTS ------------------------ */
 @layer components {
 	.card {
-		background-color: var(--card);
-		color: var(--card-foreground);
+		background-color: var(--color-card);
+		color: var(--color-card-foreground);
 	}
 
 	.hoverable-link {
-		color: var(--accent);
+		color: var(--color-accent);
 
 		&:hover {
-			color: var(--foreground);
+			color: var(--color-foreground);
 		}
 	}
 
 	.about-icon {
-		color: var(--muted-foreground);
+		color: var(--color-muted-foreground);
 
 		&:hover {
-			color: var(--foreground);
+			color: var(--color-foreground);
 		}
 	}
 }
@@ -180,10 +204,10 @@
 		animation: background-pan 8s linear infinite;
 		background: linear-gradient(
 			to right,
-			var(--foreground),
-			var(--secondary),
-			var(--accent),
-			var(--foreground),
+			var(--color-foreground),
+			var(--color-secondary),
+			var(--color-accent),
+			var(--color-foreground),
 		);
 		background-size: 200%;
 		background-clip: text;
