@@ -97,18 +97,45 @@
 
 	html,
 	body {
+		@apply scroll-smooth;
 		@apply bg-background text-foreground;
+	}
+
+	h1 {
+		@apply text-2xl;
+	}
+
+	h2 {
+		@apply text-2xl;
+	}
+
+	h3 {
+		@apply text-xl;
+	}
+	
+	h4 {
+		@apply text-lg;
 	}
 }
 
 
 /* ------------------------ COMPONENTS ------------------------ */
 @layer components {
+	.hoverable-link {
+		@apply font-medium;
+		
+		&:hover {
+			@apply text-accent;
+		}
+	}
 
+	.about-icon {
+		
+	}
 }
 
 
 /* ------------------------ UTILITIES ------------------------ */
 @layer utilities {
-
+	
 }
