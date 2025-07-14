@@ -5,19 +5,19 @@ import { AiFillInstagram } from "react-icons/ai";
 
 export function meta({}: Route.MetaArgs) {
 	return [
-		{ title: "About Me"},
+		{ title: "POKÉDEX | About"},
 		{ name: "description", content: "..." }
 	];
 }
 
 export default function About() {
 	return (
-		<>
+		<main className="container">
 			<h1>About Me</h1>
 			<div className="flex gap-2 items-center">
-				{socials.map(item => (
-					<a href={ item.link } target="_blank" className="about-icon">
-						{ item.icon }
+				{socials.map(({ href, icon }) => (
+					<a href={href} target="_blank" className="about-icon">
+						{icon}
 					</a>
 				))}
 				<span>&middot;</span>
@@ -29,29 +29,25 @@ export default function About() {
 				This is my first project with React; I made this in line with the principle of &ldquo;the best way to learn a framework, is to create something with it&rdquo;.
 				Hope you're impressed! ☺️
 			</p>
-		</>
+		</main>
 	);
 }
 
 const socials = [
 	{
-		key: "LI: jedtomanan",
+		href: "https://www.linkedin.com/in/jedtomanan/",
 		icon: <FaLinkedin />,
-		link: "https://www.linkedin.com/in/jedtomanan/",
 	},
 	{
-		key: "Git: JoseTomanan",
-		link: "https://github.com/JoseTomanan",
+		href: "https://github.com/JoseTomanan",
 		icon: <FaGithub />,
 	},
 	{
-		key: "FB: jedtomanan",
-		link: "https://www.facebook.com/jedtomanan/",
+		href: "https://www.facebook.com/jedtomanan/",
 		icon: <FaFacebookSquare />,
 	},
 	{
-		key: "IG: jose.tmnn",
-		link: "https://www.instagram.com/jose.tmnn/",
+		href: "https://www.instagram.com/jose.tmnn/",
 		icon: <AiFillInstagram />,
 	},
 ];
