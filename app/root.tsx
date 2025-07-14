@@ -38,10 +38,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-				<NavBar />
-        { children }
-        <ScrollRestoration />
-        <Scripts />
+				<main className="container flex flex-col items-center">
+					<NavBar />
+					{ children }
+					<ScrollRestoration />
+					<Scripts />
+				</main>
       </body>
     </html>
   );
