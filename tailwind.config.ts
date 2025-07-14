@@ -4,9 +4,9 @@ export default {
 	],
 	theme: {
 		fontFamily: {
-			heading: "IBM Plex Sans",
-			sans: "Inter",
-			mono: "JetBrains Mono",
+			heading: "var(--font-heading)",
+			sans: "var(--font-sans)",
+			mono: "var(--font-mono)",
 		},
 		extend: {
 			colors: {
