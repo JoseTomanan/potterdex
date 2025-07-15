@@ -26,11 +26,11 @@ export function SearchBar() {
 				</Button>
 				<Input
 					id="search" type="text" placeholder="Search..."
-					className="border-none rounded rounded-inherit rounded-l-none active:outline-none w-64" />
+					className="border-none rounded rounded-inherit rounded-l-none active:outline-none w-48 lg:w-64" />
 			</div>
 
 			<Select value={value} onValueChange={setValue}>
-				<SelectTrigger className="rounded w-40">
+				<SelectTrigger className="rounded w-32 xl:w-40">
 					<SelectValue />
 				</SelectTrigger>
 				<SelectContent>
@@ -44,7 +44,7 @@ export function SearchBar() {
 			</Select>
 
 			<Select value={order} onValueChange={setOrder}>
-				<SelectTrigger className="rounded w-32">
+				<SelectTrigger className="rounded w-24 lg:w-32">
 					<SelectValue />
 				</SelectTrigger>
 				<SelectContent>
