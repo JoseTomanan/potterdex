@@ -1,3 +1,3 @@
-export function ItemCard() {
+export function ItemCard({...props}) {
 	return <></>
 }
