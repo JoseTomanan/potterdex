@@ -10,46 +10,48 @@
 
 /* ------------------------- THEME ------------------------- */
 :root {
-	--background: #0c0e1b;
-	--foreground: #d9dcee;
+	--background: #10121a;                 /* deep desaturated navy-black, main background */
+	--foreground: #d9dcee;                 /* soft near-white with bluish tint, for headings and prominent text */
 
-	--card: #16192b;
-	--card-foreground: #e7eaf6;
+	--card: #171922;                       /* slightly lifted navy surface, for cards/panels */
+	--card-foreground: #a4a7b9;            /* soft muted gray-blue, for body text inside cards */
 
-	--popover: #16192b;
-	--popover-foreground: #e7eaf6;
+	--popover: #1c1e28;                    /* elevated surface, used in dropdowns/popovers */
+	--popover-foreground: #c8cbdb;         /* readable light gray-blue for popover content */
 
-	--primary: #4a66c0;
-	--primary-foreground: #eaefff;
+	--primary: #c0bff3;                    /* pastel periwinkle, main action/accent color */
+	--primary-foreground: #15161e;         /* dark background for contrast against primary */
 
-	--secondary: #9481bf;
-	--secondary-foreground: #0d0e18;
+	--secondary: #a89ccf;                  /* muted lavender, secondary action or category */
+	--secondary-foreground: #15161e;       /* dark contrast for legibility on secondary bg */
 
-	--muted: #25293c;
-	--muted-foreground: #9ba0b8;
+	--muted: #2b2e3a;                      /* desaturated dark bluish-gray, for secondary backgrounds */
+	--muted-foreground: #969aad;           /* soft gray with slight blue, for less emphasized text */
 
-	--accent: #5ea8cc;
-	--accent-foreground: #0c0e17;
+	--accent: #5c93aa;                     /* muted teal-blue, used for hover states or accents */
+	--accent-foreground: #1a1c24;          /* very dark blue-gray for contrast on accent bg */
 
-	--destructive: #e15a5a;
-	--border: #4a66c01a;
-	--input: #4a66c026;
-	--ring: #5f7ccf;
+	--destructive: #d36767;               /* soft coral red, for delete/destructive actions */
 
-	--chart-1: #5f7ccf;
-	--chart-2: #9481bf;
-	--chart-3: #d3a747;
-	--chart-4: #db7561;
-	--chart-5: #59b4c7;
+	--border: #2b2e3a;                     /* matches muted background, used for outlines/borders */
+	--input: #3e4152;                      /* darker input field background, visibly sunken */
+	--ring: #8d9fe0;                       /* soft cool-blue glow, used for focus rings */
 
-	--sidebar: #12152b;
-	--sidebar-foreground: #d9dcee;
-	--sidebar-primary: #5f7ccf;
-	--sidebar-primary-foreground: #eaefff;
-	--sidebar-accent: #5ea8cc;
-	--sidebar-accent-foreground: #edf2f7;
-	--sidebar-border: #4a66c01a;
-	--sidebar-ring: #5f7ccf;
+	--chart-1: #8d9fe0;                    /* steel blue-lavender, used in charts */
+	--chart-2: #a89ccf;                    /* matches secondary color, used in charts */
+	--chart-3: #c8a84a;                    /* soft gold, for contrast in charts */
+	--chart-4: #d9806c;                    /* muted warm coral-orange, adds warmth to charts */
+	--chart-5: #5caec1;                    /* turquoise-teal, adds cool balance to charts */
+
+	--sidebar: #12141b;                    /* consistent with background, slightly lifted for sidebar */
+	--sidebar-foreground: #c8cbdb;         /* readable light gray-blue text for sidebar content */
+	--sidebar-primary: #8d9fe0;            /* cool soft blue, used for highlights or active states */
+	--sidebar-primary-foreground: #15161e; /* dark contrast for sidebar buttons/tabs */
+	--sidebar-accent: #5c93aa;             /* matches global accent */
+	--sidebar-accent-foreground: #dfe3ec;  /* lightest gray-blue, highly legible on accent */
+	--sidebar-border: #2b2e3a;             /* muted border for separation */
+	--sidebar-ring: #8d9fe0;               /* consistent ring color for focus elements in sidebar */
+
 }
 
 @theme {
@@ -160,6 +162,7 @@
 		@apply bg-sidebar/50;
 		@apply backdrop-blur-lg;
 		font-weight: 300;
+		@apply border-b border-border;
 
 		& a {
 			font-family: var(--font-heading);
