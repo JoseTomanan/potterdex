@@ -223,11 +223,10 @@
 	nav {
 		@apply bg-sidebar/50;
 		@apply backdrop-blur-lg;
-		font-weight: 300;
+		font-weight: 400;
 		@apply border-b border-border;
 
 		& a {
-			font-family: var(--font-heading);
 			color: var(--color-sidebar-foreground);
 			
 			&:hover {
