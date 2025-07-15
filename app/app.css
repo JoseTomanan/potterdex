@@ -10,48 +10,47 @@
 
 /* ------------------------- THEME ------------------------- */
 :root {
-	--background: #10121a;                 /* deep desaturated navy-black, main background */
-	--foreground: #d9dcee;                 /* soft near-white with bluish tint, for headings and prominent text */
+	--background: #10121a;                 /* deep desaturated navy-black */
+	--foreground: #d9dcee;                 /* soft bluish near-white for headings */
 
-	--card: #171922;                       /* slightly lifted navy surface, for cards/panels */
-	--card-foreground: #a4a7b9;            /* soft muted gray-blue, for body text inside cards */
+	--card: #171922;                       /* lifted navy surface for cards */
+	--card-foreground: #a4a7b9;            /* muted gray-blue for body text */
 
-	--popover: #1c1e28;                    /* elevated surface, used in dropdowns/popovers */
-	--popover-foreground: #c8cbdb;         /* readable light gray-blue for popover content */
+	--popover: #1c1e28;                    /* elevated surface for popovers */
+	--popover-foreground: #c8cbdb;         /* readable light gray-blue */
 
-	--primary: #c0bff3;                    /* pastel periwinkle, main action/accent color */
-	--primary-foreground: #15161e;         /* dark background for contrast against primary */
+	--primary: #6d7dff;                    /* vibrant indigo-blue, main accent */
+	--primary-foreground: #0f101a;         /* dark contrast for buttons/text on primary */
 
-	--secondary: #a89ccf;                  /* muted lavender, secondary action or category */
-	--secondary-foreground: #15161e;       /* dark contrast for legibility on secondary bg */
+	--secondary: #c678dd;                  /* vivid orchid-lavender, secondary accent */
+	--secondary-foreground: #0f101a;       /* dark foreground for secondary elements */
 
-	--muted: #2b2e3a;                      /* desaturated dark bluish-gray, for secondary backgrounds */
-	--muted-foreground: #969aad;           /* soft gray with slight blue, for less emphasized text */
+	--muted: #2b2e3a;                      /* dark muted bluish-gray background */
+	--muted-foreground: #969aad;           /* soft neutral text color for muted areas */
 
-	--accent: #5c93aa;                     /* muted teal-blue, used for hover states or accents */
-	--accent-foreground: #1a1c24;          /* very dark blue-gray for contrast on accent bg */
+	--accent: #48c4e0;                     /* bright cyan-teal for links, icons, highlights */
+	--accent-foreground: #0e1014;          /* dark text/icon for contrast on accent background */
 
-	--destructive: #d36767;               /* soft coral red, for delete/destructive actions */
+	--destructive: #d36767;                /* soft coral red for danger actions */
 
-	--border: #2b2e3a;                     /* matches muted background, used for outlines/borders */
-	--input: #3e4152;                      /* darker input field background, visibly sunken */
-	--ring: #8d9fe0;                       /* soft cool-blue glow, used for focus rings */
+	--border: #2b2e3a;                     /* standard border for elements */
+	--input: #3e4152;                      /* sunken input field background */
+	--ring: #6d7dff;                       /* matches primary color for focus rings */
 
-	--chart-1: #8d9fe0;                    /* steel blue-lavender, used in charts */
-	--chart-2: #a89ccf;                    /* matches secondary color, used in charts */
-	--chart-3: #c8a84a;                    /* soft gold, for contrast in charts */
-	--chart-4: #d9806c;                    /* muted warm coral-orange, adds warmth to charts */
-	--chart-5: #5caec1;                    /* turquoise-teal, adds cool balance to charts */
+	--chart-1: #6d7dff;                    /* matches primary, vivid indigo */
+	--chart-2: #c678dd;                    /* matches secondary, orchid tone */
+	--chart-3: #e1b655;                    /* golden yellow, warm contrast */
+	--chart-4: #db7566;                    /* warm coral-red, energetic */
+	--chart-5: #48c4e0;                    /* matches accent, cool cyan */
 
-	--sidebar: #12141b;                    /* consistent with background, slightly lifted for sidebar */
-	--sidebar-foreground: #c8cbdb;         /* readable light gray-blue text for sidebar content */
-	--sidebar-primary: #8d9fe0;            /* cool soft blue, used for highlights or active states */
-	--sidebar-primary-foreground: #15161e; /* dark contrast for sidebar buttons/tabs */
-	--sidebar-accent: #5c93aa;             /* matches global accent */
-	--sidebar-accent-foreground: #dfe3ec;  /* lightest gray-blue, highly legible on accent */
-	--sidebar-border: #2b2e3a;             /* muted border for separation */
-	--sidebar-ring: #8d9fe0;               /* consistent ring color for focus elements in sidebar */
-
+	--sidebar: #12141b;                    /* sidebar base, matches background */
+	--sidebar-foreground: #c8cbdb;         /* light readable sidebar text */
+	--sidebar-primary: #6d7dff;            /* active tab/highlight in sidebar */
+	--sidebar-primary-foreground: #0f101a; /* dark text/icon on primary sidebar item */
+	--sidebar-accent: #48c4e0;             /* sidebar hover or link highlight */
+	--sidebar-accent-foreground: #e8f9fd;  /* very light cyan for strong contrast */
+	--sidebar-border: #2b2e3a;             /* consistent border tone */
+	--sidebar-ring: #6d7dff;               /* consistent focus outline */
 }
 
 @theme {
@@ -96,6 +95,69 @@
 	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
 	--color-sidebar-border: var(--sidebar-border);
 	--color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* 2xl */
+@media (max-width: 1536px) {
+	section.container {
+		max-width: 1280px;
+	}
+}
+
+/* xl */
+@media (max-width: 1280px) {
+	section.container {
+		max-width: 1024px;
+	}
+}
+
+/* lg */
+@media (max-width: 1024px) {
+	section.container {
+		max-width: 768px;
+	}
+}
+
+/* md */
+@media (max-width: 768px) {
+	section.container,
+	footer,
+	nav,
+	main {
+		max-width: 640px;
+	}
+	a,
+	p {
+		@apply text-sm;
+	}
+}
+
+/* sm */
+@media (max-width: 640px) {
+	section.container,
+	footer,
+	nav,
+	main {
+		width: 100%;
+	}
+	a,
+	p {
+		@apply text-xs;
+	}
+}
+
+/* xs */
+@media (max-width: 475px) {
+	section.container,
+	footer,
+	nav,
+	main {
+		width: 100%;
+	}
+	a,
+	p {
+		@apply text-xs;
+	}
 }
 
 
@@ -169,7 +231,7 @@
 			color: var(--color-sidebar-foreground);
 			
 			&:hover {
-				color: var(--color-sidebar-accent);
+				color: var(--color-sidebar-primary);
 			}
 		}
 	}

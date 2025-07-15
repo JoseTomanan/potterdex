@@ -3,11 +3,11 @@ import { GiOwl as InsideLogo } from "react-icons/gi";
 
 export function Logo() {
 	return (
-		<Link to="/" className="flex gap-2 items-center">
-			<span className="px-1">
-				<InsideLogo className="h-5 w-5 stroke-2"/>
+		<Link to="/" className="flex gap-2 items-center group">
+			<InsideLogo className="h-6 w-6 stroke-2"/>
+			<span className="text-xl font-medium group-hover:text-foreground group-hover:text-shadow-lg group-hover:text-shadow-muted">
+				PotterDex
 			</span>
-			<span className="text-xl font-medium">PotterDex</span>
 		</Link>
 	);
 }
