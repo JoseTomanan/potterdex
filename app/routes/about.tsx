@@ -27,11 +27,16 @@ export default function About() {
 					</a>
 				</span>
 			</div>
-			<p>
-				This is my first project with React; I made this in line with the principle of &ldquo;the best way to learn a framework, is to create something with it&rdquo;.
-				<br/>
-				Hope you're impressed!
-			</p>
+			<div>
+				<p>
+					This is my first project with React. I made this project in line with the principle of &ldquo;the best way to learn a framework, is to create something with it&rdquo;.
+					<br/>
+					I hope you're impressed!
+				</p>
+				<p>
+					The repository of this web app can be found <a href="https://github.com/JoseTomanan/potterdex" className="hoverable-link">here</a>.
+				</p>
+			</div>
 		</main>
 	);
 }
