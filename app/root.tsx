@@ -38,9 +38,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="flex flex-col h-screen">
 				<NavBar />
-				<div className="container mx-auto flex flex-col items-center">
+				<div className="container mx-auto flex flex-col items-center flex-grow">
 					{children}
 					<ScrollRestoration />
 					<Scripts />

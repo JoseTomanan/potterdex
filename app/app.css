@@ -172,13 +172,15 @@
 	}
 
 	footer {
-		@apply mt-4;
-		@apply pt-24;
-		@apply border-t-1;
-		@apply w-full;
-		font-family: var(--font-mono);
-		text-align: center;
+		background-color: var(--color-background);
 		color: var(--color-muted);
+		position: sticky;
+		width: 100%;
+
+		font-family: var(--font-mono);
+		@apply pt-12 pb-2;
+		@apply border-t-1;
+		text-align: center;
 
 		& h6 {
 			@apply text-sm;
