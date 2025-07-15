@@ -178,12 +178,13 @@
 		width: 100%;
 
 		font-family: var(--font-mono);
-		@apply pt-12 pb-2;
+		@apply pt-6 pb-2;
 		@apply border-t-1;
-		text-align: center;
+		text-align: right;
 
 		& h6 {
-			@apply text-sm;
+			@apply text-xs;
+			@apply mr-2;
 		}
 	}
 }
