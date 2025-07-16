@@ -19,10 +19,10 @@
 	--popover: #1d1b26;                    /* shadowed wood or stone alcove */
 	--popover-foreground: #d7d3cc;         /* readable aged scroll color */
 
-	--primary: #3d5a80;                    /* Ravenclaw-inspired deep blue */
+	--primary: #728dbb;                    /* Ravenclaw-inspired deep blue */
 	--primary-foreground: #eae9f3;         /* soft silver for clarity */
 
-	--secondary: #a93a2e;                  /* Gryffindor scarlet */
+	--secondary: #d0675b;                  /* Gryffindor scarlet */
 	--secondary-foreground: #f4e7e3;       /* warm, bright contrast */
 
 	--muted: #2b2a33;                      /* neutral background variation */
@@ -37,15 +37,15 @@
 	--input: #494651;                      /* well-worn quill parchment */
 	--ring: #b4a76f;                       /* Hufflepuff gold, subtle glow */
 
-	--chart-1: #3d5a80;                    /* Ravenclaw blue */
-	--chart-2: #a93a2e;                    /* Gryffindor red */
+	--chart-1: #728dbb;                    /* Ravenclaw blue */
+	--chart-2: #d0675b;                    /* Gryffindor red */
 	--chart-3: #b4a76f;                    /* Hufflepuff yellow-gold */
 	--chart-4: #2b8f77;                    /* Slytherin green */
 	--chart-5: #886ca6;                    /* Forbidden Forest violet magic */
 
 	--sidebar: #14131a;                    /* deep magical shadows */
 	--sidebar-foreground: #d7d3cc;         /* worn scroll text */
-	--sidebar-primary: #3d5a80;            /* house highlight */
+	--sidebar-primary: #728dbb;            /* house highlight */
 	--sidebar-primary-foreground: #f0f0f7;
 	--sidebar-accent: #2b8f77;             /* green charm highlight */
 	--sidebar-accent-foreground: #eafaf6;
