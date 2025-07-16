@@ -15,6 +15,7 @@ type ItemCardProps = {
 	nationality: string;
 	gender: string;
 	species: string;
+	blood_status: string;
 	image: string;
 }
 
@@ -45,12 +46,12 @@ export function ItemCard( item: ItemCardProps ) {
 						`text-chart-3 text-shadow-chart-3`
 
 	return (
-		<div className="card gap-y-2">
-			<span className="bg-muted h-[125px] flex justify-center">
+		<div className="card gap-y-2 group hover:bg-popover hover:border-input hover:drop-shadow-muted hover:drop-shadow-sm">
+			<span className="bg-card h-[125px] flex justify-center">
 				{item.image ? (
-					<img src={item.image} className="bg-popover w-full object-contain"/>
+					<img src={item.image} className="bg-popover group-hover:bg-muted w-full object-contain"/>
 				) : (
-					<IoPersonSharp className="size-full fill-card" />
+					<IoPersonSharp className="size-full fill-muted group-hover:bg-popover" />
 				)}
 			</span>
 			<div>
@@ -63,8 +64,10 @@ export function ItemCard( item: ItemCardProps ) {
 				</h5>
 				<span className="flex flex-row gap-x-1 items-baseline font-light">
 					<h5>{ item.nationality }</h5>
-					<span>&middot;</span>
+					&middot;
 					<h5>{ item.species }</h5>
+					&middot;
+					<h5>{ item.blood_status }</h5>
 				</span>
 			</div>
 		</div>
