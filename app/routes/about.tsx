@@ -43,7 +43,7 @@ export default function About() {
 	);
 }
 
-const socials = [
+const socials: {href: string, icon: any}[] = [
 	{
 		href: "https://www.linkedin.com/in/jedtomanan/",
 		icon: <FaLinkedin />,
