@@ -28,7 +28,7 @@
 	--muted: #2b2a33;                      /* neutral background variation */
 	--muted-foreground: #9996a1;           /* old ink, faded text */
 
-	--accent: #2b8f77;                     /* Slytherin emerald-green */
+	--accent: #43a48b;                     /* Slytherin emerald-green */
 	--accent-foreground: #e5f7f2;          /* cool glow for contrast */
 
 	--destructive: #d16a5e;                /* red clay/potion warning */
@@ -40,14 +40,14 @@
 	--chart-1: #728dbb;                    /* Ravenclaw blue */
 	--chart-2: #d0675b;                    /* Gryffindor red */
 	--chart-3: #b4a76f;                    /* Hufflepuff yellow-gold */
-	--chart-4: #2b8f77;                    /* Slytherin green */
+	--chart-4: #43a48b;                    /* Slytherin green */
 	--chart-5: #886ca6;                    /* Forbidden Forest violet magic */
 
 	--sidebar: #14131a;                    /* deep magical shadows */
 	--sidebar-foreground: #d7d3cc;         /* worn scroll text */
 	--sidebar-primary: #728dbb;            /* house highlight */
 	--sidebar-primary-foreground: #f0f0f7;
-	--sidebar-accent: #2b8f77;             /* green charm highlight */
+	--sidebar-accent: #43a48b;             /* green charm highlight */
 	--sidebar-accent-foreground: #eafaf6;
 	--sidebar-border: #2e2c34;
 	--sidebar-ring: #b4a76f;
@@ -234,8 +234,7 @@
 	}
 
 	nav {
-		@apply bg-sidebar/80;
-		@apply backdrop-blur-lg;
+		@apply bg-sidebar/90;
 		@apply border-b border-border;
 		@apply px-6;
 		@apply py-2;
