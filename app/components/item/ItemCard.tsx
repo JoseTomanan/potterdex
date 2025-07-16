@@ -41,7 +41,7 @@ export function ItemCard( item: ItemCardProps ) {
 					`text-chart-4 text-shadow-chart-4`
 				: item.house == "Ravenclaw"
 					? 
-						`text-chart-1 text-shadow-foreground`
+						`text-chart-1 text-shadow-chart-1`
 					:
 						`text-chart-3 text-shadow-chart-3`
 
@@ -59,16 +59,12 @@ export function ItemCard( item: ItemCardProps ) {
 					<h3>{item.name}</h3>
 					{genderIcon}
 				</span>
-				<h5 className={`text-shadow-sm/5 ${houseRelatedStyle}`} >
+				<h5 className={`text-shadow-xs/20 ${houseRelatedStyle}`} >
 					{item.house}
 				</h5>
-				<span className="flex flex-row gap-x-1 items-baseline font-light">
-					<h5>{ item.nationality }</h5>
-					&middot;
-					<h5>{ item.species }</h5>
-					&middot;
-					<h5>{ item.blood_status }</h5>
-				</span>
+				<h5 className="flex flex-row gap-x-1 items-baseline font-light tracking-tight text-muted-foreground">
+					{ item.nationality } &middot; { item.species } &middot; { item.blood_status }
+				</h5>
 			</div>
 		</div>
 	);
