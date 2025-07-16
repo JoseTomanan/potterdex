@@ -25,8 +25,8 @@ export function ItemGrid( props: ItemGridProps ) {
 		);
 
 	return (
-		<div className="grid grid-cols-4 gap-2">
-			{ returnableContent }
+		<div className="card-grid">
+			{returnableContent}
 		</div>
 	);
 }

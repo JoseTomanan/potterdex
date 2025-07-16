@@ -262,11 +262,15 @@
 
 /* ------------------------ COMPONENTS ------------------------ */
 @layer components {
+	.card-grid {
+		display: grid;
+		gap: 0.5rem;
+		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	}
+	
 	.card {
 		background-color: var(--color-card);
 		color: var(--color-card-foreground);
-		height: 240px;
-		width: 300px;
 		
 		@apply flex flex-col;
 		@apply p-2;
