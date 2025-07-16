@@ -168,6 +168,18 @@
 		box-sizing: border-box;
 	}
 
+	button,
+	a,
+	input,
+	textarea,
+	article,
+	span,
+	div {
+		transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, gap;
+		transition-duration: 150ms;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
 	html {
 		scroll-behavior: smooth;
 	}
@@ -213,17 +225,6 @@
 		text-wrap: pretty;
 	}
 
-	button,
-	a,
-	input,
-	textarea,
-	article,
-	span {
-		transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, gap;
-		transition-duration: 150ms;
-		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-	}
-
 	nav {
 		@apply bg-sidebar/80;
 		@apply backdrop-blur-lg;
@@ -265,7 +266,7 @@
 	.card-grid {
 		display: grid;
 		gap: 0.5rem;
-		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 	}
 	
 	.card {
@@ -275,6 +276,11 @@
 		@apply flex flex-col;
 		@apply p-2;
 		@apply border;
+
+		&:hover {
+			background-color: var(--color-popover);
+			@apply border-input;
+		}
 	}
 
 	.hoverable-link {
