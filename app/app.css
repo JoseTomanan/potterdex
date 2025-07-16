@@ -277,7 +277,7 @@
 	}
 	
 	.card {
-		background-color: var(--color-card);
+		@apply bg-card/90;
 		color: var(--color-card-foreground);
 		
 		@apply flex flex-col;
