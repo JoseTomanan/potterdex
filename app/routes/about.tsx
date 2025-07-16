@@ -12,7 +12,7 @@ export function meta({}: Route.MetaArgs) {
 
 export default function About() {
 	return (
-		<main className="flex flex-col mt-16">
+		<main className="flex flex-col">
 			<section className="flex flex-col container gap-4">
 				<div className="flex flex-col gap-1">
 					<h1>About Me</h1>
@@ -36,7 +36,7 @@ export default function About() {
 
 				<a
 					href="https://www.linkedin.com/in/jedtomanan/"
-					className="w-fit flex items-baseline gap-1 hover:gap-2 hover:text-primary">
+					className="w-fit flex items-baseline gap-2 hover:gap-4 hover:text-primary">
 					Connect with me
 					<FiArrowUpRight />
 				</a>
