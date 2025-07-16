@@ -172,6 +172,10 @@
 		scroll-behavior: smooth;
 	}
 
+	main {
+		@apply pt-16;
+	}
+
 	body {
 		background-color: var(--color-background);
 		color: var(--color-foreground);
