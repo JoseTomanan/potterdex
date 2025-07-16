@@ -35,6 +35,18 @@ export default function Home() {
 				createItem({ id: '6', name: 'Charles Oliveira', nationality: 'Brazilian' }),
 				createItem({ id: '7', name: 'Islam Makhachev', nationality: 'Russian' }),
 				createItem({ id: '8', name: 'Ilia Topuria', nationality: 'Georgian' }),
+				createItem({ id: '9', name: 'Leon Edwards', nationality: 'Jamaican-British' }),
+				createItem({ id: '10', name: 'Brandon Moreno', nationality: 'Mexican' }),
+				createItem({ id: '11', name: 'Julianna Peña', nationality: 'American' }),
+				createItem({ id: '12', name: 'Tai Tuivasa', nationality: 'Australian' }),
+				createItem({ id: '13', name: 'Ciryl Gane', nationality: 'French' }),
+				createItem({ id: '14', name: 'Valentina Shevchenko', nationality: 'Kyrgyzstani' }),
+				createItem({ id: '15', name: 'Paddy Pimblett', nationality: 'English' }),
+				createItem({ id: '16', name: 'Yair Rodríguez', nationality: 'Mexican' }),
+				createItem({ id: '17', name: 'Derrick Lewis', nationality: 'Jamaican' }),
+				createItem({ id: '18', name: 'Marvin Vettori', nationality: 'Italian' }),
+				createItem({ id: '19', name: 'Song Yadong', nationality: 'Chinese' }),
+				createItem({ id: '20', name: 'Alex Pereira', nationality: 'Brazilian' }),
 			]);
 		}, 1500);
 	}, []);
