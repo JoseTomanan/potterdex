@@ -12,7 +12,7 @@ import {
 	SelectItem,
 } from "~/components/ui/select";
 
-export function SearchBar() {
+export function SearchBar({...props}) {
 	const [value, setValue] = useState("character");
 	const [order, setOrder] = useState("ascending");
 
@@ -21,12 +21,13 @@ export function SearchBar() {
 			<div className="flex outline -outline-offset-1 outline-input rounded">
 				<Button
 					variant="ghost" size="icon"
-					className="rounded rounded-inherit rounded-r-none">
+					className="rounded rounded-inherit rounded-r-none" {...props}>
 					<FaSearch />
 				</Button>
 				<Input
 					id="search" type="text" placeholder="Search..."
-					className="border-none rounded rounded-inherit rounded-l-none active:outline-none w-48 lg:w-64" />
+					className="border-none rounded rounded-inherit rounded-l-none active:outline-none w-48 lg:w-64"
+					{...props} />
 			</div>
 
 			<Select value={value} onValueChange={setValue}>
