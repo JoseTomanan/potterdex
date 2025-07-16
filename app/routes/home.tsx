@@ -62,8 +62,8 @@ export default function Home() {
 	}, []);
 
   return (
-		<main>
-			<Pagination>
+		<main className="container">
+			<Pagination className="bg-transparent border-none w-fit">
 				<PaginationContent>
 					<PaginationItem>
 						<PaginationPrevious href="#" />
