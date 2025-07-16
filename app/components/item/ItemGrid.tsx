@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router";
 
 import type { Character as Item } from "~/lib/types/character";
-
-import { ItemSkeleton } from "./ItemSkeleton";
-import { ItemCard } from "./ItemCard";
+import {
+	ItemCard, ItemSkeleton
+} from "./ItemCard";
 
 
 type ItemGridProps = {
