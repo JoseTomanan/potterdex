@@ -11,7 +11,7 @@ export const testPopulator = [
 	{ id: '10', name: 'Brandon Moreno', nationality: 'Norwegian', house: 'Ravenclaw', gender: "", species: "Veela", blood_status: "Half-blood" },
 	{ id: '11', name: 'Gregor Gillespie', nationality: 'Hungarian', house: 'Gryffindor', gender: "Male", species: "Werewolf", blood_status: "Pure-blood" },
 	{ id: '12', name: 'Jose Aldo', nationality: 'Slovenian', house: 'Slytherin', gender: "Male", species: "Goblin", image: "https://a.espncdn.com/combiner/i?img=/i/headshots/mma/players/full/2447641.png&w=350&h=254", blood_status: "Half-blood" },
-	{ id: '13', name: 'Ciryl Gane', nationality: 'Danish', house: 'Ravenclaw', gender: "", species: "Half-giant", blood_status: "Unknown" },
+	{ id: '13', name: 'Alexander Gustafsson', nationality: 'Danish', house: 'Ravenclaw', gender: "", species: "Half-giant", image: "https://a.espncdn.com/i/headshots/mma/players/full/2500771.png", blood_status: "Unknown" },
 	{ id: '14', name: 'Valentina Shevchenko', nationality: 'Estonian', house: 'Slytherin', gender: "Female", species: "Veela", blood_status: "Pure-blood" },
 	{ id: '15', name: 'Michael Chandler', nationality: 'Moldovan', house: 'Hufflepuff', gender: "Male", species: "Human", blood_status: "Muggle-born" },
 	{ id: '16', name: 'Carlos Condit', nationality: 'Latvian', house: 'Gryffindor', gender: "", species: "Squib", blood_status: "Squib" },
