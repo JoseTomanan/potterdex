@@ -1,18 +1,32 @@
 import { createBrowserRouter } from "react-router";
 
+import type { Character as Item } from "~/lib/types/character";
+
 import { ItemSkeleton } from "./ItemSkeleton";
+import { ItemCard } from "./ItemCard";
 
 
-export function ItemGrid({...props}) {
-	let isLoaded = false;
+type ItemGridProps = {
+	items: Item[];
+	isLoading: boolean;
+}
 
-	if (!isLoaded) {
-		return <></>
-	}
+
+export function ItemGrid( props: ItemGridProps ) {
+	const returnableContent = props.isLoading
+		? (
+				Array.from({ length: 20 }).map((_, i) => (
+					<ItemSkeleton key={i} />
+				))
+		) : (
+				props.items.map(({}, i) => (
+					<ItemCard {...props.items[i]} />
+				))
+		);
 
 	return (
-		<div>
-
+		<div className="grid grid-cols-4 gap-2">
+			{ returnableContent }
 		</div>
 	);
 }
