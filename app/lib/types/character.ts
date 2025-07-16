@@ -4,6 +4,7 @@ export type Character = {
 	alias_names: string[];
 	gender: string,
 	nationality: string;
+	species: string;
 	skin_color: string;
 	house: string;
 	weight?: number;
@@ -21,6 +22,7 @@ export function createCharacter(overrides: Partial<Character> = {}): Character {
     alias_names: [],
 		gender: 'Unknown',
     nationality: '',
+		species: 'Human',
     skin_color: '',
     house: '',
     born: '',
