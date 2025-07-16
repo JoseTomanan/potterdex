@@ -2,6 +2,7 @@ export type Character = {
 	id: string;
 	name: string;
 	alias_names: string[];
+	gender: string,
 	nationality: string;
 	skin_color: string;
 	house: string;
@@ -10,6 +11,7 @@ export type Character = {
 	died?: string;
 	wand: string[];
 	wiki?: string;
+	image: string;
 }
 
 export function createCharacter(overrides: Partial<Character> = {}): Character {
@@ -17,11 +19,13 @@ export function createCharacter(overrides: Partial<Character> = {}): Character {
 		id: '',
     name: '',
     alias_names: [],
+		gender: '',
     nationality: '',
     skin_color: '',
     house: '',
     born: '',
     wand: [],
+		image: '',
     ...overrides,
 	};
 }
