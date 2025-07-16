@@ -37,9 +37,9 @@ export default function Home() {
 		setTimeout(() => {
 			setIsStillLoading(false);
 			setItems([
-				createItem({ id: '1', name: 'Eddie Alvarez', nationality: 'Transylvanian', house: 'Ravenclaw' }),
-				createItem({ id: '2', name: 'Jairzinho Rozenstruik', nationality: 'Moroccan', house: 'Gryffindor' }),
-				createItem({ id: '3', name: 'Khamzat Chimaev', nationality: 'Bulgarian', house: 'Slytherin' }),
+				createItem({ id: '1', name: 'Eddie Alvarez', nationality: 'Transylvanian', house: 'Ravenclaw', gender: "Male" }),
+				createItem({ id: '2', name: 'Rose Namajunas', nationality: 'Moroccan', house: 'Gryffindor' , gender: "Female"}),
+				createItem({ id: '3', name: 'Jessica Andrade', nationality: 'Bulgarian', house: 'Slytherin' }),
 				createItem({ id: '4', name: 'Rafael Fiziev', nationality: 'Scottish', house: 'Hufflepuff' }),
 				createItem({ id: '5', name: 'Dustin Poirier', nationality: 'Welsh', house: 'Slytherin' }),
 				createItem({ id: '6', name: 'Charles Oliveira', nationality: 'Greek', house: 'Gryffindor' }),
@@ -50,8 +50,8 @@ export default function Home() {
 				createItem({ id: '11', name: 'Gregor Gillespie', nationality: 'Hungarian', house: 'Gryffindor' }),
 				createItem({ id: '12', name: 'Tai Tuivasa', nationality: 'Slovenian', house: 'Slytherin' }),
 				createItem({ id: '13', name: 'Ciryl Gane', nationality: 'Danish', house: 'Ravenclaw' }),
-				createItem({ id: '14', name: 'Valentina Shevchenko', nationality: 'Estonian', house: 'Slytherin' }),
-				createItem({ id: '15', name: 'Michael Chandler', nationality: 'Moldovan', house: 'Hufflepuff' }),
+				createItem({ id: '14', name: 'Valentina Shevchenko', nationality: 'Estonian', house: 'Slytherin', gender: "Female" }),
+				createItem({ id: '15', name: 'Michael Chandler', nationality: 'Moldovan', house: 'Hufflepuff', gender: "Male" }),
 				createItem({ id: '16', name: 'Carlos Condit', nationality: 'Latvian', house: 'Gryffindor' }),
 				createItem({ id: '17', name: 'Michael Bisping', nationality: 'Croatian', house: 'Ravenclaw' }),
 				createItem({ id: '18', name: 'Marvin Vettori', nationality: 'Slovakian', house: 'Hufflepuff' }),
