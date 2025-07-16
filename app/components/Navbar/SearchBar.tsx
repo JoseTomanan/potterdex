@@ -49,8 +49,8 @@ export function SearchBar({ disabled }: SearchBarProps) {
 					<SelectGroup>
 						<SelectLabel>Database</SelectLabel>
 						<SelectItem value="character">Characters</SelectItem>
-						<SelectItem value="potion">Potions</SelectItem>
-						<SelectItem value="spell">Spells</SelectItem>
+						<SelectItem value="potion" disabled>Potions</SelectItem>
+						<SelectItem value="spell" disabled>Spells</SelectItem>
 					</SelectGroup>
 				</SelectContent>
 			</Select>
@@ -63,7 +63,7 @@ export function SearchBar({ disabled }: SearchBarProps) {
 					<SelectGroup>
 						<SelectLabel>Order</SelectLabel>
 						<SelectItem value="ascending">Ascending</SelectItem>
-						<SelectItem value="descending">Descending</SelectItem>
+						<SelectItem value="descending" disabled>Descending</SelectItem>
 					</SelectGroup>
 				</SelectContent>
 			</Select>
