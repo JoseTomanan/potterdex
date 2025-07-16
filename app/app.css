@@ -10,47 +10,47 @@
 
 /* ------------------------- THEME ------------------------- */
 :root {
-	--background: #10121a;                 /* deep desaturated navy-black */
-	--foreground: #d9dcee;                 /* soft bluish near-white for headings */
+	--background: #0d0c11;                 /* dark enchanted stone, night at Hogwarts */
+	--foreground: #e0ddd7;                 /* warm parchment-like light */
 
-	--card: #171922;                       /* lifted navy surface for cards */
-	--card-foreground: #a4a7b9;            /* muted gray-blue for body text */
+	--card: #17151e;                       /* aged leather or dark stone */
+	--card-foreground: #bcb8b0;            /* worn ink on old paper */
 
-	--popover: #1c1e28;                    /* elevated surface for popovers */
-	--popover-foreground: #c8cbdb;         /* readable light gray-blue */
+	--popover: #1d1b26;                    /* shadowed wood or stone alcove */
+	--popover-foreground: #d7d3cc;         /* readable aged scroll color */
 
-	--primary: #6d7dff;                    /* vibrant indigo-blue, main accent */
-	--primary-foreground: #0f101a;         /* dark contrast for buttons/text on primary */
+	--primary: #3d5a80;                    /* Ravenclaw-inspired deep blue */
+	--primary-foreground: #eae9f3;         /* soft silver for clarity */
 
-	--secondary: #c678dd;                  /* vivid orchid-lavender, secondary accent */
-	--secondary-foreground: #0f101a;       /* dark foreground for secondary elements */
+	--secondary: #a93a2e;                  /* Gryffindor scarlet */
+	--secondary-foreground: #f4e7e3;       /* warm, bright contrast */
 
-	--muted: #2b2e3a;                      /* dark muted bluish-gray background */
-	--muted-foreground: #969aad;           /* soft neutral text color for muted areas */
+	--muted: #2b2a33;                      /* neutral background variation */
+	--muted-foreground: #9996a1;           /* old ink, faded text */
 
-	--accent: #48c4e0;                     /* bright cyan-teal for links, icons, highlights */
-	--accent-foreground: #0e1014;          /* dark text/icon for contrast on accent background */
+	--accent: #2b8f77;                     /* Slytherin emerald-green */
+	--accent-foreground: #e5f7f2;          /* cool glow for contrast */
 
-	--destructive: #d36767;                /* soft coral red for danger actions */
+	--destructive: #d16a5e;                /* red clay/potion warning */
 
-	--border: #2b2e3a;                     /* standard border for elements */
-	--input: #3e4152;                      /* sunken input field background */
-	--ring: #6d7dff;                       /* matches primary color for focus rings */
+	--border: #2e2c34;                     /* shadowed frame */
+	--input: #494651;                      /* well-worn quill parchment */
+	--ring: #b4a76f;                       /* Hufflepuff gold, subtle glow */
 
-	--chart-1: #6d7dff;                    /* matches primary, vivid indigo */
-	--chart-2: #c678dd;                    /* matches secondary, orchid tone */
-	--chart-3: #e1b655;                    /* golden yellow, warm contrast */
-	--chart-4: #db7566;                    /* warm coral-red, energetic */
-	--chart-5: #48c4e0;                    /* matches accent, cool cyan */
+	--chart-1: #3d5a80;                    /* Ravenclaw blue */
+	--chart-2: #a93a2e;                    /* Gryffindor red */
+	--chart-3: #b4a76f;                    /* Hufflepuff yellow-gold */
+	--chart-4: #2b8f77;                    /* Slytherin green */
+	--chart-5: #886ca6;                    /* Forbidden Forest violet magic */
 
-	--sidebar: #12141b;                    /* sidebar base, matches background */
-	--sidebar-foreground: #c8cbdb;         /* light readable sidebar text */
-	--sidebar-primary: #6d7dff;            /* active tab/highlight in sidebar */
-	--sidebar-primary-foreground: #0f101a; /* dark text/icon on primary sidebar item */
-	--sidebar-accent: #48c4e0;             /* sidebar hover or link highlight */
-	--sidebar-accent-foreground: #e8f9fd;  /* very light cyan for strong contrast */
-	--sidebar-border: #2b2e3a;             /* consistent border tone */
-	--sidebar-ring: #6d7dff;               /* consistent focus outline */
+	--sidebar: #14131a;                    /* deep magical shadows */
+	--sidebar-foreground: #d7d3cc;         /* worn scroll text */
+	--sidebar-primary: #3d5a80;            /* house highlight */
+	--sidebar-primary-foreground: #f0f0f7;
+	--sidebar-accent: #2b8f77;             /* green charm highlight */
+	--sidebar-accent-foreground: #eafaf6;
+	--sidebar-border: #2e2c34;
+	--sidebar-ring: #b4a76f;
 }
 
 @theme {
@@ -208,14 +208,22 @@
 
 	h2 {
 		@apply text-2xl;
+		font-family: var(--font-heading);
+		font-weight: 500;
 	}
 
 	h3 {
 		@apply text-xl;
+		font-weight: 500;
 	}
 	
 	h4 {
 		@apply text-lg;
+		font-weight: 500;
+	}
+
+	h5 {
+		@apply text-base;
 	}
 
 	p {
