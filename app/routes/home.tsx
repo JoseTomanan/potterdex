@@ -7,7 +7,7 @@ import {
 	createCharacter as createItem,
 	type Character as Item,
 } from "~/lib/types/character";
-import { testPopulator } from "~/lib/test_populator";
+import testdata from "~/lib/testdata.json";
 
 import { ItemGrid } from "~/components/item/ItemGrid";
 import {
@@ -37,7 +37,7 @@ export default function Home() {
 		// Simulated loading for now
 		setTimeout(() => {
 			setIsStillLoading(false);
-			setItems(testPopulator.map(item => createItem(item)));
+			setItems(testdata.map(item => createItem(item)));
 		}, 1500);
 	}, []);
 
