@@ -223,10 +223,12 @@
 	nav {
 		@apply bg-sidebar/50;
 		@apply backdrop-blur-lg;
-		font-weight: 400;
 		@apply border-b border-border;
-
+		@apply px-6;
+		@apply py-2;
+		
 		& a {
+			font-weight: 400;
 			color: var(--color-sidebar-foreground);
 			
 			&:hover {
@@ -262,6 +264,7 @@
 	}
 
 	.hoverable-link {
+		font-weight: 500;
 		color: var(--color-accent);
 
 		&:hover {
