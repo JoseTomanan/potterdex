@@ -40,7 +40,7 @@ export function ItemCard( item: ItemCardProps ) {
 					`text-chart-4 text-shadow-chart-4`
 				: item.house == "Ravenclaw"
 					? 
-						`text-chart-1 text-shadow-chart-1`
+						`text-chart-1 text-shadow-foreground`
 					:
 						`text-chart-3 text-shadow-chart-3`
 
@@ -48,9 +48,9 @@ export function ItemCard( item: ItemCardProps ) {
 		<div className="card gap-y-2">
 			<span className="bg-muted h-[125px] flex justify-center">
 				{item.image ? (
-					<img src={item.image}/>
+					<img src={item.image} className="bg-popover w-full object-contain"/>
 				) : (
-					<IoPersonSharp className="size-full fill-muted-foreground" />
+					<IoPersonSharp className="size-full fill-card" />
 				)}
 			</span>
 			<div>
