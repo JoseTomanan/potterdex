@@ -24,6 +24,7 @@ type SearchBarProps = {
 
 export function SearchBar({ disabled }: SearchBarProps) {
 	const [database, setDatabase] = useState("character");
+	const [category, setCategory] = useState("name");
 	const [order, setOrder] = useState("ascending");
 
 	return (
@@ -51,6 +52,21 @@ export function SearchBar({ disabled }: SearchBarProps) {
 						<SelectItem value="character">Characters</SelectItem>
 						<SelectItem value="potion" disabled>Potions</SelectItem>
 						<SelectItem value="spell" disabled>Spells</SelectItem>
+					</SelectGroup>
+				</SelectContent>
+			</Select>
+
+			<Select value={category} onValueChange={setCategory}>
+				<SelectTrigger className="rounded w-24 xl:w-32">
+					<SelectValue />
+				</SelectTrigger>
+				<SelectContent>
+					<SelectGroup>
+						<SelectLabel>Sort by</SelectLabel>
+						<SelectItem value="name">Name</SelectItem>
+						<SelectItem value="house" disabled>House</SelectItem>
+						<SelectItem value="nationality" disabled>Nationality</SelectItem>
+						<SelectItem value="species" disabled>Species</SelectItem>
 					</SelectGroup>
 				</SelectContent>
 			</Select>
