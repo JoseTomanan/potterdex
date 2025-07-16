@@ -8,12 +8,12 @@ import {
 
 type ItemGridProps = {
 	items: Item[];
-	isLoading: boolean;
+	isStillLoading: boolean;
 }
 
 
 export function ItemGrid( props: ItemGridProps ) {
-	const returnableContent = props.isLoading
+	const returnableContent = props.isStillLoading
 		? (
 				Array.from({ length: 20 }).map((_, i) => (
 					<ItemSkeleton key={i} />
