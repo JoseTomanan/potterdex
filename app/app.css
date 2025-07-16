@@ -284,11 +284,6 @@
 		@apply flex flex-col;
 		@apply p-2;
 		@apply border;
-
-		&:hover {
-			background-color: var(--color-popover);
-			@apply border-input;
-		}
 	}
 
 	.hoverable-link {
