@@ -5,8 +5,8 @@ import { PiInstagramLogoFill } from "react-icons/pi";
 
 export function meta({}: Route.MetaArgs) {
 	return [
-		{ title: "POKÉDEX | About"},
-		{ name: "description", content: "..." }
+		{ title: "POTTERDÉX | About"},
+		{ name: "description", content: "About the creator" }
 	];
 }
 
