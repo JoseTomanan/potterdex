@@ -6,6 +6,7 @@ export type Character = {
 	nationality: string;
 	species: string;
 	skin_color: string;
+	blood_status: string;
 	house: string;
 	weight?: number;
 	born: string;
@@ -24,6 +25,7 @@ export function createCharacter(overrides: Partial<Character> = {}): Character {
     nationality: '',
 		species: 'Human',
     skin_color: '',
+		blood_status: '',
     house: '',
     born: '',
     wand: [],
