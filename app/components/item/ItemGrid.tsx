@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router";
-
 import type { Character as Item } from "~/lib/types/character";
 import {
 	ItemCard, ItemSkeleton
@@ -11,22 +10,21 @@ type ItemGridProps = {
 	isStillLoading: boolean;
 }
 
-
 export function ItemGrid( props: ItemGridProps ) {
-	const returnableContent = props.isStillLoading
+	const contents = props.isStillLoading
 		? (
-				Array.from({ length: 20 }).map((_, i) => (
-					<ItemSkeleton key={i} />
-				))
+			Array.from({ length: 20 }).map((_, i) => (
+				<ItemSkeleton key={i} />
+			))
 		) : (
-				props.items.map(({}, i) => (
-					<ItemCard {...props.items[i]} />
-				))
+			props.items.map(({}, i) => (
+				<ItemCard {...props.items[i]} />
+			))
 		);
 
 	return (
 		<div className="card-grid">
-			{returnableContent}
+			{contents}
 		</div>
 	);
 }
