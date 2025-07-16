@@ -225,11 +225,12 @@
 	}
 
 	nav {
-		@apply bg-sidebar/50;
+		@apply bg-sidebar/80;
 		@apply backdrop-blur-lg;
 		@apply border-b border-border;
 		@apply px-6;
 		@apply py-2;
+		z-index: 50;
 		
 		& a {
 			font-weight: 400;
@@ -249,7 +250,6 @@
 
 		font-family: var(--font-mono);
 		@apply pt-6 pb-2;
-		@apply border-t-1;
 		text-align: right;
 
 		& h6 {
@@ -265,6 +265,12 @@
 	.card {
 		background-color: var(--color-card);
 		color: var(--color-card-foreground);
+		height: 240px;
+		width: 300px;
+		
+		@apply flex flex-col;
+		@apply p-2;
+		@apply border;
 	}
 
 	.hoverable-link {
