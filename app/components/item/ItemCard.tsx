@@ -3,7 +3,6 @@ import {
 	IoMale,
 	IoFemale,
 	IoMaleFemale,
-	IoTransgender,
 } from "react-icons/io5";
 import { MdQuestionMark } from "react-icons/md";
 import { Skeleton } from "../ui/skeleton";
@@ -21,29 +20,24 @@ type ItemCardProps = {
 
 export function ItemCard( item: ItemCardProps ) {
 	const genderIcon = (item.gender == "Male")
-			? (
-				<IoMale />
-			) : (
+			? <IoMale />
+			:
 				item.gender == "Female"
 					? <IoFemale />
-					: (
-						(item.gender == "" || item.gender == "Unknown")
-							? <MdQuestionMark />
-							: <IoMaleFemale />
-				)
-			);
-
-	const houseRelatedStyle = item.house == "Gryffindor"
-			?
-				`text-chart-2 text-shadow-chart-2`
-			: item.house == "Slytherin"
-				?
-					`text-chart-4 text-shadow-chart-4`
-				: item.house == "Ravenclaw"
-					? 
-						`text-chart-1 text-shadow-chart-1`
 					:
-						`text-chart-3 text-shadow-chart-3`
+						item.gender == "" || item.gender == "Unknown"
+							? <MdQuestionMark />
+							: <IoMaleFemale />;
+
+	const houseRelatedStyle = (item.house == "Gryffindor")
+			? "text-chart-2 text-shadow-chart-2"
+			:
+				item.house == "Slytherin"
+				? "text-chart-4 text-shadow-chart-4"
+				:
+					item.house == "Ravenclaw"
+					? "text-chart-1 text-shadow-chart-1"
+					: "text-chart-3 text-shadow-chart-3";
 
 	return (
 		<div className="card gap-y-2 group hover:bg-popover hover:border-input hover:drop-shadow-muted hover:drop-shadow-sm">
