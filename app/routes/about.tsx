@@ -12,8 +12,8 @@ export function meta({}: Route.MetaArgs) {
 
 export default function About() {
 	return (
-		<main className="flex flex-col mt-16 gap-6">
-			<section className="container">
+		<main className="flex flex-col mt-16">
+			<section className="flex flex-col container gap-4">
 				<div className="flex flex-col gap-1">
 					<h1>About Me</h1>
 					<span className="flex gap-2 items-center">
@@ -22,22 +22,24 @@ export default function About() {
 								{icon}
 							</a>
 						))}
-						<span>&middot;</span>
-						<a href="https://josetmnn.vercel.app" target="_blank" className="hoverable-link">
-							portfolio
-						</a>
 					</span>
 				</div>
+
 				<div>
 					<p>
-						This is my first project with React. I made this project in line with the principle of &ldquo;the best way to learn a framework, is to create something with it&rdquo;.
-						<br/>
-						I hope you're impressed!
-					</p>
-					<p>
+						This is my first project with React; I made this in line with the principle of &ldquo;the best way to learn a framework, is to create something with it&rdquo;.
+						<br />
 						The repository of this web app can be found <a href="https://github.com/JoseTomanan/potterdex" className="hoverable-link">here</a>.
+						You can also visit my <a href="https://josetmnn.vercel.app" target="_blank" className="hoverable-link">portfolio</a>.
 					</p>
 				</div>
+
+				<a
+					href="https://www.linkedin.com/in/jedtomanan/"
+					className="w-fit flex items-baseline gap-1 hover:gap-2 hover:text-primary">
+					Connect with me
+					<FiArrowUpRight />
+				</a>
 			</section>
 		</main>
 	);
