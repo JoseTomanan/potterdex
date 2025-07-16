@@ -25,12 +25,16 @@ export default function Home() {
 	useEffect(() => {
 		// Simulated loading for now
 		setTimeout(() => {
+			setIsLoading(false);
 			setItems([
 				createItem({ id: '1', name: 'Eddie Alvarez', nationality: 'American'}),
 				createItem({ id: '2', name: 'Jairzinho Rozenstruik', nationality: 'Surinamese'}),
 				createItem({ id: '3', name: 'Khamzat Chimaev', nationality: 'Chechnyan'}),
 				createItem({ id: '4', name: 'Rafael Fiziev', nationality: 'Azerbaijani'}),
 				createItem({ id: '5', name: 'Dustin Poirier', nationality: 'American'}),
+				createItem({ id: '6', name: 'Charles Oliveira', nationality: 'Brazilian' }),
+				createItem({ id: '7', name: 'Islam Makhachev', nationality: 'Russian' }),
+				createItem({ id: '8', name: 'Ilia Topuria', nationality: 'Georgian' }),
 			]);
 		}, 1500);
 	}, []);
@@ -38,7 +42,6 @@ export default function Home() {
   return (
 		<main>
 			{/* TODO: PAGINATION */}
-
 			<ItemGrid items={items} isLoading={isLoading} />
 		</main>
 	);
