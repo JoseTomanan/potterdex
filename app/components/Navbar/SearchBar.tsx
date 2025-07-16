@@ -23,7 +23,7 @@ type SearchBarProps = {
 };
 
 export function SearchBar({ disabled }: SearchBarProps) {
-	const [value, setValue] = useState("character");
+	const [database, setDatabase] = useState("character");
 	const [order, setOrder] = useState("ascending");
 
 	return (
@@ -41,7 +41,7 @@ export function SearchBar({ disabled }: SearchBarProps) {
 					/>
 			</div>
 
-			<Select value={value} onValueChange={setValue}>
+			<Select value={database} onValueChange={setDatabase}>
 				<SelectTrigger className="rounded w-32 xl:w-40">
 					<SelectValue />
 				</SelectTrigger>
