@@ -1,5 +1,5 @@
 import type { Route } from "./+types/home";
-import { ItemGrid } from "~/components/ItemGrid";
+import { ItemGrid } from "~/components/item/ItemGrid";
 
 export function meta({}: Route.MetaArgs) {
   return [
