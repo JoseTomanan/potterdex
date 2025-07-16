@@ -5,6 +5,7 @@ import {
 	IoMaleFemale,
 	IoTransgender,
 } from "react-icons/io5";
+import { GoQuestion } from "react-icons/go";
 import { Skeleton } from "../ui/skeleton";
 
 
@@ -26,7 +27,7 @@ export function ItemCard( item: ItemCardProps ) {
 					? <IoFemale />
 					: (
 						(item.gender == "" || item.gender == "Unknown")
-							? <b className="h-5 items-baseline">?</b>
+							? <GoQuestion />
 							: <IoMaleFemale />
 				)
 			);
