@@ -5,7 +5,7 @@ import {
 	IoMaleFemale,
 	IoTransgender,
 } from "react-icons/io5";
-import { GoQuestion } from "react-icons/go";
+import { MdQuestionMark } from "react-icons/md";
 import { Skeleton } from "../ui/skeleton";
 
 
@@ -27,18 +27,30 @@ export function ItemCard( item: ItemCardProps ) {
 					? <IoFemale />
 					: (
 						(item.gender == "" || item.gender == "Unknown")
-							? <GoQuestion />
+							? <MdQuestionMark />
 							: <IoMaleFemale />
 				)
 			);
 
+	const houseRelatedStyle = item.house == "Gryffindor"
+			?
+				`text-chart-2 text-shadow-chart-2`
+			: item.house == "Slytherin"
+				?
+					`text-chart-4 text-shadow-chart-4`
+				: item.house == "Ravenclaw"
+					? 
+						`text-chart-1 text-shadow-chart-1`
+					:
+						`text-chart-3 text-shadow-chart-3`
+
 	return (
 		<div className="card gap-y-2">
-			<span className="bg-primary-foreground h-[125px] flex justify-center">
+			<span className="bg-muted h-[125px] flex justify-center">
 				{item.image ? (
 					<img src={item.image}/>
 				) : (
-					<IoPersonSharp className="size-full fill-muted" />
+					<IoPersonSharp className="size-full fill-muted-foreground" />
 				)}
 			</span>
 			<div>
@@ -46,8 +58,10 @@ export function ItemCard( item: ItemCardProps ) {
 					<h3>{item.name}</h3>
 					{genderIcon}
 				</span>
-				<h5>{ item.house }</h5>
-				<span className="flex flex-row gap-x-1 items-baseline">
+				<h5 className={`text-shadow-sm/5 ${houseRelatedStyle}`} >
+					{item.house}
+				</h5>
+				<span className="flex flex-row gap-x-1 items-baseline font-light">
 					<h5>{ item.nationality }</h5>
 					<span>&middot;</span>
 					<h5>{ item.species }</h5>
