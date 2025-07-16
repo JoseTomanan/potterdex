@@ -73,15 +73,15 @@ export function ItemCard( item: ItemCardProps ) {
 
 export function ItemSkeleton() {
 	return (
-		<div className="card gap-y-3">
+		<div className="card gap-y-3 pb-3">
 			<Skeleton className="bg-muted h-[125px] w-full rounded" />
-			<div className="space-y-2.5">
+			<div className="space-y-2">
 				<span className="flex space-x-2">
 					<Skeleton className="bg-muted h-5 w-[160px]" />
 					<Skeleton className="bg-muted size-5 rounded-full"/>
 				</span>
-				<Skeleton className="bg-muted h-4 w-[100px]" />
-				<Skeleton className="bg-muted h-4 w-[120px]" />
+				<Skeleton className="bg-muted h-4 w-[80px]" />
+				<Skeleton className="bg-muted h-4 w-[160px]" />
 			</div>
 		</div>
 	);
