@@ -19,7 +19,7 @@ export function createCharacter(overrides: Partial<Character> = {}): Character {
 		id: '',
     name: '',
     alias_names: [],
-		gender: '',
+		gender: 'Unknown',
     nationality: '',
     skin_color: '',
     house: '',
