@@ -1,0 +1,414 @@
+[
+  {
+    "id": "1",
+    "name": "Eddie Alvarez",
+    "alias_names": [
+      "The Underground King",
+      "Bloodfang"
+    ],
+    "gender": "Male",
+    "nationality": "Transylvanian",
+    "species": "Vampire",
+    "skin_color": "Pale",
+    "blood_status": "Half-blood",
+    "house": "Ravenclaw",
+    "weight": 155,
+    "born": "1984-01-11",
+    "wand": [
+      "Holly",
+      "Vampire Fang",
+      "11\""
+    ],
+    "image": "https://a.espncdn.com/i/headshots/mma/players/full/2431333.png"
+  },
+  {
+    "id": "2",
+    "name": "Rose Namajunas",
+    "alias_names": [
+      "Thug Rose",
+      "Desert Bloom"
+    ],
+    "gender": "Female",
+    "nationality": "Moroccan",
+    "species": "Veela",
+    "skin_color": "Olive",
+    "blood_status": "Muggle-born",
+    "house": "Gryffindor",
+    "weight": 115,
+    "born": "1992-06-29",
+    "wand": [
+      "Cherry",
+      "Phoenix Feather",
+      "10.5\""
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Jessica Andrade",
+    "alias_names": [
+      "Bate Estaca",
+      "Stonefist"
+    ],
+    "gender": "Female",
+    "nationality": "Bulgarian",
+    "species": "Half-giant",
+    "skin_color": "Tan",
+    "blood_status": "Pure-blood",
+    "house": "Slytherin",
+    "weight": 125,
+    "born": "1991-09-25",
+    "wand": [
+      "Oak",
+      "Troll Whisker",
+      "13.5\""
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Rafael Fiziev",
+    "alias_names": [
+      "Ataman",
+      "Firekick"
+    ],
+    "gender": "Male",
+    "nationality": "Scottish",
+    "species": "Human",
+    "skin_color": "Fair",
+    "blood_status": "Unknown",
+    "house": "Hufflepuff",
+    "weight": 155,
+    "born": "1993-03-05",
+    "wand": [
+      "Elm",
+      "Hippogriff Talon",
+      "11.75\""
+    ],
+    "image": "https://a.espncdn.com/combiner/i?img=/i/headshots/mma/players/full/4339488.png&w=350&h=254"
+  },
+  {
+    "id": "5",
+    "name": "Dustin Poirier",
+    "alias_names": [
+      "The Diamond",
+      "Moonfang"
+    ],
+    "gender": "",
+    "nationality": "Welsh",
+    "species": "Werewolf",
+    "skin_color": "Tanned",
+    "blood_status": "Half-blood",
+    "house": "Slytherin",
+    "weight": 155,
+    "born": "1989-01-19",
+    "wand": [
+      "Ash",
+      "Werewolf Hair",
+      "12\""
+    ],
+    "image": "https://a.espncdn.com/combiner/i?img=/i/headshots/mma/players/full/2506549.png&w=350&h=254"
+  },
+  {
+    "id": "6",
+    "name": "Charles Oliveira",
+    "alias_names": [
+      "Do Bronx",
+      "Blinkshade"
+    ],
+    "gender": "Male",
+    "nationality": "Greek",
+    "species": "Goblin",
+    "skin_color": "Greenish",
+    "blood_status": "Pure-blood",
+    "house": "Gryffindor",
+    "weight": 155,
+    "born": "1989-10-17",
+    "wand": [
+      "Ebony",
+      "Goblin Nail",
+      "9.75\""
+    ],
+    "image": "https://a.espncdn.com/combiner/i?img=/i/headshots/mma/players/full/2504169.png&w=350&h=254"
+  },
+  {
+    "id": "7",
+    "name": "Islam Makhachev",
+    "alias_names": [
+      "The Eagle's Shadow",
+      "Dustwhirl"
+    ],
+    "gender": "",
+    "nationality": "Romanian",
+    "species": "Squib",
+    "skin_color": "Fair",
+    "blood_status": "Squib",
+    "house": "Ravenclaw",
+    "weight": 155,
+    "born": "1991-09-27",
+    "wand": []
+  },
+  {
+    "id": "8",
+    "name": "Justin Gaethje",
+    "alias_names": [
+      "The Highlight",
+      "Stoneburst"
+    ],
+    "gender": "Male",
+    "nationality": "Irish",
+    "species": "Centaur",
+    "skin_color": "Tan",
+    "blood_status": "Unknown",
+    "house": "Gryffindor",
+    "weight": 155,
+    "born": "1988-11-14",
+    "wand": [
+      "Pine",
+      "Centaur Hair",
+      "14\""
+    ],
+    "image": "https://a.espncdn.com/i/headshots/mma/players/full/3022345.png"
+  },
+  {
+    "id": "9",
+    "name": "Mickey Gall",
+    "alias_names": [
+      "Ghoststep",
+      "Gallant"
+    ],
+    "gender": "Male",
+    "nationality": "Austrian",
+    "species": "Human",
+    "skin_color": "Fair",
+    "blood_status": "Muggle-born",
+    "house": "Hufflepuff",
+    "weight": 170,
+    "born": "1992-01-22",
+    "wand": [
+      "Maple",
+      "Unicorn Hair",
+      "10\""
+    ]
+  },
+  {
+    "id": "10",
+    "name": "Khamzat Chimaev",
+    "alias_names": [
+      "Borz",
+      "Snowlash"
+    ],
+    "gender": "",
+    "nationality": "Norwegian",
+    "species": "Veela",
+    "skin_color": "Pale",
+    "blood_status": "Half-blood",
+    "house": "Ravenclaw",
+    "weight": 170,
+    "born": "1994-05-01",
+    "wand": [
+      "Birch",
+      "Veela Hair",
+      "11\""
+    ],
+    "image": "https://a.espncdn.com/combiner/i?img=/i/headshots/mma/players/full/4684751.png&w=350&h=254"
+  },
+  {
+    "id": "11",
+    "name": "Valentina Shevchenko",
+    "alias_names": [
+      "Bullet"
+    ],
+    "gender": "Female",
+    "nationality": "Latvian",
+    "species": "Elf",
+    "skin_color": "Pale",
+    "blood_status": "Pure-blood",
+    "house": "Ravenclaw",
+    "weight": 125,
+    "born": "1988-03-07",
+    "wand": [
+      "Ash",
+      "Phoenix feather",
+      "11 inches"
+    ]
+  },
+  {
+    "id": "12",
+    "name": "Sean O'Malley",
+    "alias_names": [
+      "Sugar"
+    ],
+    "gender": "Male",
+    "nationality": "Danish",
+    "species": "Half-giant",
+    "skin_color": "Freckled",
+    "blood_status": "Half-blood",
+    "house": "Hufflepuff",
+    "weight": 135,
+    "born": "1994-10-24",
+    "wand": [
+      "Fir",
+      "Unicorn hair",
+      "13\u00bd inches"
+    ]
+  },
+  {
+    "id": "13",
+    "name": "Amanda Nunes",
+    "alias_names": [
+      "The Lioness"
+    ],
+    "gender": "Female",
+    "nationality": "Amazonian",
+    "species": "Werewolf",
+    "skin_color": "Brown",
+    "blood_status": "Half-blood",
+    "house": "Slytherin",
+    "weight": 135,
+    "born": "1988-05-30",
+    "wand": [
+      "Redwood",
+      "Werewolf whisker",
+      "12 inches"
+    ]
+  },
+  {
+    "id": "14",
+    "name": "Alexander Volkanovski",
+    "alias_names": [
+      "The Great"
+    ],
+    "gender": "Male",
+    "nationality": "Australian",
+    "species": "Human",
+    "skin_color": "Tanned",
+    "blood_status": "Muggle-born",
+    "house": "Gryffindor",
+    "weight": 145,
+    "born": "1988-09-29",
+    "wand": [
+      "Mahogany",
+      "Dragon heartstring",
+      "11 inches"
+    ]
+  },
+  {
+    "id": "15",
+    "name": "Conor McGregor",
+    "alias_names": [
+      "The Notorious"
+    ],
+    "gender": "Male",
+    "nationality": "Irish",
+    "species": "Goblin",
+    "skin_color": "Rosy",
+    "blood_status": "Pure-blood",
+    "house": "Slytherin",
+    "weight": 155,
+    "born": "1988-07-14",
+    "wand": [
+      "Ebony",
+      "Leprechaun gold core",
+      "13 inches"
+    ],
+    "image": "https://a.espncdn.com/i/headshots/mma/players/full/3022677.png"
+  },
+  {
+    "id": "16",
+    "name": "Stipe Miocic",
+    "alias_names": [],
+    "gender": "Male",
+    "nationality": "Croatian",
+    "species": "Giant",
+    "skin_color": "Rough",
+    "blood_status": "Squib",
+    "house": "Hufflepuff",
+    "weight": 240,
+    "born": "1982-08-19",
+    "wand": [
+      "Oak",
+      "Troll hair",
+      "15 inches"
+    ]
+  },
+  {
+    "id": "17",
+    "name": "Francis Ngannou",
+    "alias_names": [
+      "The Predator"
+    ],
+    "gender": "Male",
+    "nationality": "Wakandan",
+    "species": "Half-giant",
+    "skin_color": "Dark brown",
+    "blood_status": "Unknown",
+    "house": "Gryffindor",
+    "weight": 260,
+    "born": "1986-09-05",
+    "wand": [
+      "Baobab",
+      "Hippogriff feather",
+      "16 inches"
+    ]
+  },
+  {
+    "id": "18",
+    "name": "Renato Moicano",
+    "alias_names": [
+      "Money"
+    ],
+    "gender": "Male",
+    "nationality": "Brazilian",
+    "species": "Veela",
+    "skin_color": "Dark",
+    "blood_status": "Pure-blood",
+    "house": "Slytherin",
+    "weight": 205,
+    "born": "1987-07-19",
+    "wand": [
+      "Hornbeam",
+      "Veela hair",
+      "13 inches"
+    ],
+		"image": "https://a.espncdn.com/combiner/i?img=/i/headshots/mma/players/full/3028863.png&w=350&h=254"
+  },
+  {
+    "id": "19",
+    "name": "Demetrious Johnson",
+    "alias_names": [
+      "Mighty Mouse"
+    ],
+    "gender": "Male",
+    "nationality": "Swiss",
+    "species": "Goblin",
+    "skin_color": "Brown",
+    "blood_status": "Muggle-born",
+    "house": "Ravenclaw",
+    "weight": 125,
+    "born": "1986-08-13",
+    "wand": [
+      "Cherry",
+      "Pixie dust",
+      "9 inches"
+    ]
+  },
+  {
+    "id": "20",
+    "name": "BJ Penn",
+    "alias_names": [
+      "The Prodigy"
+    ],
+    "gender": "Male",
+    "nationality": "Hawaiian",
+    "species": "Human",
+    "skin_color": "Tan",
+    "blood_status": "Half-blood",
+    "house": "Hufflepuff",
+    "weight": 155,
+    "born": "1978-12-13",
+    "wand": [
+      "Koa",
+      "Phoenix feather",
+      "12\u00bd inches"
+    ]
+  }
+]
