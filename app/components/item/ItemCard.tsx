@@ -13,6 +13,7 @@ type ItemCardProps = {
 	house: string;
 	nationality: string;
 	gender: string;
+	species: string;
 	image: string;
 }
 
@@ -24,8 +25,8 @@ export function ItemCard( item: ItemCardProps ) {
 				item.gender == "Female"
 					? <IoFemale />
 					: (
-						(item.gender === null || item.gender == "Unknown")
-							? <b>?</b>
+						(item.gender == "" || item.gender == "Unknown")
+							? <b className="h-5 items-baseline">?</b>
 							: <IoMaleFemale />
 				)
 			);
@@ -40,12 +41,15 @@ export function ItemCard( item: ItemCardProps ) {
 				)}
 			</span>
 			<div>
-				<h3>{ item.name }</h3>
+				<span className="flex items-baseline-last gap-2">
+					<h3>{item.name}</h3>
+					{genderIcon}
+				</span>
 				<h5>{ item.house }</h5>
 				<span className="flex flex-row gap-x-1 items-baseline">
-					<h5>{genderIcon}</h5>
-					<span>&middot;</span>
 					<h5>{ item.nationality }</h5>
+					<span>&middot;</span>
+					<h5>{ item.species }</h5>
 				</span>
 			</div>
 		</div>
@@ -56,11 +60,14 @@ export function ItemCard( item: ItemCardProps ) {
 export function ItemSkeleton() {
 	return (
 		<div className="card gap-y-3">
-			<Skeleton className="bg-muted h-[125px] w-[280px] rounded" />
-			<div className="space-y-2">
-				<Skeleton className="bg-muted h-5 w-[240px]" />
-				<Skeleton className="bg-muted h-4 w-[200px]" />
+			<Skeleton className="bg-muted h-[125px] w-full rounded" />
+			<div className="space-y-2.5">
+				<span className="flex space-x-2">
+					<Skeleton className="bg-muted h-5 w-[160px]" />
+					<Skeleton className="bg-muted size-5 rounded-full"/>
+				</span>
 				<Skeleton className="bg-muted h-4 w-[100px]" />
+				<Skeleton className="bg-muted h-4 w-[120px]" />
 			</div>
 		</div>
 	);
