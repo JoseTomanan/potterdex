@@ -24,22 +24,15 @@ export function SearchBar({ disabled }: SearchBarProps) {
 
 	return (
 		<form className="flex gap-4">
-			<div className="flex outline -outline-offset-1 outline-input rounded">
-				<Button
-					variant="ghost" size="icon"
-					className="rounded rounded-inherit rounded-r-none" disabled={disabled}>
-					<FaSearch />
-				</Button>
-				<Input
-					value={search}
-					onChange={(event) => setSearchState({ search: event.target.value })}
-					id="search"
-					type="text"
-					placeholder="Search..."
-					disabled={disabled}
-					className="border-none rounded rounded-inherit rounded-l-none active:outline-none w-48 lg:w-64"
-					/>
-			</div>
+			<Input
+				value={search}
+				id="search"
+				type="text"
+				placeholder="Search..."
+				disabled={disabled}
+				onChange={(event) => setSearchState({ search: event.target.value })}
+				className="rounded rounded-inherit active:outline-none w-48 lg:w-64"
+				/>
 
 			<Select
 				value={database}
