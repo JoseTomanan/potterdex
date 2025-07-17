@@ -54,20 +54,25 @@ export default function Home() {
 							setPage(page-1);
 						}}/>
 					</PaginationItem>
-					{(page > 1) ? (
+					{(page > 2) ? (
 						<PaginationItem>
 							<PaginationEllipsis />
 						</PaginationItem>
 					) : <></>}
-					{(page > 2) ? (
+					{(page > 1) ? (
 						<PaginationItem>
-							<PaginationLink href="#">
+							<PaginationLink
+								onClick={(e) => {
+								e.preventDefault();
+								setIsLoading(true);
+								setPage(page-1);
+								}}>
 								{page-1}
 							</PaginationLink>
 						</PaginationItem>
 					) : <></>}
 					<PaginationItem>
-						<PaginationLink href="#">{page}</PaginationLink>
+						<PaginationLink isActive href="#">{page}</PaginationLink>
 					</PaginationItem>
 					<PaginationItem>
 						<PaginationLink onClick={(e) => {
