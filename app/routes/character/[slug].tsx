@@ -1,5 +1,3 @@
-import { FaArrowsSpin } from "react-icons/fa6";
-
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
 import { ItemDetails } from "~/components/item/ItemDetails";
@@ -54,9 +52,14 @@ function CharacterSlugSkeleton() {
 	// TODO: add skeleton that matches intended figure
 
 	return (
-		<main className="container flex flex-col justify-center align-middle">
-			<FaArrowsSpin className="size-20 animate-spin" />
-			<Skeleton className="w-full h-20" />
+		<main className="container">
+			<section className="container flex flex-col gap-y-2">
+				<Skeleton className="w-125 h-10" />
+				<Skeleton className="w-80 h-5" />
+				<Skeleton className="w-80 h-4" />
+				<Skeleton className="w-60 h-4" />
+				<Skeleton className="w-50 h-4" />
+			</section>
 		</main>
 	);
 }
