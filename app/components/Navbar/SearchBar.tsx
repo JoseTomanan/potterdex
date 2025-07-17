@@ -50,9 +50,9 @@ export function SearchBar({ disabled }: SearchBarProps) {
 				<SelectContent>
 					<SelectGroup>
 						<SelectLabel>Database</SelectLabel>
-						<SelectItem value="character">Characters</SelectItem>
-						<SelectItem value="potion" disabled>Potions</SelectItem>
-						<SelectItem value="spell" disabled>Spells</SelectItem>
+						<SelectItem value="characters">Characters</SelectItem>
+						<SelectItem value="potions" disabled>Potions</SelectItem>
+						<SelectItem value="spells" disabled>Spells</SelectItem>
 					</SelectGroup>
 				</SelectContent>
 			</Select>
