@@ -1,5 +1,11 @@
 export type Character = {
-	id: string;
+	slug: string;
+	animagus?: string;
+	boggart?: string;
+	eye_color: string;
+	hair_color: string;
+	family_members: string[];
+	marital_status: string;
 	name: string;
 	alias_names: string[];
 	gender: string,
@@ -8,6 +14,10 @@ export type Character = {
 	skin_color: string;
 	blood_status: string;
 	house: string;
+	height?: number;
+	patronus: string;
+	romances: string[];
+	titles?: string[];
 	weight?: number;
 	born: string;
 	died?: string;
@@ -18,7 +28,13 @@ export type Character = {
 
 export function createCharacter(overrides: Partial<Character> = {}): Character {
 	return {
-		id: '',
+		slug: '',
+		animagus: '',
+		boggart: '',
+		eye_color: '',
+		hair_color: '',
+		family_members: [],
+		marital_status: '',
     name: '',
     alias_names: [],
 		gender: 'Unknown',
@@ -27,6 +43,9 @@ export function createCharacter(overrides: Partial<Character> = {}): Character {
     skin_color: '',
 		blood_status: '',
     house: '',
+		patronus: '',
+		romances: [],
+		titles: [],
     born: '',
     wand: [],
 		image: '',

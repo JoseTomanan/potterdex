@@ -1,6 +1,6 @@
 [
   {
-    "id": "1",
+    "slug": "1",
     "name": "Eddie Alvarez",
     "alias_names": [
       "The Underground King",
@@ -22,7 +22,7 @@
     "image": "https://a.espncdn.com/i/headshots/mma/players/full/2431333.png"
   },
   {
-    "id": "2",
+    "slug": "2",
     "name": "Rose Namajunas",
     "alias_names": [
       "Thug Rose",
@@ -43,7 +43,7 @@
     ]
   },
   {
-    "id": "3",
+    "slug": "3",
     "name": "Jessica Andrade",
     "alias_names": [
       "Bate Estaca",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": "4",
+    "slug": "4",
     "name": "Rafael Fiziev",
     "alias_names": [
       "Ataman",
@@ -86,7 +86,7 @@
     "image": "https://a.espncdn.com/combiner/i?img=/i/headshots/mma/players/full/4339488.png&w=350&h=254"
   },
   {
-    "id": "5",
+    "slug": "5",
     "name": "Dustin Poirier",
     "alias_names": [
       "The Diamond",
@@ -108,7 +108,7 @@
     "image": "https://a.espncdn.com/combiner/i?img=/i/headshots/mma/players/full/2506549.png&w=350&h=254"
   },
   {
-    "id": "6",
+    "slug": "6",
     "name": "Charles Oliveira",
     "alias_names": [
       "Do Bronx",
@@ -130,7 +130,7 @@
     "image": "https://a.espncdn.com/combiner/i?img=/i/headshots/mma/players/full/2504169.png&w=350&h=254"
   },
   {
-    "id": "7",
+    "slug": "7",
     "name": "Islam Makhachev",
     "alias_names": [
       "The Eagle's Shadow",
@@ -147,7 +147,7 @@
     "wand": []
   },
   {
-    "id": "8",
+    "slug": "8",
     "name": "Justin Gaethje",
     "alias_names": [
       "The Highlight",
@@ -169,7 +169,7 @@
     "image": "https://a.espncdn.com/i/headshots/mma/players/full/3022345.png"
   },
   {
-    "id": "9",
+    "slug": "9",
     "name": "Mickey Gall",
     "alias_names": [
       "Ghoststep",
@@ -190,7 +190,7 @@
     ]
   },
   {
-    "id": "10",
+    "slug": "10",
     "name": "Khamzat Chimaev",
     "alias_names": [
       "Borz",
@@ -212,7 +212,7 @@
     "image": "https://a.espncdn.com/combiner/i?img=/i/headshots/mma/players/full/4684751.png&w=350&h=254"
   },
   {
-    "id": "11",
+    "slug": "11",
     "name": "Valentina Shevchenko",
     "alias_names": [
       "Bullet"
@@ -232,7 +232,7 @@
     ]
   },
   {
-    "id": "12",
+    "slug": "12",
     "name": "Sean O'Malley",
     "alias_names": [
       "Sugar"
@@ -252,7 +252,7 @@
     ]
   },
   {
-    "id": "13",
+    "slug": "13",
     "name": "Amanda Nunes",
     "alias_names": [
       "The Lioness"
@@ -272,7 +272,7 @@
     ]
   },
   {
-    "id": "14",
+    "slug": "14",
     "name": "Alexander Volkanovski",
     "alias_names": [
       "The Great"
@@ -292,7 +292,7 @@
     ]
   },
   {
-    "id": "15",
+    "slug": "15",
     "name": "Conor McGregor",
     "alias_names": [
       "The Notorious"
@@ -313,7 +313,7 @@
     "image": "https://a.espncdn.com/i/headshots/mma/players/full/3022677.png"
   },
   {
-    "id": "16",
+    "slug": "16",
     "name": "Stipe Miocic",
     "alias_names": [],
     "gender": "Male",
@@ -331,7 +331,7 @@
     ]
   },
   {
-    "id": "17",
+    "slug": "17",
     "name": "Francis Ngannou",
     "alias_names": [
       "The Predator"
@@ -351,7 +351,7 @@
     ]
   },
   {
-    "id": "18",
+    "slug": "18",
     "name": "Renato Moicano",
     "alias_names": [
       "Money"
@@ -372,7 +372,7 @@
 		"image": "https://a.espncdn.com/combiner/i?img=/i/headshots/mma/players/full/3028863.png&w=350&h=254"
   },
   {
-    "id": "19",
+    "slug": "19",
     "name": "Demetrious Johnson",
     "alias_names": [
       "Mighty Mouse"
@@ -392,7 +392,7 @@
     ]
   },
   {
-    "id": "20",
+    "slug": "20",
     "name": "BJ Penn",
     "alias_names": [
       "The Prodigy"
