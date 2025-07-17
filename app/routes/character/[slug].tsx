@@ -69,7 +69,7 @@ function CharacterSlugNotFound() {
 	return (
 		<main>
 			<h1>404: Character not found</h1>
-			<Link to="/">Back to items</Link>
+			<Link to="/" className="hoverable-link">Back to items</Link>
 		</main>
 	);
 }
