@@ -6,9 +6,11 @@ import {
 } from "react-icons/io5";
 import { MdQuestionMark } from "react-icons/md";
 import { Skeleton } from "../ui/skeleton";
+import { Link } from "react-router";
 
 
 type ItemCardProps = {
+	slug: string;
 	name: string;
 	house: string;
 	nationality: string;
@@ -50,7 +52,9 @@ export function ItemCard( item: ItemCardProps ) {
 			</span>
 			<div>
 				<span className="flex items-baseline-last gap-2">
-					<h3>{item.name}</h3>
+					<h3>
+						<Link to={`/character/${item.slug}`}>{ item.name }</Link>
+					</h3>
 					{genderIcon}
 				</span>
 				<h5 className={`text-shadow-xs/20 ${houseRelatedStyle}`} >
