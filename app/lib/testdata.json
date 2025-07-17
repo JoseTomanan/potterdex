@@ -1,6 +1,6 @@
 [
   {
-    "slug": "1",
+    "slug": "harry-potter",
     "name": "Eddie Alvarez",
     "alias_names": [
       "The Underground King",
@@ -22,7 +22,7 @@
     "image": "https://a.espncdn.com/i/headshots/mma/players/full/2431333.png"
   },
   {
-    "slug": "2",
+    "slug": "hermione-granger",
     "name": "Rose Namajunas",
     "alias_names": [
       "Thug Rose",
@@ -43,7 +43,7 @@
     ]
   },
   {
-    "slug": "3",
+    "slug": "ron-weasley",
     "name": "Jessica Andrade",
     "alias_names": [
       "Bate Estaca",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "slug": "4",
+    "slug": "albert-jorkins",
     "name": "Rafael Fiziev",
     "alias_names": [
       "Ataman",
