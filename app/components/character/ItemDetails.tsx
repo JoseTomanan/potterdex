@@ -6,10 +6,12 @@ type ItemDetailsProps = Character;
 export function ItemDetails(props: ItemDetailsProps) {
 	return (
 		<section>
-			<h6 className="font-mono text-muted-foreground">// PROPER FORMATTING COMING SOON!</h6>
-			<h4>
+			<h6 className="font-mono text-muted-foreground">
+				(PROPER FORMATTING TO FOLLOW)
+			</h6>
+			<h6>
 				SLUG: <span className="font-mono">{props.slug}</span>
-			</h4>
+			</h6>
 			<div className="flex flex-col">
 				<h1>{props.name}</h1>
 				<span className="flex flex-row">
