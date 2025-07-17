@@ -1,11 +1,18 @@
 import { createContext, useContext, useState } from "react";
 
 
+export type DatabaseType = "characters" | "potions" | "spells";
+
+export type SortType = "name" | "house" | "nationality" | "species";
+
+export type OrderType = "ascending" | "descending";
+
+
 type SearchState = {
 	search: string;
-  database: "characters" | "potions" | "spells";
-  sort: "name" | "house" | "nationality" | "species";
-  order: "ascending" | "descending";
+  database: DatabaseType;
+  sort: SortType;
+  order: OrderType;
 };
 
 type SearchContextType = SearchState & {
