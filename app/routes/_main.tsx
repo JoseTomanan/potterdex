@@ -1,13 +1,8 @@
-import {
-	useEffect,
-	useState,
-} from "react";
+import axios from "axios";
+
+import { useEffect, useState, } from "react";
 import type { Route } from "./+types/_main";
-import {
-	createCharacter as createItem,
-	type Character as Item,
-} from "~/lib/types/character";
-import testdata from "~/lib/testdata.json";
+import { createCharacter, type Character, } from "~/lib/types/character";
 
 import { ItemGrid } from "~/components/character/ItemGrid";
 import {
@@ -31,16 +26,22 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
 	const [page, setPage] = useState(1);
-	const [items, setItems] = useState<Item[]>([]);
+	const [characters, setCharacters] = useState<Character[]>([]);
 	const [isLoading, setIsLoading] = useState<boolean>(true);
 
 	useEffect(() => {
-		// Simulated loading for now
-		setTimeout(() => {
-			setIsLoading(false);
-			setItems(testdata.map(item => createItem(item)));
-		}, 1500);
-	}, []);
+		axios.get(`https://api.potterdb.com/v1/characters?page[size]=20&page[number]=${page}`)
+				.then(res => {
+						const actualCharacters = res.data.data.map((item: { attributes: any; }) => item.attributes);
+						setCharacters(actualCharacters);
+				})
+				.catch(error => {
+						console.log(error);
+				})
+				.finally(() => {
+						setIsLoading(false);
+				});
+	}, [page]);
 
   return (
 		<main className="w-screen px-1 md:px-2">
@@ -76,7 +77,7 @@ export default function Home() {
 				</PaginationContent>
 			</Pagination>
 
-			<ItemGrid items={items} isLoading={isLoading} />
+			<ItemGrid items={characters} isLoading={isLoading} />
 		</main>
 	);
 }
