@@ -9,7 +9,7 @@ import {
 } from "~/lib/types/character";
 import testdata from "~/lib/testdata.json";
 
-import { ItemGrid } from "~/components/item/ItemGrid";
+import { ItemGrid } from "~/components/character/ItemGrid";
 import {
 	Pagination,
 	PaginationContent,

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
-import { ItemDetails } from "~/components/item/ItemDetails";
+import { ItemDetails } from "~/components/character/ItemDetails";
 import type { Character } from "~/lib/types/character";
 
 import axios from 'axios';
