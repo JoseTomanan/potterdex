@@ -11,11 +11,6 @@ import {
 	SelectLabel,
 	SelectItem,
 } from "~/components/ui/select";
-import {
-	Tooltip,
-	TooltipTrigger,
-	TooltipContent,
-} from "~/components/ui/tooltip";
 
 
 type SearchBarProps = {
@@ -24,7 +19,7 @@ type SearchBarProps = {
 
 export function SearchBar({ disabled }: SearchBarProps) {
 	const [database, setDatabase] = useState("character");
-	const [category, setCategory] = useState("name");
+	const [filter, setFilter] = useState("name");
 	const [order, setOrder] = useState("ascending");
 
 	return (
@@ -56,13 +51,13 @@ export function SearchBar({ disabled }: SearchBarProps) {
 				</SelectContent>
 			</Select>
 
-			<Select value={category} onValueChange={setCategory}>
+			<Select value={filter} onValueChange={setFilter}>
 				<SelectTrigger className="rounded w-24 xl:w-32">
 					<SelectValue />
 				</SelectTrigger>
 				<SelectContent>
 					<SelectGroup>
-						<SelectLabel>Sort by</SelectLabel>
+						<SelectLabel>Filter</SelectLabel>
 						<SelectItem value="name">Name</SelectItem>
 						<SelectItem value="house" disabled>House</SelectItem>
 						<SelectItem value="nationality" disabled>Nationality</SelectItem>
