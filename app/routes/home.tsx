@@ -32,12 +32,12 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
 	const [page, setPage] = useState(1);
 	const [items, setItems] = useState<Item[]>([]);
-	const [isStillLoading, setIsStillLoading] = useState(true);
+	const [isLoading, setIsLoading] = useState<boolean>(true);
 
 	useEffect(() => {
 		// Simulated loading for now
 		setTimeout(() => {
-			setIsStillLoading(false);
+			setIsLoading(false);
 			setItems(testdata.map(item => createItem(item)));
 		}, 1500);
 	}, []);
@@ -76,7 +76,7 @@ export default function Home() {
 				</PaginationContent>
 			</Pagination>
 
-			<ItemGrid items={items} isStillLoading={isStillLoading} />
+			<ItemGrid items={items} isLoading={isLoading} />
 		</main>
 	);
 }

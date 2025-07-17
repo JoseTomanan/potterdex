@@ -4,11 +4,11 @@ import { ItemCard, ItemSkeleton, } from "./ItemCard";
 
 type ItemGridProps = {
 	items: Item[];
-	isStillLoading: boolean;
+	isLoading: boolean;
 }
 
 export function ItemGrid( props: ItemGridProps ) {
-	const contents = props.isStillLoading
+	const contents = props.isLoading
 			? (
 					Array.from({ length: 20 }).map((_, i) => (
 						<ItemSkeleton key={i} />
