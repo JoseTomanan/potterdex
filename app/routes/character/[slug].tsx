@@ -7,8 +7,6 @@ import axios from 'axios';
 import { Skeleton } from "~/components/ui/skeleton";
 
 
-const fetcher = (url: string) => fetch(url).then(res => res.json);
-
 export default function CharacterSlug() {
 	const { slug } = useParams();
 
@@ -17,15 +15,15 @@ export default function CharacterSlug() {
 	
 	useEffect(() => {
 		axios.get(`https://api.potterdb.com/v1/characters/${slug}`)
-			.then(res => {
-				setCharacter(res.data.data.attributes);
-			})
-			.catch(error => {
-				console.log(error);
-			})
-			.finally(() => {
-				setIsLoading(false);
-			});
+				.then(res => {
+						setCharacter(res.data.data.attributes);
+				})
+				.catch(error => {
+						console.log(error);
+				})
+				.finally(() => {
+						setIsLoading(false);
+				});
 	}, [slug]);
 
 	
