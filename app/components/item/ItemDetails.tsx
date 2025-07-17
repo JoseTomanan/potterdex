@@ -6,16 +6,20 @@ type ItemDetailsProps = Character;
 export function ItemDetails(props: ItemDetailsProps) {
 	return (
 		<section className="container">
-			{props.slug}
-			<div>
-				<span>
-					{props.name}
+			<h6 className="font-mono text-muted-foreground">// PROPER FORMATTING COMING SOON!</h6>
+			<h4>
+				SLUG: <span className="font-mono">{props.slug}</span>
+			</h4>
+			<div className="flex flex-col">
+				<h1>{props.name}</h1>
+				<span className="flex flex-row">
 					{props.born}
 					{props.died ? props.died : <></>}
+					{props.marital_status}
 				</span>
-				{props.gender}
-				{props.nationality}
-				{props.skin_color}
+				<h6>{props.gender}</h6>
+				<h6>{props.nationality}</h6>
+				<h6>{props.skin_color}</h6>
 				{props.species}
 				{props.wand}
 				{props.weight ? props.weight : <></>}
@@ -25,7 +29,11 @@ export function ItemDetails(props: ItemDetailsProps) {
 			</div>
 			<div>
 				{props.image ? props.image : <></>}
-				{props.wiki ? props.wiki : <></>}
+				{props.wiki ? (
+					<a href="props.wiki" target="_blank" className="hoverable-link">
+						Visit wiki
+					</a>
+				) : <></>}
 			</div>
 		</section>
 	);
