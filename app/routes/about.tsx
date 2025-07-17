@@ -1,4 +1,4 @@
-import type { Route } from "./+types/home";
+import type { Route } from "./+types/about";
 import { FiArrowUpRight } from "react-icons/fi";
 import { FaLinkedin, FaFacebookSquare, FaGithub } from "react-icons/fa";
 import { PiInstagramLogoFill } from "react-icons/pi";
