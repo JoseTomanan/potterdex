@@ -26,16 +26,13 @@ export default function CharacterSlug() {
 				});
 	}, [slug]);
 
-	
 	if (isLoading) {
 		return CharacterSlugSkeleton();
 	}
 	
-	
 	if (!character) {
 		return CharacterSlugNotFound();
 	}
-
 
 	return (
 		<main className="container">

@@ -52,15 +52,17 @@ export function ItemCard( item: ItemCardProps ) {
 			</span>
 			<div>
 				<span className="flex items-baseline-last gap-2">
-					<h3 className="decoration-1 underline-offset-2 hover:underline ">
-						<Link to={`/character/${item.slug}`}>{ item.name }</Link>
+					<h3 className="decoration-1 underline-offset-2 hover:underline truncate">
+						<Link to={`/character/${item.slug}`} className="">
+							{ item.name }
+						</Link>
 					</h3>
-					{genderIcon}
+					<span className="size-4">{genderIcon}</span>
 				</span>
 				<h5 className={`text-shadow-xs/20 ${houseRelatedStyle}`} >
 					{item.house}
 				</h5>
-				<h5 className="flex flex-row gap-x-1 items-baseline font-light tracking-tight text-muted-foreground">
+				<h5 className="flex flex-row gap-x-1 items-baseline font-light tracking-tight text-muted-foreground truncate">
 					{ item.nationality } &middot; { item.species } &middot; { item.blood_status }
 				</h5>
 			</div>
