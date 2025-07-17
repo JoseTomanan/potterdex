@@ -30,6 +30,7 @@ export function meta({}: Route.MetaArgs) {
 
 
 export default function Home() {
+	const [page, setPage] = useState(1);
 	const [items, setItems] = useState<Item[]>([]);
 	const [isStillLoading, setIsStillLoading] = useState(true);
 
@@ -48,11 +49,23 @@ export default function Home() {
 					<PaginationItem>
 						<PaginationPrevious href="#" />
 					</PaginationItem>
+					{(page > 1) ? (
+						<PaginationItem>
+							<PaginationEllipsis />
+						</PaginationItem>
+					) : <></>}
+					{(page > 2) ? (
+						<PaginationItem>
+							<PaginationLink href="#">
+								{page-1}
+							</PaginationLink>
+						</PaginationItem>
+					) : <></>}
 					<PaginationItem>
-						<PaginationLink href="#">1</PaginationLink>
+						<PaginationLink href="#">{page}</PaginationLink>
 					</PaginationItem>
 					<PaginationItem>
-						<PaginationLink href="#">2</PaginationLink>
+						<PaginationLink href="#">{page+1}</PaginationLink>
 					</PaginationItem>
 					<PaginationItem>
 						<PaginationEllipsis />
