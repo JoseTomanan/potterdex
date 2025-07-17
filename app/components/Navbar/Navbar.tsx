@@ -16,7 +16,7 @@ export function NavBar() {
 				<SearchBar disabled={isNotFixed}/>
 			</div>
 			<span className="flex-1"/>
-			<div className="flex gap-4 justify-end">
+			<div className="flex gap-8 justify-end">
 				<a href="https://potterdb.com/" target="_blank">PotterDB</a>
 				<Link to="/about">About</Link>
 			</div>
