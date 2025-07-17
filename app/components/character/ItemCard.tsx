@@ -39,7 +39,9 @@ export function ItemCard( item: ItemCardProps ) {
 				:
 					item.house == "Ravenclaw"
 					? "text-chart-1 text-shadow-chart-1"
-					: "text-chart-3 text-shadow-chart-3";
+					: item.house == "Hufflepuff"
+						? "text-chart-3 text-shadow-chart-3"
+						: "text-muted-foreground text-shadow-muted-foreground";
 
 	return (
 		<div className="card gap-y-2 group hover:bg-popover hover:border-input hover:drop-shadow-muted hover:drop-shadow-sm">
@@ -60,7 +62,7 @@ export function ItemCard( item: ItemCardProps ) {
 					<span className="size-4">{genderIcon}</span>
 				</span>
 				<h5 className={`text-shadow-xs/20 ${houseRelatedStyle}`} >
-					{item.house}
+					{item.house ? item.house : "No house"}
 				</h5>
 				<h5 className="flex flex-row gap-x-1 items-baseline font-light tracking-tight text-muted-foreground truncate">
 					{ item.nationality } &middot; { item.species } &middot; { item.blood_status }
