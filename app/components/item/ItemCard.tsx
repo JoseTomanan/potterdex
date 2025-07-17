@@ -52,7 +52,7 @@ export function ItemCard( item: ItemCardProps ) {
 			</span>
 			<div>
 				<span className="flex items-baseline-last gap-2">
-					<h3>
+					<h3 className="decoration-1 underline-offset-2 hover:underline ">
 						<Link to={`/character/${item.slug}`}>{ item.name }</Link>
 					</h3>
 					{genderIcon}
