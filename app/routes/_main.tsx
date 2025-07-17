@@ -2,7 +2,7 @@ import axios from "axios";
 
 import { useEffect, useState, } from "react";
 import type { Route } from "./+types/_main";
-import { createCharacter, type Character, } from "~/lib/types/character";
+import type { Character } from "~/lib/types/character";
 
 import { ItemGrid } from "~/components/character/ItemGrid";
 import {
@@ -48,7 +48,11 @@ export default function Home() {
 			<Pagination className="bg-transparent border-none w-fit">
 				<PaginationContent>
 					<PaginationItem>
-						<PaginationPrevious href="#" />
+						<PaginationPrevious onClick={(e) => {
+							e.preventDefault();
+							setIsLoading(true);
+							setPage(page-1);
+						}}/>
 					</PaginationItem>
 					{(page > 1) ? (
 						<PaginationItem>
@@ -66,13 +70,21 @@ export default function Home() {
 						<PaginationLink href="#">{page}</PaginationLink>
 					</PaginationItem>
 					<PaginationItem>
-						<PaginationLink href="#">{page+1}</PaginationLink>
+						<PaginationLink onClick={(e) => {
+							e.preventDefault();
+							setIsLoading(true);
+							setPage(page+1);
+						}}>{page+1}</PaginationLink>
 					</PaginationItem>
 					<PaginationItem>
 						<PaginationEllipsis />
 					</PaginationItem>
 					<PaginationItem>
-						<PaginationNext href="#" />
+						<PaginationNext onClick={(e) => {
+							e.preventDefault();
+							setIsLoading(true);
+							setPage(page+1);
+						}} />
 					</PaginationItem>
 				</PaginationContent>
 			</Pagination>
