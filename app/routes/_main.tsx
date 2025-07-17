@@ -36,11 +36,11 @@ export default function Home() {
 			`?page[size]=20` +
 			`&page[number]=${page}` +
 			`&sort=${(order == "descending") ? '-' : ''}${sort}` +
-			`&filter[name_cont]=${search}`;
+			((search != '')
+					? (`&filter[name_cont]=${search}`)
+					: ('') );
 
-	useEffect(() => {
-		setIsLoading(true);
-		axios.get(url)
+	const fetchCharacters = () => axios.get(url)
 				.then(res => {
 						const actualCharacters = res.data.data.map((item: { attributes: any; }) => item.attributes);
 						setCharacters(actualCharacters);
@@ -51,7 +51,17 @@ export default function Home() {
 				.finally(() => {
 						setIsLoading(false);
 				});
-	}, [page, search, database, sort, order]);
+
+	useEffect(() => {
+		setIsLoading(true);
+		fetchCharacters();
+	}, [page]);
+
+	useEffect(() => {
+		setIsLoading(true);
+		setPage(1);
+		fetchCharacters();
+	}, [search, database, sort, order]);
 
   return (
 		<main className="w-screen px-1 md:px-2">
