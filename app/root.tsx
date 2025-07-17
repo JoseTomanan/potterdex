@@ -40,7 +40,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body className="flex flex-col h-screen">
 				<NavBar />
-				<div className="container mx-auto flex flex-col items-center flex-grow">
+				<div className="flex flex-col items-center flex-grow">
 					{children}
 					<ScrollRestoration />
 					<Scripts />
