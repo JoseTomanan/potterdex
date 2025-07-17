@@ -2,7 +2,7 @@ import {
 	useEffect,
 	useState,
 } from "react";
-import type { Route } from "./+types/home";
+import type { Route } from "./+types/_main";
 import {
 	createCharacter as createItem,
 	type Character as Item,
