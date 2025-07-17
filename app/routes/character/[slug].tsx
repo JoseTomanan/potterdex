@@ -38,7 +38,7 @@ export default function CharacterSlug() {
 
 
 	return (
-		<main>
+		<main className="container">
 			{/* TODO: bread crumbs */}
 			<ItemDetails {...character}/>
 		</main>
@@ -51,7 +51,7 @@ function CharacterSlugSkeleton() {
 
 	return (
 		<main className="container">
-			<section className="container flex flex-col gap-y-2">
+			<section className="flex flex-col gap-y-2">
 				<Skeleton className="w-125 h-10" />
 				<Skeleton className="w-80 h-5" />
 				<Skeleton className="w-80 h-4" />
@@ -65,7 +65,7 @@ function CharacterSlugSkeleton() {
 
 function CharacterSlugNotFound() {
 	return (
-		<main>
+		<main className="container">
 			<h1>404: Character not found</h1>
 			<Link to="/" className="hoverable-link">Back to items</Link>
 		</main>
