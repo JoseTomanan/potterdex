@@ -5,7 +5,7 @@ type ItemDetailsProps = Character;
 
 export function ItemDetails(props: ItemDetailsProps) {
 	return (
-		<section className="container">
+		<section>
 			<h6 className="font-mono text-muted-foreground">// PROPER FORMATTING COMING SOON!</h6>
 			<h4>
 				SLUG: <span className="font-mono">{props.slug}</span>
