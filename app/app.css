@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400");
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700");
 
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -226,6 +226,11 @@
 		@apply text-base;
 	}
 
+	h6 {
+		@apply text-sm;
+		color: var(--color-muted-foreground);
+	}
+
 	p {
 		@apply text-base;
 		color: var(--color-muted-foreground);
@@ -261,6 +266,7 @@
 		text-align: right;
 
 		& h6 {
+			color: var(--color-muted);
 			@apply text-xs;
 			@apply mr-2;
 		}
@@ -286,6 +292,15 @@
 	}
 
 	.hoverable-link {
+		font-weight: 400;
+		color: var(--color-foreground);
+
+		&:hover {
+			color: var(--color-accent);
+		}
+	}
+
+	.highlight-link {
 		font-weight: 500;
 		color: var(--color-accent);
 
