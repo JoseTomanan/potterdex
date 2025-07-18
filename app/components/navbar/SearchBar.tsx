@@ -24,16 +24,20 @@ export function SearchBar({ disabled }: SearchBarProps) {
 
 	return (
 		<form className="flex gap-4">
-			<Input
-				value={search}
-				id="search"
-				type="text"
-				placeholder="Search..."
-				disabled={disabled}
-				onChange={(event) => setSearchState({ search: event.target.value })}
-				className="rounded rounded-inherit active:outline-none w-48 lg:w-64"
-				/>
+			<div className="flex flex-row rounded rounded-inherit outline outline-muted-foreground -outline-offset-1">
+				<Input
+					value={search}
+					id="search"
+					type="text"
+					placeholder="Search..."
+					disabled={disabled}
+					onChange={(event) => setSearchState({ search: event.target.value })}
+					className="border-none rounded-l active:outline-none w-48 lg:w-64"
+					/>
+				<FaSearch className="grow w-7 h-full font-light pr-3 m-auto text-muted-foreground bg-input/30"/>
+			</div>
 
+			{/*
 			<Select
 				value={database}
 				onValueChange={(i: DatabaseType) => setSearchState({ database: i })}>
@@ -49,11 +53,12 @@ export function SearchBar({ disabled }: SearchBarProps) {
 					</SelectGroup>
 				</SelectContent>
 			</Select>
+			*/}
 
 			<Select
 				value={sort}
 				onValueChange={(i: SortType) => setSearchState({ sort: i })}>
-				<SelectTrigger className="rounded w-24 xl:w-32">
+				<SelectTrigger className="rounded w-16 xl:w-28 border-muted-foreground" >
 					<SelectValue />
 				</SelectTrigger>
 				<SelectContent>
