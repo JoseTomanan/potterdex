@@ -62,13 +62,28 @@ export function ItemDetails(props: ItemDetailsProps) {
 				</div>
 
 				<div className="flex flex-col flex-2/3">
-					<p>Blood status: {props.blood_status}</p>
-					<p>Marital status: {props.marital_status}</p>
-					<p>Nationality: {props.nationality ? props.nationality : <>&mdash;</>}</p>
-					<p>Skin color: {props.skin_color ? props.skin_color : <>&mdash;</>}</p>
-					<p>Wand: {props.wand ? props.wand : <>&mdash;</>}</p>
+					<p>
+						<b>Blood status:</b>
+						{props.blood_status}
+					</p>
+					<p>
+						<b>Marital status:</b>
+						{props.marital_status ? props.marital_status : <>&mdash;</>}
+					</p>
+					<p>
+						<b>Nationality:</b>
+						{props.nationality ? props.nationality : <>&mdash;</>}
+					</p>
+					<p>
+						<b>Skin color:</b>
+						{props.skin_color ? props.skin_color : <>&mdash;</>}
+					</p>
+					<p>
+						<b>Wand:</b>
+						{props.wand ? props.wand : <>&mdash;</>}
+					</p>
 					{props.weight ? (
-							<p>Weight: {props.weight}</p>
+							<p><b>Weight:</b> {props.weight}</p>
 					) : <></>}
 				</div>
 			</div>
