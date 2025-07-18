@@ -59,7 +59,7 @@ function CharacterSlugSkeleton() {
 
 	return (
 		<main className="container">
-			<section className="flex flex-col gap-y-2 rounded bg-card border border-border px-2 py-4">
+			<section className="flex flex-col gap-y-2 rounded bg-card border border-border px-8 py-4">
 				<Skeleton className="w-80 h-4 pb-2" />
 				<Skeleton className="w-125 h-10" />
 				<Skeleton className="w-80 h-5" />
