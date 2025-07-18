@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {IoSearchOutline as SearchIcon } from "react-icons/io5";
+import { IoIosSearch as SearchIcon } from "react-icons/io";
 import { useLocation } from "react-router";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
@@ -24,12 +24,12 @@ export function SearchBar() {
 
 	return (
 		<form className="flex gap-4">
-			<div className={`relative flex flex-row rounded rounded-inherit outline ${isInHome ? `outline-muted-foreground` : `outline-input`} -outline-offset-1`}>
+			<div className={`relative flex flex-row bg-background rounded rounded-inherit outline-input ${isInHome ? `outline-2 -outline-offset-2` : `outline -outline-offset-1`}`}>
 				<Input
 					value={search}
 					id="search"
 					type="text"
-					placeholder="Search..."
+					placeholder={`Search by ${sort}...`}
 					disabled={isInAbout}
 					onChange={(event) => setSearchState({ search: event.target.value })}
 					className="border-none rounded active:outline-none w-48 lg:w-64"
@@ -58,7 +58,7 @@ export function SearchBar() {
 			<Select
 				value={sort}
 				onValueChange={(i: SortType) => setSearchState({ sort: i })}>
-				<SelectTrigger className={`rounded w-16 xl:w-28 ${isInHome ? `border-muted-foreground`: ""}`} >
+				<SelectTrigger className="rounded w-20 xl:w-32" >
 					<SelectValue />
 				</SelectTrigger>
 				<SelectContent>
