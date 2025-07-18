@@ -57,11 +57,11 @@ export function ItemDetails(props: ItemDetailsProps) {
 			</span>
 
 			<div className="flex flex-row gap-x-4 mt-2">
-				<div className="flex flex-col gap-1 flex-1/3 px-4 py-2 bg-popover rounded mx-2">
+				<div className="flex flex-col gap-1 flex-1/4 px-4 py-2 bg-popover rounded mx-2">
 					{Bio}
 				</div>
 
-				<div className="flex flex-col flex-2/3">
+				<div className="flex flex-col flex-3/4">
 					<p>
 						<b>Blood status: </b>
 						{props.blood_status}
