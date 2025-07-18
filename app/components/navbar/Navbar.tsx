@@ -13,7 +13,7 @@ export function NavBar() {
 		<nav className={`flex flex-row items-center justify-center w-full ${isNotFixed ? "relative" : "fixed"}`}>
 			<div className="flex items-center gap-6">
 				<Logo />
-				<SearchBar disabled={isNotFixed}/>
+				<SearchBar />
 			</div>
 			<span className="flex-1"/>
 			<div className="flex gap-8 justify-end">
