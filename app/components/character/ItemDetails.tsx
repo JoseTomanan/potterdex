@@ -1,4 +1,5 @@
 import { IoPersonSharp } from "react-icons/io5";
+import { dashIfNone } from "~/lib/utils";
 import type { Character } from "~/lib/types/character";
 
 
@@ -63,24 +64,19 @@ export function ItemDetails(props: ItemDetailsProps) {
 
 				<div className="flex flex-col flex-2/3">
 					<p>
-						<b>Blood status: </b>
-						{props.blood_status}
+						<b>Blood status: </b> {dashIfNone(props.blood_status)}
 					</p>
 					<p>
-						<b>Marital status: </b>
-						{props.marital_status ? props.marital_status : <>&mdash;</>}
+						<b>Marital status: </b> {dashIfNone(props.marital_status)}
 					</p>
 					<p>
-						<b>Nationality: </b>
-						{props.nationality ? props.nationality : <>&mdash;</>}
+						<b>Nationality: </b> {dashIfNone(props.nationality)}
 					</p>
 					<p>
-						<b>Skin color: </b>
-						{props.skin_color ? props.skin_color : <>&mdash;</>}
+						<b>Skin color: </b> {dashIfNone(props.skin_color)}
 					</p>
 					<p>
-						<b>Wand: </b>
-						{props.wand ? props.wand : <>&mdash;</>}
+						<b>Wand:</b> {dashIfNone(props.wand)}
 					</p>
 					{props.weight ? (
 							<p><b>Weight: </b> {props.weight}</p>
