@@ -63,8 +63,9 @@ export default function Home() {
 		fetchCharacters();
 	}, [search, database, sort, order]);
 
-  return (
-		<main className="w-screen px-1 md:px-2">
+
+	// segregated for visual clarity
+	const PaginationSection = (
 			<Pagination className="bg-transparent border-none w-fit">
 				<PaginationContent>
 					{(page != 1) ? (
@@ -122,6 +123,12 @@ export default function Home() {
 					</PaginationItem>
 				</PaginationContent>
 			</Pagination>
+	);
+
+	
+  return (
+		<main className="w-screen px-1 md:px-2">
+			{PaginationSection}
 			<ItemGrid items={characters} isLoading={isLoading} />
 		</main>
 	);
