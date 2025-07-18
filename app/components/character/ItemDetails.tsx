@@ -56,8 +56,8 @@ export function ItemDetails(props: ItemDetailsProps) {
 				) : <></>}
 			</span>
 
-			<div className="flex flex-row gap-x-4">
-				<div className="flex flex-col gap-1 flex-1/3 px-2 py-1 bg-popover border">
+			<div className="flex flex-row gap-x-4 mt-2">
+				<div className="flex flex-col gap-1 flex-1/3 px-4 py-2 bg-popover rounded mx-2">
 					{Bio}
 				</div>
 
