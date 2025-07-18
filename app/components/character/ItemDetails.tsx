@@ -2,6 +2,8 @@ import { IoPersonSharp } from "react-icons/io5";
 import { dashIfNone } from "~/lib/utils";
 import type { Character } from "~/lib/types/character";
 
+import styles from "./ItemDetails.module.css";
+
 
 type ItemDetailsProps = Character;
 
@@ -57,8 +59,8 @@ export function ItemDetails(props: ItemDetailsProps) {
 				) : <></>}
 			</span>
 
-			<div className="flex flex-row gap-x-4 mt-2">
-				<div className={`flex flex-col gap-1 ${props.image ? "flex-1/3" : "flex-1/4"} px-4 py-2 bg-popover rounded mx-2`}>
+			<div className="flex flex-row gap-x-6 mt-2">
+				<div className={`flex flex-col gap-1 ${props.image ? "flex-1/3" : "flex-1/4"} px-4 py-2 bg-popover rounded`}>
 					{Bio}
 				</div>
 
