@@ -239,10 +239,9 @@
 	}
 
 	nav {
-		@apply bg-sidebar/90;
-		@apply border-b border-border;
+		@apply bg-background/85;
 		@apply px-6;
-		@apply py-2;
+		@apply py-3;
 		z-index: 50;
 		
 		& a {
