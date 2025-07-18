@@ -19,7 +19,7 @@ import { useSearch } from "~/lib/context/SearchContext";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "POTTERDEX | Database" },
+    { title: "POTTERDEX | Home" },
     { name: "description", content: "Pokedex for Harry Potter" },
   ];
 }
