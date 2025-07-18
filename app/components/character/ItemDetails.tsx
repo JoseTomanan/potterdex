@@ -41,7 +41,7 @@ export function ItemDetails(props: ItemDetailsProps) {
 	);
 
 	return (
-		<section className="rounded bg-card border border-border px-2 py-4">
+		<section className="rounded bg-card border border-border px-8 py-4">
 			<p className="font-mono text-muted">
 				<b>slugname</b>: {props.slug}
 			</p>

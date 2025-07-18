@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { FaSearch } from "react-icons/fa";
+import {IoSearchOutline as SearchIcon } from "react-icons/io5";
+import { useLocation } from "react-router";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 import {
@@ -15,26 +16,25 @@ import { useSearch } from "~/lib/context/SearchContext";
 import type { DatabaseType, SortType, OrderType } from "~/lib/context/SearchContext";
 
 
-type SearchBarProps = {
-	disabled: boolean,
-};
-
-export function SearchBar({ disabled }: SearchBarProps) {
+export function SearchBar() {
 	const {search, database, sort, order, setSearchState} = useSearch();
+
+	const isInHome = useLocation().pathname === "/";
+	const isInAbout = useLocation().pathname === "/about"
 
 	return (
 		<form className="flex gap-4">
-			<div className="flex flex-row rounded rounded-inherit outline outline-muted-foreground -outline-offset-1">
+			<div className={`relative flex flex-row rounded rounded-inherit outline ${isInHome ? `outline-muted-foreground` : `outline-input`} -outline-offset-1`}>
 				<Input
 					value={search}
 					id="search"
 					type="text"
 					placeholder="Search..."
-					disabled={disabled}
+					disabled={isInAbout}
 					onChange={(event) => setSearchState({ search: event.target.value })}
-					className="border-none rounded-l active:outline-none w-48 lg:w-64"
+					className="border-none rounded active:outline-none w-48 lg:w-64"
 					/>
-				<FaSearch className="grow w-7 h-full font-light pr-3 m-auto text-muted-foreground bg-input/30"/>
+				<SearchIcon className="grow size-4 m-auto text-muted-foreground absolute top-1/2 -translate-1/2 right-0.5 pointer-events-none"/>
 			</div>
 
 			{/*
@@ -58,7 +58,7 @@ export function SearchBar({ disabled }: SearchBarProps) {
 			<Select
 				value={sort}
 				onValueChange={(i: SortType) => setSearchState({ sort: i })}>
-				<SelectTrigger className="rounded w-16 xl:w-28 border-muted-foreground" >
+				<SelectTrigger className={`rounded w-16 xl:w-28 ${isInHome ? `border-muted-foreground`: ""}`} >
 					<SelectValue />
 				</SelectTrigger>
 				<SelectContent>
