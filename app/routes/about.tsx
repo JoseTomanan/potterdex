@@ -27,6 +27,9 @@ export default function About() {
 
 				<div>
 					<p>
+						This frontend uses the <a href="https://docs.potterdb.com" target="_blank" className="hoverable-link">PotterDB API</a>.
+					</p>
+					<p>
 						This is my first project with React; I made this in line with the principle of &ldquo;the best way to learn a framework, is to create something with it&rdquo;.
 						<br />
 						You can visit this app's <a href="https://github.com/JoseTomanan/potterdex" className="hoverable-link"> Git repository</a>.
