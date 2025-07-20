@@ -32,7 +32,7 @@ export function SearchBar() {
 					placeholder={`Search by ${sort}...`}
 					disabled={isInAbout}
 					onChange={(event) => setSearchState({ search: event.target.value })}
-					className="border-none rounded active:outline-none w-48 lg:w-64"
+					className="border-none rounded active:outline-none w-36 md:w-48 lg:w-64"
 					/>
 				<SearchIcon className="grow size-4 m-auto text-muted-foreground absolute top-1/2 -translate-1/2 right-0.5 pointer-events-none"/>
 			</div>
