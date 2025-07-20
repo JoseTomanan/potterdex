@@ -66,7 +66,7 @@ export default function Home() {
 
 	// segregated for visual clarity
 	const PaginationSection = () => (
-			<Pagination className="bg-transparent border-none w-fit">
+			<Pagination className="bg-transparent border-none w-fit pt-4 pb-10">
 				<PaginationContent>
 					{(page != 1) ? (
 						<PaginationItem>
