@@ -1,8 +1,8 @@
+import "./ItemDetails.module.css";
+
 import { IoPersonSharp } from "react-icons/io5";
 import { dashIfNone } from "~/lib/utils";
 import type { Character } from "~/lib/types/character";
-
-import styles from "./ItemDetails.module.css";
 
 
 type ItemDetailsProps = Character;
@@ -14,7 +14,7 @@ export function ItemDetails(props: ItemDetailsProps) {
 				{props.image ? (
 					<img
 						src={props.image}
-						className="h-fit object-contain" />
+						className="h-[min(100%, 480px)] w-full object-contain" />
 				) : (
 					<IoPersonSharp className="fill-muted size-full" />
 				)}
@@ -35,9 +35,11 @@ export function ItemDetails(props: ItemDetailsProps) {
 			<span className="flex space-x-1 items-baseline">
 				<h5>Aliases: </h5>
 				<h6>
-					{props.alias_names.map((i) => (<>
-						{i} <br/>
-					</> ))}
+					{props.alias_names.length !== 0
+						?
+							props.alias_names.map((i) => (<> {i}<br/> </>))
+						: <>None</>
+					}
 				</h6>
 			</span>
 		</>
