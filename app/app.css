@@ -42,10 +42,6 @@
 	main {
 		max-width: 640px;
 	}
-	a,
-	p {
-		@apply text-sm;
-	}
 }
 
 /* sm (Phones) */
@@ -56,10 +52,6 @@
 	main {
 		width: 100%;
 	}
-	a,
-	p {
-		@apply text-xs;
-	}
 }
 
 /* xs (Small phones) */
@@ -69,10 +61,6 @@
 	nav,
 	main {
 		width: 100%;
-	}
-	a,
-	p {
-		@apply text-xs;
 	}
 }
 
