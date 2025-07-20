@@ -282,6 +282,15 @@
 		@apply flex flex-col;
 	}
 
+	.character-slug-page {
+		background-color: var(--color-card);
+		@apply border border-border;
+		@apply rounded;
+		@apply px-8;
+		@apply py-4;
+		@apply mx-[min(2em,8%)];
+	}
+
 	.hoverable-link {
 		color: var(--color-foreground);
 

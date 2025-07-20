@@ -59,13 +59,15 @@ function CharacterSlugSkeleton() {
 
 	return (
 		<main className="container">
-			<section className="flex flex-col gap-y-2 rounded bg-card border border-border px-8 py-4">
+			<section className="character-slug-page space-y-4 pt-6">
 				<Skeleton className="w-80 h-4 pb-2" />
 				<Skeleton className="w-125 h-10" />
-				<Skeleton className="w-80 h-5" />
-				<Skeleton className="w-80 h-4" />
-				<Skeleton className="w-60 h-4" />
-				<Skeleton className="w-50 h-4" />
+				<div className="space-y-2">
+					<Skeleton className="w-80 h-5" />
+					<Skeleton className="w-80 h-4" />
+					<Skeleton className="w-60 h-4" />
+					<Skeleton className="w-50 h-4" />
+				</div>
 			</section>
 		</main>
 	);
@@ -77,7 +79,10 @@ function CharacterSlugNotFound() {
 		<main className="container">
 			<section>
 				<h1>404: Character not found</h1>
-				<Link to="/" className="flex flex-row items-baseline gap-2 hover:gap-4 highlight-link">Back to home <FiArrowUpRight /></Link>
+				<Link to="/" className="flex flex-row items-baseline gap-2 hover:gap-4 highlight-link">
+					Back to home
+					<FiArrowUpRight />
+				</Link>
 			</section>
 		</main>
 	);
