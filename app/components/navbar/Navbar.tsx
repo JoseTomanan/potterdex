@@ -15,13 +15,13 @@ const Logo = () => (
 
 export function NavBar() {
 	return (
-		<nav className="flex flex-row justify-center w-full fixed">
+		<nav className="flex flex-row justify-center w-full fixed flex-wrap">
 			<div className="flex items-center gap-6">
 				<Logo />
 				<SearchBar />
 			</div>
 			<span className="flex-1"/>
-			<div className="flex gap-8 justify-end">
+			<div className="flex gap-8 items-center">
 				<a href="https://potterdb.com/" target="_blank">PotterDB</a>
 				<Link to="/about">About</Link>
 			</div>
