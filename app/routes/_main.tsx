@@ -125,7 +125,7 @@ export default function Home() {
 	
   return (
 		<main className="container">
-			<div className="pb-12">
+			<div className="pt-2 pb-10">
 				<PaginationSection />
 			</div>
 			<div className="w-full">
