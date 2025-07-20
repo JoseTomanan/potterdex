@@ -10,47 +10,40 @@
 
 /* ------------------------- THEME ------------------------- */
 :root {
-	--background: #0d0c11;                 /* dark enchanted stone, night at Hogwarts */
-	--foreground: #e0ddd7;                 /* warm parchment-like light */
+	--background: #0c0a09;
+  --foreground: #fafaf9;
+  --card: #1c1917;
+  --card-foreground: #fafaf9;
+  --popover: #1c1917;
+  --popover-foreground: #fafaf9;
+  --primary: #fd9a00;
+  --primary-foreground: #1c1917;
+  --secondary: #292524;
+  --secondary-foreground: #fafaf9;
+  --muted: #292524;
+  --muted-foreground: #a6a09b;
+  --accent: #292524;
+  --accent-foreground: #fafaf9;
 
-	--card: #17151e;                       /* aged leather or dark stone */
-	--card-foreground: #bcb8b0;            /* worn ink on old paper */
+  --destructive: #ff6467;
+  --border: #ffffff1a;
+  --input: #ffffff27;
+  --ring: #79716b;
 
-	--popover: #1d1b26;                    /* shadowed wood or stone alcove */
-	--popover-foreground: #d7d3cc;         /* readable aged scroll color */
-
-	--primary: #728dbb;                    /* Ravenclaw-inspired deep blue */
-	--primary-foreground: #eae9f3;         /* soft silver for clarity */
-
-	--secondary: #d0675b;                  /* Gryffindor scarlet */
-	--secondary-foreground: #f4e7e3;       /* warm, bright contrast */
-
-	--muted: #2b2a33;                      /* neutral background variation */
-	--muted-foreground: #9996a1;           /* old ink, faded text */
-
-	--accent: #43a48b;                     /* Slytherin emerald-green */
-	--accent-foreground: #e5f7f2;          /* cool glow for contrast */
-
-	--destructive: #d16a5e;                /* red clay/potion warning */
-
-	--border: #2e2c34;                     /* shadowed frame */
-	--input: #494651;                      /* well-worn quill parchment */
-	--ring: #b4a76f;                       /* Hufflepuff gold, subtle glow */
-
-	--chart-1: #728dbb;                    /* Ravenclaw blue */
-	--chart-2: #d0675b;                    /* Gryffindor red */
-	--chart-3: #b4a76f;                    /* Hufflepuff yellow-gold */
-	--chart-4: #43a48b;                    /* Slytherin green */
-	--chart-5: #886ca6;                    /* Forbidden Forest violet magic */
-
-	--sidebar: #14131a;                    /* deep magical shadows */
-	--sidebar-foreground: #d7d3cc;         /* worn scroll text */
-	--sidebar-primary: #728dbb;            /* house highlight */
-	--sidebar-primary-foreground: #f0f0f7;
-	--sidebar-accent: #43a48b;             /* green charm highlight */
-	--sidebar-accent-foreground: #eafaf6;
-	--sidebar-border: #2e2c34;
-	--sidebar-ring: #b4a76f;
+	--chart-1: #4d73d4;
+  --chart-2: #fc604f;
+  --chart-3: #e3b342;
+  --chart-4: #00bc7d;
+  --chart-5: #ff2056;
+	
+  --sidebar: #1c1917;
+  --sidebar-foreground: #fafaf9;
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: #fafaf9;
+  --sidebar-accent: #292524;
+  --sidebar-accent-foreground: #fafaf9;
+  --sidebar-border: #ffffff1a;
+  --sidebar-ring: #79716b;
 }
 
 @theme {
@@ -240,7 +233,7 @@
 
 	nav {
 		@apply bg-background/85;
-		@apply px-6;
+		@apply px-[min(1.5em,5%)];
 		@apply py-3;
 		z-index: 50;
 		
@@ -277,18 +270,15 @@
 @layer components {
 	.card-grid {
 		display: grid;
-		gap: 0.75rem;
-		grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+		gap: 1em;
+		grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 	}
 	
 	.card {
 		@apply bg-card/90;
 		color: var(--color-card-foreground);
 		@apply rounded;
-		
 		@apply flex flex-col;
-		@apply p-2;
-		@apply border;
 	}
 
 	.hoverable-link {
