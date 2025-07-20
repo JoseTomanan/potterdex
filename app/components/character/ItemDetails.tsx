@@ -1,5 +1,5 @@
 import { IoPersonSharp } from "react-icons/io5";
-import { dashIfNone } from "~/lib/utils";
+import { dashIfNone, joinWithMiddot } from "~/lib/utils";
 import type { Character } from "~/lib/types/character";
 
 
@@ -46,6 +46,8 @@ export function ItemDetails(props: ItemDetailsProps) {
 	const attributeNames = ["Blood status", "Marital status", "Nationality", "Skin color", "Wand", "Weight"];
 	const attributeValues = [props.blood_status, props.marital_status, props.nationality, props.skin_color, props.wand, props.weight];
 
+	const subtitle: string = joinWithMiddot([props.house, props.gender, props.species]);
+
 	return (
 		<section className="character-slug-page space-y-4">
 			<p className="font-mono text-muted">
@@ -54,12 +56,14 @@ export function ItemDetails(props: ItemDetailsProps) {
 			<h1 className="border-b">{props.name}</h1>
 
 			<span className="text-lg text-muted-foreground">
-				<span>{props.house} &middot; {props.gender} &middot; {props.species} &middot; </span>
-				{props.wiki ? (
-					<a href="props.wiki" target="_blank" className="highlight-link">
-						Visit wiki
-					</a>
-				) : <></>}
+				{subtitle ? 
+						<>{subtitle} &middot; &nbsp;</>
+				: <></>}
+				{props.wiki ?
+						<a href="props.wiki" target="_blank" className="highlight-link">
+							Visit wiki
+						</a>
+				: <></>}
 			</span>
 
 			<div className="flex flex-row gap-x-6 mt-2">
