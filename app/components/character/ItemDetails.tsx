@@ -1,5 +1,3 @@
-import "./ItemDetails.module.css";
-
 import { IoPersonSharp } from "react-icons/io5";
 import { dashIfNone } from "~/lib/utils";
 import type { Character } from "~/lib/types/character";
@@ -45,6 +43,9 @@ export function ItemDetails(props: ItemDetailsProps) {
 		</>
 	);
 
+	const attributeNames = ["Blood status", "Marital status", "Nationality", "Skin color", "Wand", "Weight"];
+	const attributeValues = [props.blood_status, props.marital_status, props.nationality, props.skin_color, props.wand, props.weight];
+
 	return (
 		<section className="character-slug-page space-y-4">
 			<p className="font-mono text-muted">
@@ -67,24 +68,12 @@ export function ItemDetails(props: ItemDetailsProps) {
 				</div>
 
 				<div className="flex flex-col flex-2/3">
-					<p>
-						<b>Blood status: </b> {dashIfNone(props.blood_status)}
-					</p>
-					<p>
-						<b>Marital status: </b> {dashIfNone(props.marital_status)}
-					</p>
-					<p>
-						<b>Nationality: </b> {dashIfNone(props.nationality)}
-					</p>
-					<p>
-						<b>Skin color: </b> {dashIfNone(props.skin_color)}
-					</p>
-					<p>
-						<b>Wand:</b> {dashIfNone(props.wand)}
-					</p>
-					{props.weight ? (
-							<p><b>Weight: </b> {props.weight}</p>
-					) : <></>}
+					{attributeNames.map((name, i) => (
+						<p>
+							<span className="font-semibold tracking-wide">{name}:&nbsp;</span>
+							{dashIfNone(attributeValues[i])}
+						</p>
+					))}
 				</div>
 			</div>
 		</section>
