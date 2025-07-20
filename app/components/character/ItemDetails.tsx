@@ -14,7 +14,7 @@ export function ItemDetails(props: ItemDetailsProps) {
 				{props.image ? (
 					<img
 						src={props.image}
-						className="h-[min(100%, 480px)] w-full object-contain" />
+						className="object-contain w-3/4" />
 				) : (
 					<IoPersonSharp className="fill-muted size-full" />
 				)}
@@ -46,11 +46,11 @@ export function ItemDetails(props: ItemDetailsProps) {
 	);
 
 	return (
-		<section className="rounded bg-card border border-border px-8 py-4">
+		<section className="character-slug-page space-y-4">
 			<p className="font-mono text-muted">
 				slugname: {props.slug}
 			</p>
-			<h1>{props.name}</h1>
+			<h1 className="border-b">{props.name}</h1>
 
 			<span className="text-lg text-muted-foreground">
 				<span>{props.house} &middot; {props.gender} &middot; {props.species} &middot; </span>
