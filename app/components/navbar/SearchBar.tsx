@@ -75,17 +75,17 @@ export function SearchBar() {
 			<Select
 				value={order}
 				onValueChange={(i: OrderType) => setSearchState({ order: i })}>
-				<SelectTrigger className={`rounded w-16 xl:w-16 ${isInAbout ? `text-muted-foreground` : ``}`} >
+				<SelectTrigger className="rounded w-16 xl:w-16" >
 					<SelectValue />
 				</SelectTrigger>
 				<SelectContent>
 					<SelectGroup>
 						<SelectLabel>Order</SelectLabel>
 						<SelectItem value="ascending">
-							<AscendingIcon className="text-foreground" />
+							<AscendingIcon className={`${isInAbout ? `text-muted-foreground` : `text-foreground`}`} />
 						</SelectItem>
 						<SelectItem value="descending">
-							<DescendingIcon className="text-foreground" />
+							<DescendingIcon className={`${isInAbout ? `text-muted-foreground` : `text-foreground`}`} />
 						</SelectItem>
 					</SelectGroup>
 				</SelectContent>
