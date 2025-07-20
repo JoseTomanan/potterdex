@@ -83,12 +83,12 @@ export function ItemCard( item: ItemCardProps ) {
 
 
 	return (
-		<div className="card gap-y-2 group hover:bg-popover hover:drop-shadow-muted hover:drop-shadow-sm">
-			<span className="bg-card h-[280px] flex justify-center align-middle">
+		<div className="card gap-y-2 group hover:bg-muted">
+			<span className="h-[280px] flex justify-center align-middle">
 				{item.image ? (
-					<img src={item.image} className="w-full bg-popover object-cover"/>
+					<img src={item.image} className="w-full bg-popover object-cover rounded shadow-inner"/>
 				) : (
-					<IoPersonSharp className="size-full fill-muted" />
+					<IoPersonSharp className="size-full bg-popover fill-muted rounded" />
 				)}
 			</span>
 			<div className="px-3 pb-3">
