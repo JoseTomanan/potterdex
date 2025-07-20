@@ -7,6 +7,7 @@ import {
 import { MdQuestionMark } from "react-icons/md";
 import { Skeleton } from "../ui/skeleton";
 import { Link } from "react-router";
+import { joinWithMiddot } from "~/lib/utils";
 
 
 type ItemCardProps = {
@@ -49,10 +50,7 @@ export function ItemCard( item: ItemCardProps ) {
 						: "text-muted-foreground text-shadow-muted-foreground font-light";
 
 	
-	const nonHouseSubtitle = [item.nationality, item.species, item.blood_status]
-				.filter(i => i !== null)
-				.join(" · ");
-
+	const nonHouseSubtitle = joinWithMiddot([item.nationality, item.species, item.blood_status]);
 
 	// TODO: use willTruncate() in conjunction with this
 	const ResultingSubtitle = () => (
