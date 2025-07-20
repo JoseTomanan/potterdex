@@ -127,9 +127,9 @@ export default function Home() {
 
 	
   return (
-		<main className="w-screen">
+		<main className="container">
 			<PaginationSection />
-			<div className="px-1 md:px-2 lg:px-4">
+			<div className="w-full">
 				<ItemGrid items={characters} isLoading={isLoading} />
 			</div>
 		</main>
