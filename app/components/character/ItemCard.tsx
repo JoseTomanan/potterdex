@@ -56,33 +56,31 @@ export function ItemCard( item: ItemCardProps ) {
 	const ResultingSubtitle = () => (
 		true
 			?
-				<>
-					<h5 className="items-baseline" >
-						<span className={`text-shadow-xs/20 ${houseRelatedStyle}`}>
-							{item.house ? item.house : "No house"}
+				<h5 className="items-baseline" >
+					<span className={`text-shadow-xs/20 ${houseRelatedStyle}`}>
+						{item.house ? item.house : "No house"}
+					</span>
+					{nonHouseSubtitle ?
+						<span className="font-light tracking-tight text-muted-foreground">
+							&nbsp; &middot; {nonHouseSubtitle}
 						</span>
-						{nonHouseSubtitle ?
-							<span className="font-light tracking-tight text-muted-foreground">
-								&nbsp; &middot; {nonHouseSubtitle}
-							</span>
-						: <></>}
-					</h5>
-				</>
+					: <></>}
+				</h5>
 			:
 				<>
-					<h5 className={`flex items-center text-shadow-xs/20 ${houseRelatedStyle}`} >
+					<h6 className={`flex items-center text-shadow-xs/20 ${houseRelatedStyle}`} >
 						{item.house ? item.house : "No house"}
-					</h5>
-					<h5 className="flex flex-row items-baseline font-light tracking-tight text-muted-foreground">
+					</h6>
+					<h6 className="flex flex-row items-baseline font-light tracking-tight text-muted-foreground">
 						{nonHouseSubtitle}
-					</h5>
+					</h6>
 				</>
 	);
 
 
 	return (
 		<div className="card gap-y-2 group hover:bg-muted">
-			<span className="h-[280px] flex justify-center align-middle">
+			<span className="h-70 flex justify-center align-middle">
 				{item.image ? (
 					<img src={item.image} className="w-full bg-popover object-cover rounded shadow-inner"/>
 				) : (
@@ -104,14 +102,14 @@ export function ItemCard( item: ItemCardProps ) {
 export function ItemSkeleton() {
 	return (
 		<div className="card gap-y-3 p-2">
-			<Skeleton className="bg-muted h-[280px] w-full rounded" />
+			<Skeleton className="bg-muted h-70 w-full rounded" />
 			<div className="space-y-2">
 				<span className="flex space-x-2">
 					<Skeleton className="bg-muted size-5 rounded-full"/>
-					<Skeleton className="bg-muted h-5 w-[280px]" />
+					<Skeleton className="bg-muted h-5 w-70" />
 				</span>
-				<Skeleton className="bg-muted h-4 w-[100px]" />
-				<Skeleton className="bg-muted h-4 w-[160px]" />
+				<Skeleton className="bg-muted h-4 w-25" />
+				<Skeleton className="bg-muted h-4 w-40" />
 			</div>
 		</div>
 	);
