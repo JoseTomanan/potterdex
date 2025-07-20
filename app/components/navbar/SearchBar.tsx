@@ -24,7 +24,9 @@ export function SearchBar() {
 
 	return (
 		<form className="flex gap-4">
-			<div className={`relative flex flex-row bg-background rounded rounded-inherit outline-input ${isInHome ? `outline-2 -outline-offset-2` : `outline -outline-offset-1`}`}>
+			<div className={`relative flex flex-row bg-background rounded rounded-inherit outline-input
+						${isInHome ? `outline-2 -outline-offset-2` : `outline -outline-offset-1`}
+						`}>
 				<Input
 					value={search}
 					id="search"
@@ -58,7 +60,7 @@ export function SearchBar() {
 			<Select
 				value={sort}
 				onValueChange={(i: SortType) => setSearchState({ sort: i })}>
-				<SelectTrigger className="rounded w-20 xl:w-32" >
+				<SelectTrigger className={`rounded w-20 xl:w-32 ${isInAbout ? `text-muted-foreground` : ``}`} >
 					<SelectValue />
 				</SelectTrigger>
 				<SelectContent>
@@ -75,7 +77,7 @@ export function SearchBar() {
 			<Select
 				value={order}
 				onValueChange={(i: OrderType) => setSearchState({ order: i })}>
-				<SelectTrigger className="rounded w-24 lg:w-32">
+				<SelectTrigger className={`rounded w-20 xl:w-32 ${isInAbout ? `text-muted-foreground` : ``}`} >
 					<SelectValue />
 				</SelectTrigger>
 				<SelectContent>
