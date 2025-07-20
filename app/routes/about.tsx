@@ -27,7 +27,8 @@ export default function About() {
 
 				<div>
 					<p>
-						This frontend uses the <a href="https://docs.potterdb.com" target="_blank" className="hoverable-link">PotterDB API</a>.
+						This frontend UI uses the <a href="https://docs.potterdb.com" target="_blank" className="hoverable-link">PotterDB API</a>.
+						Logo is taken from open source emoji library <a href="https://github.com/twitter/twemoji" target="_blank" className="hoverable-link">Twemoji</a>.
 					</p>
 					<p>
 						This is my first project with React; I made this in line with the principle of &ldquo;the best way to learn a framework, is to create something with it&rdquo;.
@@ -39,7 +40,7 @@ export default function About() {
 
 				<a
 					href="https://www.linkedin.com/in/jedtomanan/"
-					className="w-fit flex items-baseline gap-2 hover:gap-4 hover:text-primary">
+					className="w-fit flex items-baseline gap-2 hover:gap-4 highlight-link">
 					Connect with me
 					<FiArrowUpRight />
 				</a>
