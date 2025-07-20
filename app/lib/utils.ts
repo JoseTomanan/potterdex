@@ -6,6 +6,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export function dashIfNone(val?: string | string[]) {
+export function dashIfNone(val?: string | string[] | number) {
 	return val ? val : `–`;
 }
