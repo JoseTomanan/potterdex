@@ -112,6 +112,7 @@ export function ItemSkeleton() {
 					<Skeleton className="bg-muted size-5 rounded-full"/>
 					<Skeleton className="bg-muted h-5 w-[280px]" />
 				</span>
+				<Skeleton className="bg-muted h-4 w-[100px]" />
 				<Skeleton className="bg-muted h-4 w-[160px]" />
 			</div>
 		</div>
