@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700");
 
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -9,6 +9,12 @@
 
 
 /* ------------------------- THEME ------------------------- */
+@theme {
+	--font-heading: "Cinzel";
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+	--font-mono: "JetBrains Mono";
+}
+
 :root {
 	--background: #0c0a09;
   --foreground: #fafaf9;
@@ -44,12 +50,6 @@
   --sidebar-accent-foreground: #fafaf9;
   --sidebar-border: #ffffff1a;
   --sidebar-ring: #79716b;
-}
-
-@theme {
-	--font-heading: "Bricolage Grotesque";
-  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
-	--font-mono: "JetBrains Mono";
 }
 
 @theme inline {
