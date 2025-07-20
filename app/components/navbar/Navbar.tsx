@@ -6,7 +6,7 @@ import { SearchBar } from "./SearchBar";
 const Logo = () => (
 		<Link to="/" className="flex gap-2 items-center group">
 			<LogoIcon className="h-6 w-6 stroke-2"/>
-			<span className="text-xl font-heading font-semibold tracking-tighter">
+			<span className="text-xl font-heading font-bold tracking-tighter">
 				Potterdex
 			</span>
 		</Link>
@@ -14,10 +14,8 @@ const Logo = () => (
 
 
 export function NavBar() {
-	const isNotFixed = (useLocation().pathname === "/about");
-
 	return (
-		<nav className={`flex flex-row items-center justify-center w-full ${isNotFixed ? "relative" : "fixed"}`}>
+		<nav className="flex flex-row justify-center w-full fixed">
 			<div className="flex items-center gap-6">
 				<Logo />
 				<SearchBar />
