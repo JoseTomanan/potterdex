@@ -1,5 +1,6 @@
 import type { Character as Item } from "~/lib/types/character";
 import { ItemCard, ItemSkeleton, } from "./ItemCard";
+import { ITEMS_PER_PAGE } from "~/lib/constants";
 
 
 type ItemGridProps = {
@@ -8,20 +9,21 @@ type ItemGridProps = {
 }
 
 export function ItemGrid( props: ItemGridProps ) {
-	const contents = props.isLoading
-			? (
-					Array.from({ length: 20 }).map((_, i) => (
+	const Content = () => (
+			props.isLoading
+				?
+					Array.from({ length: ITEMS_PER_PAGE }).map((_, i) => (
 						<ItemSkeleton key={i} />
 					))
-			) : (
+				:
 					props.items.map(({}, i) => (
 						<ItemCard {...props.items[i]} />
 					))
-			);
+		);
 
 	return (
 		<div className="card-grid">
-			{contents}
+			<Content />
 		</div>
 	);
 }
