@@ -97,21 +97,21 @@
 	}
 }
 
-/* xl */
+/* xl (Big laptops, desktops) */
 @media (max-width: 1280px) {
 	.container {
 		max-width: 1024px;
 	}
 }
 
-/* lg */
+/* lg (Big tablets, laptops) */
 @media (max-width: 1024px) {
 	.container {
 		max-width: 768px;
 	}
 }
 
-/* md */
+/* md (Tablets) */
 @media (max-width: 768px) {
 	.container,
 	footer,
@@ -125,7 +125,7 @@
 	}
 }
 
-/* sm */
+/* sm (Phones) */
 @media (max-width: 640px) {
 	.container,
 	footer,
@@ -139,7 +139,7 @@
 	}
 }
 
-/* xs */
+/* xs (Small phones) */
 @media (max-width: 475px) {
 	.container,
 	footer,
