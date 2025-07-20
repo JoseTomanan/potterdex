@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700");
 
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -9,88 +9,12 @@
 
 
 /* ------------------------- THEME ------------------------- */
-@theme {
-	--font-heading: "Cinzel";
-  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
-	--font-mono: "JetBrains Mono";
-}
+@import "./styles/theme.css";
 
-:root {
-	--background: #0c0a09;
-	--foreground: #fafaf9;
-	--card: #1c1917;
-	--card-foreground: #fafaf9;
-	--popover: #231f1d;
-	--popover-foreground: #fafaf9;
-	--primary: #fd9a00;
-	--primary-foreground: #1c1917;
-	--secondary: #4d73d4;
-	--secondary-foreground: #fafaf9;
-	--muted: #292524;
-	--muted-foreground: #a6a09b;
-	--accent: #fc604f;
-	--accent-foreground: #fafaf9;
 
-	--destructive: #ff6467;
-	--border: #ffffff1a;
-	--input: #ffffff27;
-	--ring: #79716b;
+/* ------------------------- RESPONSIVENESS ------------------------- */
 
-	--chart-1: #4d73d4;
-	--chart-2: #fc604f;
-	--chart-3: #e3b342;
-	--chart-4: #00bc7d;
-	--chart-5: #ff2056;
-
-	--sidebar: var(--background);
-	--sidebar-foreground: var(--foreground);
-	--sidebar-primary: var(--primary);
-	--sidebar-primary-foreground: var(--primary-foreground);
-	--sidebar-accent: var(--accent);
-	--sidebar-accent-foreground: var(--accent-foreground);
-	--sidebar-border: var(--border);
-	--sidebar-ring: var(--ring);
-}
-
-@theme inline {
-	--radius-sm: calc(var(--radius) - 4px);
-	--radius-md: calc(var(--radius) - 2px);
-	--radius-lg: var(--radius);
-	--radius-xl: calc(var(--radius) + 4px);
-	--color-background: var(--background);
-	--color-foreground: var(--foreground);
-	--color-card: var(--card);
-	--color-card-foreground: var(--card-foreground);
-	--color-popover: var(--popover);
-	--color-popover-foreground: var(--popover-foreground);
-	--color-primary: var(--primary);
-	--color-primary-foreground: var(--primary-foreground);
-	--color-secondary: var(--secondary);
-	--color-secondary-foreground: var(--secondary-foreground);
-	--color-muted: var(--muted);
-	--color-muted-foreground: var(--muted-foreground);
-	--color-accent: var(--accent);
-	--color-accent-foreground: var(--accent-foreground);
-	--color-destructive: var(--destructive);
-	--color-border: var(--border);
-	--color-input: var(--input);
-	--color-ring: var(--ring);
-	--color-chart-1: var(--chart-1);
-	--color-chart-2: var(--chart-2);
-	--color-chart-3: var(--chart-3);
-	--color-chart-4: var(--chart-4);
-	--color-chart-5: var(--chart-5);
-	--color-sidebar: var(--sidebar);
-	--color-sidebar-foreground: var(--sidebar-foreground);
-	--color-sidebar-primary: var(--sidebar-primary);
-	--color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-	--color-sidebar-accent: var(--sidebar-accent);
-	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-	--color-sidebar-border: var(--sidebar-border);
-	--color-sidebar-ring: var(--sidebar-ring);
-}
-
-/* 2xl */
+/* 2xl (High res monitors) */
 @media (max-width: 1536px) {
 	.container {
 		max-width: 1280px;
@@ -273,13 +197,15 @@
 		column-gap: 1em;
 		row-gap: 2em;
 		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+		@apply px-2 sm:px-0;
 	}
 	
 	.card {
+		@apply flex flex-col;
 		@apply bg-card/90;
 		color: var(--color-card-foreground);
 		@apply rounded;
-		@apply flex flex-col;
 	}
 
 	.character-slug-page {
