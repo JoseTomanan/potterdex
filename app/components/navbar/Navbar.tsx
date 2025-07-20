@@ -1,10 +1,17 @@
-import {
-	Link,
-	useLocation,
-} from "react-router";
-
-import { Logo } from "./Logo";
+import { GiOwl as LogoIcon } from "react-icons/gi";
+import { Link, useLocation } from "react-router";
 import { SearchBar } from "./SearchBar";
+
+
+const Logo = () => (
+		<Link to="/" className="flex gap-2 items-center group">
+			<LogoIcon className="h-6 w-6 stroke-2"/>
+			<span className="text-xl font-heading font-medium group-hover:text-foreground group-hover:text-shadow-lg group-hover:text-shadow-muted">
+				Potterdex
+			</span>
+		</Link>
+	);
+
 
 export function NavBar() {
 	const isNotFixed = (useLocation().pathname === "/about");
