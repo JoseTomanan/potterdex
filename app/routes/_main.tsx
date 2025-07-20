@@ -66,7 +66,7 @@ export default function Home() {
 
 	// segregated for visual clarity
 	const PaginationSection = () => (
-			<Pagination className="bg-transparent border-none w-fit pt-2 pb-12">
+			<Pagination className="bg-transparent border-none w-fit">
 				<PaginationContent>
 					<PaginationItem>
 						<PaginationPrevious
@@ -125,7 +125,9 @@ export default function Home() {
 	
   return (
 		<main className="container">
-			<PaginationSection />
+			<div className="pb-12">
+				<PaginationSection />
+			</div>
 			<div className="w-full">
 				<ItemGrid items={characters} isLoading={isLoading} />
 			</div>
