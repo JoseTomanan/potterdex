@@ -6,7 +6,8 @@ import { SearchBar } from "./SearchBar";
 const Logo = () => (
 		<Link to="/" className="flex gap-2 items-center group">
 			<LogoIcon className="h-6 w-6 stroke-2"/>
-			<span className="text-xl font-heading font-bold tracking-tighter">
+			<span className="text-xl font-heading font-bold tracking-tighter
+						hidden md:block">
 				Potterdex
 			</span>
 		</Link>
