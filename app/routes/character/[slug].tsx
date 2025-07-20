@@ -47,8 +47,10 @@ export default function CharacterSlug() {
 
 	return (
 		<main className="container">
-			{/* TODO: bread crumbs */}
-			<ItemDetails {...character}/>
+			<div className="pt-6">
+				{/* TODO: bread crumbs */}
+				<ItemDetails {...character}/>
+			</div>
 		</main>
 	);
 }
