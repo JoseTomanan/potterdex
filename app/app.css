@@ -24,7 +24,7 @@
   --popover-foreground: #fafaf9;
   --primary: #fd9a00;
   --primary-foreground: #1c1917;
-  --secondary: #292524;
+  --secondary: #4d73d4;
   --secondary-foreground: #fafaf9;
   --muted: #292524;
   --muted-foreground: #a6a09b;
@@ -283,20 +283,22 @@
 	}
 
 	.hoverable-link {
-		font-weight: 400;
 		color: var(--color-foreground);
 
 		&:hover {
-			color: var(--color-accent);
+			color: var(--color-primary);
 		}
 	}
 
 	.highlight-link {
 		font-weight: 500;
-		color: var(--color-accent);
+		text-decoration-line: underline;
+		text-decoration-thickness: 1px;
+		text-underline-offset: 2px;
+		color: var(--color-foreground);
 
 		&:hover {
-			color: var(--color-foreground);
+			color: var(--color-primary);
 		}
 	}
 
