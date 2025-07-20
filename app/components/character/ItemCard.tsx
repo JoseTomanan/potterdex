@@ -21,47 +21,45 @@ type ItemCardProps = {
 }
 
 export function ItemCard( item: ItemCardProps ) {
-	const genderIcon = (item.gender == "Male")
+	const GenderIcon = () => (
+			item.gender == "Male"
 			? <IoMale />
-			:
-				item.gender == "Female"
+			: item.gender == "Female"
 					? <IoFemale />
-					:
-						item.gender == "" || item.gender == "Unknown"
+					: item.gender == "" || item.gender == "Unknown"
 							? <MdQuestionMark />
-							: <IoMaleFemale />;
+							: <IoMaleFemale />
+		);
+
 
 	const houseRelatedStyle = (item.house == "Gryffindor")
 			? "text-chart-2 text-shadow-chart-2"
-			:
-				item.house == "Slytherin"
+			: item.house == "Slytherin"
 				? "text-chart-4 text-shadow-chart-4"
-				:
-					item.house == "Ravenclaw"
+				: item.house == "Ravenclaw"
 					? "text-chart-1 text-shadow-chart-1"
 					: item.house == "Hufflepuff"
 						? "text-chart-3 text-shadow-chart-3"
-						: "text-muted-foreground text-shadow-muted-foreground";
+						: "text-muted-foreground text-shadow-muted-foreground font-light";
+
 
 	return (
-		<div className="card gap-y-2 group hover:bg-popover hover:border-input hover:drop-shadow-muted hover:drop-shadow-sm">
-			<span className="bg-card h-[125px] flex justify-center">
+		<div className="card gap-y-2 group hover:bg-popover hover:drop-shadow-muted hover:drop-shadow-sm">
+			<span className="bg-card h-[280px] flex justify-center align-middle">
 				{item.image ? (
-					<img src={item.image} className="bg-popover group-hover:bg-muted w-full object-contain"/>
+					<img src={item.image} className="w-full bg-popover object-cover"/>
 				) : (
-					<IoPersonSharp className="size-full fill-muted group-hover:bg-popover" />
+					<IoPersonSharp className="size-full fill-muted" />
 				)}
 			</span>
-			<div>
-				<span className="flex items-baseline-last gap-2">
-					<h3 className="decoration-1 underline-offset-2 hover:underline truncate">
-						<Link to={`/character/${item.slug}`} className="">
-							{ item.name }
-						</Link>
-					</h3>
-					<span className="size-4">{genderIcon}</span>
-				</span>
-				<h5 className={`text-shadow-xs/20 ${houseRelatedStyle}`} >
+			<div className="px-3 pb-3">
+				<h3 className="text-foreground/80 decoration-1 underline-offset-2 hover:underline
+						flex items-center gap-1.5
+						">
+					<GenderIcon />
+					<Link to={`/character/${item.slug}`} className="truncate w-full">{item.name}</Link>
+				</h3>
+				<h5 className={`flex items-center gap-2 text-shadow-xs/20 ${houseRelatedStyle}`} >
 					{item.house ? item.house : "No house"}
 				</h5>
 				<h5 className="flex flex-row gap-x-1 items-baseline font-light tracking-tight text-muted-foreground truncate">
@@ -75,12 +73,12 @@ export function ItemCard( item: ItemCardProps ) {
 
 export function ItemSkeleton() {
 	return (
-		<div className="card gap-y-3 pb-3">
-			<Skeleton className="bg-muted h-[125px] w-full rounded" />
+		<div className="card gap-y-3 p-2">
+			<Skeleton className="bg-muted h-[280px] w-full rounded" />
 			<div className="space-y-2">
 				<span className="flex space-x-2">
-					<Skeleton className="bg-muted h-5 w-[160px]" />
 					<Skeleton className="bg-muted size-5 rounded-full"/>
+					<Skeleton className="bg-muted h-5 w-[280px]" />
 				</span>
 				<Skeleton className="bg-muted h-4 w-[80px]" />
 				<Skeleton className="bg-muted h-4 w-[160px]" />
