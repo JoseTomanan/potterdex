@@ -20,6 +20,12 @@ type ItemCardProps = {
 	image: string;
 }
 
+
+const willTruncate = (e: HTMLElement) => {
+	return e.scrollWidth > e.clientWidth;
+};
+
+
 export function ItemCard( item: ItemCardProps ) {
 	const GenderIcon = () => (
 			item.gender == "Male"
@@ -42,6 +48,39 @@ export function ItemCard( item: ItemCardProps ) {
 						? "text-chart-3 text-shadow-chart-3"
 						: "text-muted-foreground text-shadow-muted-foreground font-light";
 
+	
+	const nonHouseSubtitle = [item.nationality, item.species, item.blood_status]
+				.filter(i => i !== null)
+				.join(" · ");
+
+
+	// TODO: use willTruncate() in conjunction with this
+	const ResultingSubtitle = () => (
+		true
+			?
+				<>
+					<h5 className="items-baseline" >
+						<span className={`text-shadow-xs/20 ${houseRelatedStyle}`}>
+							{item.house ? item.house : "No house"}
+						</span>
+						{nonHouseSubtitle ?
+							<span className="font-light tracking-tight text-muted-foreground">
+								&nbsp; &middot; {nonHouseSubtitle}
+							</span>
+						: <></>}
+					</h5>
+				</>
+			:
+				<>
+					<h5 className={`flex items-center text-shadow-xs/20 ${houseRelatedStyle}`} >
+						{item.house ? item.house : "No house"}
+					</h5>
+					<h5 className="flex flex-row items-baseline font-light tracking-tight text-muted-foreground">
+						{nonHouseSubtitle}
+					</h5>
+				</>
+	);
+
 
 	return (
 		<div className="card gap-y-2 group hover:bg-popover hover:drop-shadow-muted hover:drop-shadow-sm">
@@ -53,18 +92,11 @@ export function ItemCard( item: ItemCardProps ) {
 				)}
 			</span>
 			<div className="px-3 pb-3">
-				<h3 className="text-foreground/80 decoration-1 underline-offset-2 hover:underline
-						flex items-center gap-1.5
-						">
+				<h3 className="text-foreground/80 decoration-1 underline-offset-2 flex items-center gap-1.5">
 					<GenderIcon />
-					<Link to={`/character/${item.slug}`} className="truncate w-full">{item.name}</Link>
+					<Link to={`/character/${item.slug}`} className="truncate w-full hover:underline">{item.name}</Link>
 				</h3>
-				<h5 className={`flex items-center gap-2 text-shadow-xs/20 ${houseRelatedStyle}`} >
-					{item.house ? item.house : "No house"}
-				</h5>
-				<h5 className="flex flex-row gap-x-1 items-baseline font-light tracking-tight text-muted-foreground truncate">
-					{ item.nationality } &middot; { item.species } &middot; { item.blood_status }
-				</h5>
+				<ResultingSubtitle />
 			</div>
 		</div>
 	);
@@ -80,7 +112,6 @@ export function ItemSkeleton() {
 					<Skeleton className="bg-muted size-5 rounded-full"/>
 					<Skeleton className="bg-muted h-5 w-[280px]" />
 				</span>
-				<Skeleton className="bg-muted h-4 w-[80px]" />
 				<Skeleton className="bg-muted h-4 w-[160px]" />
 			</div>
 		</div>
