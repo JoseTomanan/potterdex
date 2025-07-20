@@ -13,7 +13,8 @@ export function meta({}: Route.MetaArgs) {
 export default function About() {
 	return (
 		<main className="container">
-			<section className="flex flex-col gap-4">
+			<div className="h-8"/>
+			<section className="flex flex-col gap-4 px-2">
 				<div className="flex flex-col gap-1">
 					<h1>About Me</h1>
 					<span className="flex gap-2 items-center">
