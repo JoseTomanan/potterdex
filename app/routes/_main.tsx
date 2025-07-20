@@ -68,35 +68,32 @@ export default function Home() {
 	const PaginationSection = () => (
 			<Pagination className="bg-transparent border-none w-fit pt-2 pb-12">
 				<PaginationContent>
-					{(page != 1) ? (
-						<PaginationItem>
-							<PaginationPrevious
+					<PaginationItem>
+						<PaginationPrevious
 								size="icon"
 								onClick={(e) => {
 									e.preventDefault();
 									setPage(page-1);
 								}}
-							/>
-						</PaginationItem>
-					) : <></>}
+								className={`${page != 1 ? "" : "invisible"}`}
+								/>
+					</PaginationItem>
 
-					{(page > 2) ? (
-						<PaginationItem>
-							<PaginationEllipsis />
-						</PaginationItem>
-					) : <></>}
+					<PaginationItem>
+						<PaginationEllipsis className={`${page > 2 ? "" : "invisible"}`} />
+					</PaginationItem>
 
-					{(page > 1) ? (
-						<PaginationItem>
-							<PaginationLink
+					<PaginationItem>
+						<PaginationLink
 								onClick={(e) => {
-								e.preventDefault();
-								setPage(page-1);
-								}}>
-								{page-1}
-							</PaginationLink>
-						</PaginationItem>
-					) : <></>}
+									e.preventDefault();
+									setPage(page-1);
+								}}
+								className={`${page > 1 ? "" : "invisible"}`}
+								>
+							{page-1}
+						</PaginationLink>
+					</PaginationItem>
 
 					<PaginationItem>
 						<PaginationLink isActive href="#">{page}</PaginationLink>
