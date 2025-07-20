@@ -88,7 +88,7 @@ export function ItemCard( item: ItemCardProps ) {
 				{item.image ? (
 					<img src={item.image} className="w-full bg-popover object-cover rounded shadow-inner"/>
 				) : (
-					<IoPersonSharp className="size-full bg-popover fill-muted rounded" />
+					<IoPersonSharp className="size-full fill-popover rounded" />
 				)}
 			</span>
 			<div className="px-3 pb-3">
