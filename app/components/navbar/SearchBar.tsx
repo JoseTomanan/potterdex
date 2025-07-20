@@ -1,17 +1,15 @@
 import { useState } from "react";
 import { IoIosSearch as SearchIcon } from "react-icons/io";
+import {
+	PiSortAscendingBold as AscendingIcon,
+	PiSortDescendingBold as DescendingIcon,
+} from "react-icons/pi";
+
 import { useLocation } from "react-router";
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
-import {
-	Select,
-	SelectTrigger,
-	SelectValue,
-	SelectContent,
-	SelectGroup,
-	SelectLabel,
-	SelectItem,
-} from "~/components/ui/select";
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectGroup, SelectLabel, SelectItem, } from "~/components/ui/select";
+
 import { useSearch } from "~/lib/context/SearchContext";
 import type { DatabaseType, SortType, OrderType } from "~/lib/context/SearchContext";
 
@@ -77,14 +75,18 @@ export function SearchBar() {
 			<Select
 				value={order}
 				onValueChange={(i: OrderType) => setSearchState({ order: i })}>
-				<SelectTrigger className={`rounded w-20 xl:w-32 ${isInAbout ? `text-muted-foreground` : ``}`} >
+				<SelectTrigger className={`rounded w-16 xl:w-16 ${isInAbout ? `text-muted-foreground` : ``}`} >
 					<SelectValue />
 				</SelectTrigger>
 				<SelectContent>
 					<SelectGroup>
 						<SelectLabel>Order</SelectLabel>
-						<SelectItem value="ascending">Ascending</SelectItem>
-						<SelectItem value="descending">Descending</SelectItem>
+						<SelectItem value="ascending">
+							<AscendingIcon />
+						</SelectItem>
+						<SelectItem value="descending">
+							<DescendingIcon />
+						</SelectItem>
 					</SelectGroup>
 				</SelectContent>
 			</Select>
