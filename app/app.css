@@ -42,14 +42,14 @@
   --chart-4: #00bc7d;
   --chart-5: #ff2056;
 	
-  --sidebar: #1c1917;
-  --sidebar-foreground: #fafaf9;
+  --sidebar: var(--background);
+  --sidebar-foreground: var(--foreground);
   --sidebar-primary: var(--primary);
-  --sidebar-primary-foreground: #fafaf9;
-  --sidebar-accent: #292524;
-  --sidebar-accent-foreground: #fafaf9;
-  --sidebar-border: #ffffff1a;
-  --sidebar-ring: #79716b;
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
 }
 
 @theme inline {
