@@ -47,10 +47,9 @@ export default function CharacterSlug() {
 
 	return (
 		<main className="container">
-			<div className="pt-6">
-				{/* TODO: bread crumbs */}
-				<ItemDetails {...character}/>
-			</div>
+			<div className="h-6" />
+			{/* TODO: bread crumbs */}
+			<ItemDetails {...character}/>
 		</main>
 	);
 }
@@ -61,9 +60,10 @@ function CharacterSlugSkeleton() {
 
 	return (
 		<main className="container">
-			<section className="character-slug-page space-y-4 pt-6">
+			<div className="h-6"/>
+			<section className="character-slug-page space-y-4">
 				<Skeleton className="w-80 h-4 pb-2" />
-				<Skeleton className="w-125 h-10" />
+				<Skeleton className="w-4/5 h-10" />
 				<div className="space-y-2">
 					<Skeleton className="w-80 h-5" />
 					<Skeleton className="w-80 h-4" />
