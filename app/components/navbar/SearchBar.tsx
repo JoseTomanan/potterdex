@@ -82,10 +82,10 @@ export function SearchBar() {
 					<SelectGroup>
 						<SelectLabel>Order</SelectLabel>
 						<SelectItem value="ascending">
-							<AscendingIcon />
+							<AscendingIcon className="text-foreground" />
 						</SelectItem>
 						<SelectItem value="descending">
-							<DescendingIcon />
+							<DescendingIcon className="text-foreground" />
 						</SelectItem>
 					</SelectGroup>
 				</SelectContent>
