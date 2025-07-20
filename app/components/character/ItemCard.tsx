@@ -80,9 +80,9 @@ export function ItemCard( item: ItemCardProps ) {
 
 	return (
 		<div className="card gap-y-2 group hover:bg-muted">
-			<span className="h-70 flex justify-center align-middle">
+			<span className="h-70 flex justify-start align-top">
 				{item.image ? (
-					<img src={item.image} className="w-full bg-popover object-cover rounded shadow-inner"/>
+					<img src={item.image} className="size-full bg-popover object-cover rounded shadow-inner"/>
 				) : (
 					<IoPersonSharp className="size-full fill-popover rounded" />
 				)}
