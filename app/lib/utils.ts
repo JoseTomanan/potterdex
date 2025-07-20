@@ -6,6 +6,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export function dashIfNone(val?: string | string[] | number) {
-	return val ? val : `–`;
-}
+export const dashIfNone = (val?: string | string[] | number) => (val ? val : `–`);
+
+export const joinWithMiddot = (l: any[]) => l.filter(i => i !== null).join(" · ");
