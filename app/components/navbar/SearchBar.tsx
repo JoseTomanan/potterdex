@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { IoIosSearch as SearchIcon } from "react-icons/io";
 import {
 	PiSortAscendingBold as AscendingIcon,
@@ -6,7 +5,6 @@ import {
 } from "react-icons/pi";
 
 import { useLocation } from "react-router";
-import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectGroup, SelectLabel, SelectItem, } from "~/components/ui/select";
 
@@ -15,9 +13,10 @@ import type { DatabaseType, SortType, OrderType } from "~/lib/context/SearchCont
 
 
 export function SearchBar() {
-	const {search, database, sort, order, setSearchState} = useSearch();
+	const {search, sort, order, setSearchState} = useSearch();
 
 	const isInHome = useLocation().pathname === "/";
+
 	const isInAbout = useLocation().pathname === "/about"
 
 	return (
