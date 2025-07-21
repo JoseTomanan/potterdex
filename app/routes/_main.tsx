@@ -25,6 +25,21 @@ export function meta({}: Route.MetaArgs) {
 }
 
 
+const fetchCharacters = (url: string, setCharacters: Function, setIsLoading: Function) => (
+		axios.get(url)
+				.then(res => {
+						const actualCharacters = res.data.data.map((item: { attributes: any; }) => item.attributes);
+						setCharacters(actualCharacters);
+				})
+				.catch(error => {
+						console.log(error);
+				})
+				.finally(() => {
+						setIsLoading(false);
+				})
+	);
+
+
 export default function Home() {
 	const { search, database, sort, order } = useSearch();
 
@@ -40,31 +55,17 @@ export default function Home() {
 					? (`&filter[name_cont]=${search}`)
 					: ('') );
 
-	const fetchCharacters = () => axios.get(url)
-				.then(res => {
-						const actualCharacters = res.data.data.map((item: { attributes: any; }) => item.attributes);
-						setCharacters(actualCharacters);
-				})
-				.catch(error => {
-						console.log(error);
-				})
-				.finally(() => {
-						setIsLoading(false);
-				});
-
 	useEffect(() => {
 		setIsLoading(true);
-		fetchCharacters();
+		fetchCharacters(url, setCharacters, setIsLoading);
 	}, [page]);
 
 	useEffect(() => {
 		setIsLoading(true);
 		setPage(1);
-		fetchCharacters();
+		fetchCharacters(url, setCharacters, setIsLoading);
 	}, [search, database, sort, order]);
 
-
-	// segregated for visual clarity
 	const PaginationSection = () => (
 			<Pagination className="bg-transparent border-none w-fit">
 				<PaginationContent>

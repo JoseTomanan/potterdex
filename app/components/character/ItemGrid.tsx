@@ -9,8 +9,9 @@ type ItemGridProps = {
 }
 
 export function ItemGrid( props: ItemGridProps ) {
-	const Content = () => (
-			props.isLoading
+	return (
+		<div className="card-grid">
+			{props.isLoading
 				?
 					Array.from({ length: ITEMS_PER_PAGE }).map((_, i) => (
 						<ItemSkeleton key={i} />
@@ -19,11 +20,7 @@ export function ItemGrid( props: ItemGridProps ) {
 					props.items.map(({}, i) => (
 						<ItemCard {...props.items[i]} />
 					))
-		);
-
-	return (
-		<div className="card-grid">
-			<Content />
+			}
 		</div>
 	);
 }
