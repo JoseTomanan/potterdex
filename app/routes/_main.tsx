@@ -15,6 +15,7 @@ import {
 	PaginationPrevious,
 } from "~/components/ui/pagination"
 import { useSearch } from "~/lib/context/SearchContext";
+import { ITEMS_PER_PAGE } from "~/lib/constants";
 
 
 export function meta({}: Route.MetaArgs) {
@@ -54,6 +55,8 @@ export default function Home() {
 			((search != '')
 					? (`&filter[name_cont]=${search}`)
 					: ('') );
+
+	const isEndOfPage = () => characters.length < ITEMS_PER_PAGE;
 
 	useEffect(() => {
 		setIsLoading(true);
@@ -101,23 +104,28 @@ export default function Home() {
 					</PaginationItem>
 					
 					<PaginationItem>
-						<PaginationLink onClick={(e) => {
-							e.preventDefault();
-							setPage(page+1);
-						}}>{page+1}</PaginationLink>
+						<PaginationLink
+							onClick={(e) => {
+								e.preventDefault();
+								setPage(page+1);
+							}}
+							className={`${isEndOfPage() ? "invisible" : ""}`}>
+							{page+1}
+						</PaginationLink>
 					</PaginationItem>
 					
 					<PaginationItem>
-						<PaginationEllipsis />
+						<PaginationEllipsis className={`${isEndOfPage() ? "invisible" : ""}`} />
 					</PaginationItem>
 					
 					<PaginationItem>
 						<PaginationNext
-							size="icon"
-							onClick={(e) => {
-							e.preventDefault();
-							setPage(page+1);
-						}} />
+									onClick={(e) => {
+										e.preventDefault();
+										setPage(page+1);
+									}}
+									size="icon"
+									className={`${isEndOfPage() ? "invisible" : ""}`} />
 					</PaginationItem>
 				</PaginationContent>
 			</Pagination>
