@@ -10,9 +10,8 @@ const Bio = (props: ItemDetailsProps) => (
 		<>
 			<div className="flex justify-center align-middle bg-popover">
 				{props.image ? (
-					<img
-						src={props.image}
-						className="object-contain w-3/4" />
+					<img src={props.image}
+								className="object-contain w-3/4" />
 				) : (
 					<IoPersonSharp className="fill-muted size-full" />
 				)}
@@ -87,7 +86,7 @@ export function ItemDetails(props: ItemDetailsProps) {
 
 export function ItemDetailsSkeleton() {
 	return (
-		<>
+		<div className="space-y-6">
 			<Skeleton className="w-80 h-4 pb-2" />
 			<Skeleton className="w-4/5 h-10" />
 			<div className="space-y-2">
@@ -96,6 +95,6 @@ export function ItemDetailsSkeleton() {
 				<Skeleton className="w-60 h-4" />
 				<Skeleton className="w-50 h-4" />
 			</div>
-		</>
+		</div>
 	);
 }
