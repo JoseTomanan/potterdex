@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router";
+import { useParams } from "react-router";
 import { ItemDetails, ItemDetailsSkeleton } from "~/components/character/ItemDetails";
-import type { Character } from "~/lib/types/character";
 
 import axios from 'axios';
-import { Skeleton } from "~/components/ui/skeleton";
 import type { Route } from "../character/+types/[slug]";
-import { FiArrowUpRight } from "react-icons/fi";
 
 
 export function meta({}: Route.MetaArgs) {
