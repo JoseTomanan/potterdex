@@ -1,10 +1,22 @@
 import { GiOwl as LogoIcon } from "react-icons/gi";
 import { Link, useLocation } from "react-router";
 import { SearchBar } from "./SearchBar";
+import { useSearch } from "~/lib/context/SearchContext";
+
+
+const isInMain = () => useLocation().pathname === "/";
+
+
+const tryResetSearch = () => {
+	if (isInMain()) {
+		const { setSearchState } = useSearch();
+		setSearchState({search: ""});
+	}
+};
 
 
 const Logo = () => (
-		<Link to="/" className="flex gap-2 items-center group">
+		<Link to="/" onClick={tryResetSearch} className="flex gap-2 items-center group">
 			<LogoIcon className="h-6 w-6 stroke-2"/>
 			<span className="text-xl font-heading font-bold tracking-tighter
 						hidden md:block">
