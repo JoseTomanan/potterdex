@@ -1,6 +1,7 @@
 import { IoPersonSharp } from "react-icons/io5";
 import { dashIfNone, joinWithMiddot } from "~/lib/utils";
 import type { Character } from "~/lib/types/character";
+import { Skeleton } from "../ui/skeleton";
 
 
 type ItemDetailsProps = Character;
@@ -79,6 +80,21 @@ export function ItemDetails(props: ItemDetailsProps) {
 						</p>
 					))}
 				</div>
+			</div>
+		</>
+	);
+}
+
+export function ItemDetailsSkeleton() {
+	return (
+		<>
+			<Skeleton className="w-80 h-4 pb-2" />
+			<Skeleton className="w-4/5 h-10" />
+			<div className="space-y-2">
+				<Skeleton className="w-80 h-5" />
+				<Skeleton className="w-80 h-4" />
+				<Skeleton className="w-60 h-4" />
+				<Skeleton className="w-50 h-4" />
 			</div>
 		</>
 	);
