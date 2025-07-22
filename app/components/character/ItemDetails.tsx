@@ -60,7 +60,7 @@ export function ItemDetails(props: ItemDetailsProps) {
 						<>{subtitle} &middot; &nbsp;</>
 				: <></>}
 				{props.wiki ?
-						<a href="props.wiki" target="_blank" className="highlight-link">
+						<a href={props.wiki} target="_blank" className="highlight-link">
 							Visit wiki
 						</a>
 				: <></>}
