@@ -48,8 +48,9 @@ export default function CharacterSlug() {
 	return (
 		<main className="container">
 			<div className="h-6" />
-			{/* TODO: bread crumbs */}
-			<ItemDetails {...character}/>
+			<section className="character-slug-page space-y-4">
+				<ItemDetails {...character}/>
+			</section>
 		</main>
 	);
 }

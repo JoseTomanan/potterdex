@@ -49,7 +49,7 @@ export function ItemDetails(props: ItemDetailsProps) {
 	const subtitle: string = joinWithMiddot([props.house, props.gender, props.species]);
 
 	return (
-		<section className="character-slug-page space-y-4">
+		<>
 			<p className="font-mono text-muted">
 				slugname: {props.slug}
 			</p>
@@ -80,6 +80,6 @@ export function ItemDetails(props: ItemDetailsProps) {
 					))}
 				</div>
 			</div>
-		</section>
+		</>
 	);
 }
