@@ -17,9 +17,15 @@ export function ItemGrid( props: ItemGridProps ) {
 						<ItemSkeleton key={i} />
 					))
 				:
-					props.items.map(({}, i) => (
-						<ItemCard {...props.items[i]} />
-					))
+					props.items.length > 0
+						?
+							props.items.map(({}, i) => (
+								<ItemCard {...props.items[i]} />
+							))
+						:
+							<>
+								<h6>No more results found.</h6>
+							</>
 			}
 		</div>
 	);
