@@ -8,23 +8,16 @@ import { MdQuestionMark } from "react-icons/md";
 import { Skeleton } from "../ui/skeleton";
 import { Link } from "react-router";
 import { joinWithMiddot } from "~/lib/utils";
+import type { Character } from "~/lib/types/character";
+import { Dialog, DialogContent, DialogTrigger } from "@radix-ui/react-dialog";
+import ItemModal from "./ItemModal";
 
 
-type ItemCardProps = {
-	slug: string;
-	name: string;
-	house: string;
-	nationality: string;
-	gender: string;
-	species: string;
-	blood_status: string;
-	image: string;
-}
+type ItemCardProps = Character;
 
 
-const willTruncate = (e: HTMLElement) => {
-	return e.scrollWidth > e.clientWidth;
-};
+// for future use
+const willTruncate = (e: HTMLElement) => e.scrollWidth > e.clientWidth;
 
 
 export function ItemCard( item: ItemCardProps ) {
@@ -88,10 +81,20 @@ export function ItemCard( item: ItemCardProps ) {
 				)}
 			</span>
 			<div className="px-3 pb-3">
-				<h3 className="text-foreground/80 decoration-1 underline-offset-2 flex items-center gap-1.5">
-					<GenderIcon />
-					<Link to={`/character/${item.slug}`} className="truncate w-full hover:underline">{item.name}</Link>
-				</h3>
+				<Dialog>
+					<DialogTrigger asChild>
+						<span className="flex items-center gap-1.5 w-full">
+							<GenderIcon />
+							<h3 className="text-left text-foreground/80 underline-offset-2 decoration-1 truncate
+										w-full hover:underline cursor-pointer">
+								{item.name}
+							</h3>
+						</span>
+					</DialogTrigger>
+					<DialogContent className="w-sm">
+						<ItemModal />
+					</DialogContent>
+				</Dialog>
 				<ResultingSubtitle />
 			</div>
 		</div>
