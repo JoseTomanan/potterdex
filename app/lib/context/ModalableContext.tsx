@@ -18,6 +18,13 @@ export function ModalableProvider({ children }: { children: ReactNode }) {
 	return (
 		<ModalableContext.Provider value={{isOpen, openModal, closeModal}}>
 			{children}
+			{isOpen
+				?
+					<>
+						{console.log("--> It reached this point.")}
+						{closeModal()}
+					</>
+			: <></>}
 		</ModalableContext.Provider>
 	);
 }
