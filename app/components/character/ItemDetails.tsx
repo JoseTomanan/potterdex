@@ -73,7 +73,7 @@ export function ItemDetails(props: ItemDetailsProps) {
 
 				<div className="flex flex-col flex-2/3">
 					{attributeNames.map((name, i) => (
-						<p>
+						<p key={i}>
 							<span className="font-semibold tracking-wide">{name}:&nbsp;</span>
 							{dashIfNone(attributeValues[i])}
 						</p>
