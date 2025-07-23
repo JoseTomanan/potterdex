@@ -6,11 +6,11 @@ import {
 } from "react-icons/io5";
 import { MdQuestionMark } from "react-icons/md";
 import { Skeleton } from "../ui/skeleton";
-import { Link } from "react-router";
-import { joinWithMiddot } from "~/lib/utils";
+import { joinWithMiddot, getHouseRelatedStyle } from "~/lib/utils";
 import type { Character } from "~/lib/types/character";
 import { Dialog, DialogContent, DialogTrigger } from "@radix-ui/react-dialog";
 import ItemModal from "./ItemModal";
+import { useModalable } from "~/lib/context/ModalableContext";
 
 
 type ItemCardProps = Character;
@@ -19,29 +19,23 @@ type ItemCardProps = Character;
 // for future use
 const willTruncate = (e: HTMLElement) => e.scrollWidth > e.clientWidth;
 
-
-export function ItemCard( item: ItemCardProps ) {
-	const GenderIcon = () => (
-			item.gender == "Male"
+const getGenderIcon = (gender: String) => (
+			gender == "Male"
 			? <IoMale />
-			: item.gender == "Female"
+			: gender == "Female"
 					? <IoFemale />
-					: item.gender == "" || item.gender == "Unknown"
+					: gender == "" || gender == "Unknown"
 							? <MdQuestionMark />
 							: <IoMaleFemale />
 		);
 
 
-	const houseRelatedStyle = (item.house == "Gryffindor")
-			? "text-chart-2 text-shadow-chart-2"
-			: item.house == "Slytherin"
-				? "text-chart-4 text-shadow-chart-4"
-				: item.house == "Ravenclaw"
-					? "text-chart-1 text-shadow-chart-1"
-					: item.house == "Hufflepuff"
-						? "text-chart-3 text-shadow-chart-3"
-						: "text-muted-foreground text-shadow-muted-foreground font-light";
+export function ItemCard( item: ItemCardProps ) {
+	const { openModal } = useModalable();
 
+	const GenderIcon = () => getGenderIcon(item.gender);
+
+	const houseRelatedStyle = getHouseRelatedStyle(item.house);
 	
 	const nonHouseSubtitle = joinWithMiddot([item.nationality, item.species, item.blood_status]);
 
@@ -81,20 +75,13 @@ export function ItemCard( item: ItemCardProps ) {
 				)}
 			</span>
 			<div className="px-3 pb-3">
-				<Dialog>
-					<DialogTrigger asChild>
-						<span className="flex items-center gap-1.5 w-full">
-							<GenderIcon />
-							<h3 className="text-left text-foreground/80 underline-offset-2 decoration-1 truncate
-										w-full hover:underline cursor-pointer">
-								{item.name}
-							</h3>
-						</span>
-					</DialogTrigger>
-					<DialogContent className="w-sm">
-						<ItemModal />
-					</DialogContent>
-				</Dialog>
+				<button onClick={openModal}
+							className="flex items-center gap-1.5 w-full">
+					<GenderIcon />
+					<h3 className="text-left text-foreground/80 underline-offset-2 decoration-1 truncate hover:underline w-full cursor-pointer">
+						{item.name}
+					</h3>
+				</button>
 				<ResultingSubtitle />
 			</div>
 		</div>
