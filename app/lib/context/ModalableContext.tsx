@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, type ReactNode } from "react";
 
 
 type ModalableContextType = {
@@ -9,7 +9,7 @@ type ModalableContextType = {
 
 const ModalableContext = createContext<ModalableContextType | null>(null);
 
-export function ModalableProvider({ children }: { children: React.ReactNode }) {
+export function ModalableProvider({ children }: { children: ReactNode }) {
 	const [isOpen, setIsOpen] = useState(false);
 	
 	const openModal = () => setIsOpen(true);
