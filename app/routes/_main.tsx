@@ -14,7 +14,7 @@ import {
 	PaginationNext,
 	PaginationPrevious,
 } from "~/components/ui/pagination"
-import { useSearch } from "~/lib/context/SearchContext";
+import { useSearchContext } from "~/lib/context/SearchContext";
 import { ITEMS_PER_PAGE } from "~/lib/constants";
 
 
@@ -42,7 +42,7 @@ const fetchCharacters = (url: string, setCharacters: Function, setIsLoading: Fun
 
 
 export default function Home() {
-	const { search, database, sort, order } = useSearch();
+	const { search, database, sort, order } = useSearchContext();
 
 	const [page, setPage] = useState(1);
 	const [characters, setCharacters] = useState<Character[]>([]);
