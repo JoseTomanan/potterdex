@@ -3,7 +3,7 @@ import type { SearchState } from "~/lib/types/SearchState";
 
 
 type SearchContextType = SearchState & {
-	setSearchState: (partial: Partial<SearchState>) => void;
+	setSearchState: (newState: SearchState) => void;
 };
 
 const SearchContext = createContext<SearchContextType | null>(null);
@@ -17,8 +17,8 @@ export function SearchProvider({ children }: { children: React.ReactNode }) {
 		order: "ascending",
 	});
 
-	const setSearchState = (partial: Partial<SearchState>) => {
-		setState((prev) => ({...prev, ...partial}));
+	const setSearchState = (newState: SearchState) => {
+		setState((prevState) => ({...prevState, ...newState}));
 	};
 
 	return (
