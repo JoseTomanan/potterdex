@@ -9,6 +9,7 @@ type ModalableContextType = {
 
 const ModalableContext = createContext<ModalableContextType | null>(null);
 
+
 export function ModalableProvider({ children }: { children: ReactNode }) {
 	const [isOpen, setIsOpen] = useState(false);
 	
@@ -18,16 +19,22 @@ export function ModalableProvider({ children }: { children: ReactNode }) {
 	return (
 		<ModalableContext.Provider value={{isOpen, openModal, closeModal}}>
 			{children}
+			<h1 className={`z-100 font-bold ${isOpen ? "" : "hidden"}`}>MODAL IS OPEN</h1>
 			{isOpen
 				?
 					<>
 						{console.log("--> It reached this point.")}
 						{closeModal()}
 					</>
-			: <></>}
+				:
+					<>
+						{console.log("--> The modal is now closed.")}
+					</>
+			}
 		</ModalableContext.Provider>
 	);
 }
+
 
 export function useModalable() {
 	const context = useContext(ModalableContext);
