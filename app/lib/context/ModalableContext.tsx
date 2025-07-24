@@ -1,13 +1,7 @@
 import { createContext, useContext, useState, type ReactNode } from "react";
 
 
-type ModalableContextType = {
-	isOpen: boolean;
-	openModal: () => void;
-	closeModal: () => void;
-}
-
-const ModalableContext = createContext<ModalableContextType | null>(null);
+const ModalableContext = createContext<{isOpen: boolean, openModal: () => void, closeModal: () => void} | null>(null);
 
 
 export function ModalableProvider({ children }: { children: ReactNode }) {
@@ -18,19 +12,16 @@ export function ModalableProvider({ children }: { children: ReactNode }) {
 
 	return (
 		<ModalableContext.Provider value={{isOpen, openModal, closeModal}}>
-			{children}
-			<h1 className={`z-100 font-bold ${isOpen ? "" : "hidden"}`}>MODAL IS OPEN</h1>
+			<h1 className={isOpen ? "" : "hidden"}>MODAL IS OPEN</h1>
 			{isOpen
 				?
 					<>
 						{console.log("--> It reached this point.")}
-						{closeModal()}
+						{setTimeout(closeModal, 1000)}
 					</>
-				:
-					<>
-						{console.log("--> The modal is now closed.")}
-					</>
+				: <>{console.log("--> The modal is now closed.")}</>
 			}
+			{children}
 		</ModalableContext.Provider>
 	);
 }
