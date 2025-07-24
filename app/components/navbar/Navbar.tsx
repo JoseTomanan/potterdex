@@ -1,7 +1,7 @@
 import { GiOwl as LogoIcon } from "react-icons/gi";
 import { Link, useLocation } from "react-router";
 import { SearchBar } from "./SearchBar";
-import { useSearch } from "~/lib/context/SearchContext";
+import { useSearchContext } from "~/lib/context/SearchContext";
 
 
 const isInMain = () => useLocation().pathname === "/";
@@ -9,7 +9,7 @@ const isInMain = () => useLocation().pathname === "/";
 
 const tryResetSearch = () => {
 	if (isInMain()) {
-		const { setSearchState } = useSearch();
+		const { setSearchState } = useSearchContext();
 		setSearchState({search: ""});
 	}
 };

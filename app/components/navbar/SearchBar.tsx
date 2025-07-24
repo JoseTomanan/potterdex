@@ -8,12 +8,12 @@ import { useLocation } from "react-router";
 import { Input } from "~/components/ui/input";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectGroup, SelectLabel, SelectItem, } from "~/components/ui/select";
 
-import { useSearch } from "~/lib/context/SearchContext";
+import { useSearchContext } from "~/lib/context/SearchContext";
 import type { SortType, OrderType } from "~/lib/context/SearchContext";
 
 
 export function SearchBar() {
-	const {search, sort, order, setSearchState} = useSearch();
+	const {search, sort, order, setSearchState} = useSearchContext();
 
 	const isInHome = useLocation().pathname === "/";
 
