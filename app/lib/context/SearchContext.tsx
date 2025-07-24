@@ -1,11 +1,10 @@
 import { createContext, useContext, useState } from "react";
-import type { SearchState } from "../types/SearchState";
+import type { SearchState } from "~/lib/types/SearchState";
 
 
 type SearchContextType = SearchState & {
 	setSearchState: (partial: Partial<SearchState>) => void;
 };
-
 
 const SearchContext = createContext<SearchContextType | null>(null);
 
