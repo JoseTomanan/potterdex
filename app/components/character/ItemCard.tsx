@@ -10,7 +10,7 @@ import { joinWithMiddot, getHouseRelatedStyle } from "~/lib/utils";
 import type { Character } from "~/lib/types/character";
 import { Dialog, DialogContent, DialogTrigger } from "@radix-ui/react-dialog";
 import ItemModal from "./ItemModal";
-import { useModalable } from "~/lib/context/ModalableContext";
+import { useModalableContext } from "~/lib/context/ModalableContext";
 
 
 type ItemCardProps = Character;
@@ -31,7 +31,7 @@ const getGenderIcon = (gender: String) => (
 
 
 export function ItemCard( item: ItemCardProps ) {
-	const { openModal } = useModalable();
+	const { openModal } = useModalableContext();
 
 	const GenderIcon = () => getGenderIcon(item.gender);
 

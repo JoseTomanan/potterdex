@@ -1,11 +1,11 @@
 import { Dialog, DialogContent } from "@radix-ui/react-dialog";
-import { useModalable } from "~/lib/context/ModalableContext";
+import { useModalableContext } from "~/lib/context/ModalableContext";
 
 
 export default function ItemModal() {
 	console.log("--> Modal opened");
 
-	const { isOpen, closeModal } = useModalable();
+	const { isOpen, closeModal } = useModalableContext();
 
 	return (
 		<Dialog open={isOpen} onOpenChange={closeModal}>

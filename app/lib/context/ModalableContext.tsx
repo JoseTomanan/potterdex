@@ -36,7 +36,7 @@ export function ModalableProvider({ children }: { children: ReactNode }) {
 }
 
 
-export function useModalable() {
+export function useModalableContext() {
 	const context = useContext(ModalableContext);
   if (!context)
 		throw new Error("useModalable must be used within ModalableProvider");
