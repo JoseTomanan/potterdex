@@ -9,7 +9,7 @@ import { Input } from "~/components/ui/input";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectGroup, SelectLabel, SelectItem, } from "~/components/ui/select";
 
 import { useSearchContext } from "~/lib/context/SearchContext";
-import type { SortType, OrderType } from "~/lib/context/SearchContext";
+import type { SortType, OrderType } from "~/lib/types/SearchState";
 
 
 export function SearchBar() {
