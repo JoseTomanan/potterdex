@@ -7,9 +7,8 @@ import type { Route } from "../character/+types/[slug]";
 
 
 export function meta({}: Route.MetaArgs) {
-	const { slug } = useParams();
 	return [
-		{ title: `POTTERDÉX | ${slug}` },
+		{ title: `POTTERDÉX | Character` },
 		{ name: "description", content: ""}
 	];
 }
