@@ -4,16 +4,9 @@ import { SearchBar } from "./SearchBar";
 import { useSearchContext } from "~/lib/context/SearchContext";
 
 
-const isInMain = () => useLocation().pathname === "/";
-
-
-const Logo = ({clearSearch}: {clearSearch: () => void}) => (
+const Logo = ({onClick}: {onClick: () => void}) => (
 		<Link to="/" className="flex gap-2 items-center group"
-					onClick={() => {
-						if (isInMain()) {
-							clearSearch();
-						}
-					}}>
+					onClick={onClick}>
 			<LogoIcon className="h-6 w-6 stroke-2"/>
 			<span className="text-xl font-heading font-bold tracking-tighter
 						hidden md:block">
@@ -25,12 +18,15 @@ const Logo = ({clearSearch}: {clearSearch: () => void}) => (
 
 export function NavBar() {
 	const { setSearchState } = useSearchContext();
-	const clearSearch = () => setSearchState({search: ""});
+
+	const tryClearSearch = (useLocation().pathname === "/")
+				? () => setSearchState({search: ""})
+				: () => null;
 
 	return (
 		<nav className="flex flex-row justify-between w-full fixed flex-wrap">
 			<div className="flex items-center gap-6">
-				<Logo clearSearch={clearSearch} />
+				<Logo onClick={tryClearSearch} />
 				<SearchBar />
 			</div>
 			<div className="flex gap-8 items-center">
