@@ -12,15 +12,6 @@ export function ModalableProvider({ children }: { children: ReactNode }) {
 
 	return (
 		<ModalableContext.Provider value={{isOpen, openModal, closeModal}}>
-			<h1 className={isOpen ? "" : "hidden"}>MODAL IS OPEN</h1>
-			{isOpen
-				?
-					<>
-						{console.log("--> It reached this point.")}
-						{setTimeout(closeModal, 1000)}
-					</>
-				: <>{console.log("--> The modal is now closed.")}</>
-			}
 			{children}
 		</ModalableContext.Provider>
 	);
