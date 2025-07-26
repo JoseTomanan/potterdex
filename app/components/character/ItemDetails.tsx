@@ -65,7 +65,7 @@ export function ItemDetails(props: Character) {
 			</span>
 
 			<div className="flex flex-col lg:flex-row gap-6 mt-2">
-				<div className={`flex flex-col gap-1 ${props.image ? "flex-1/3" : "flex-1/4"} px-4 py-2 bg-popover rounded`}>
+				<div className={`flex flex-col gap-1 ${props.image ? "flex-1/2" : "flex-1/3"} px-4 py-2 bg-popover rounded`}>
 					<Bio {...props} />
 				</div>
 
