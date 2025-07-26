@@ -6,76 +6,31 @@ import {
 } from "react-icons/io5";
 import { MdQuestionMark } from "react-icons/md";
 import { Skeleton } from "../ui/skeleton";
-import { Link } from "react-router";
-import { joinWithMiddot } from "~/lib/utils";
+import { joinWithMiddot, getHouseRelatedStyle } from "~/lib/utils";
+import type { Character } from "~/lib/types/character";
+import { Dialog, DialogTrigger } from "~/components/ui/dialog";
+import ItemModal from "./ItemModal";
 
 
-type ItemCardProps = {
-	slug: string;
-	name: string;
-	house: string;
-	nationality: string;
-	gender: string;
-	species: string;
-	blood_status: string;
-	image: string;
-}
+type ItemCardProps = Character;
 
-
-const willTruncate = (e: HTMLElement) => {
-	return e.scrollWidth > e.clientWidth;
-};
-
-
-export function ItemCard( item: ItemCardProps ) {
-	const GenderIcon = () => (
-			item.gender == "Male"
+const getGenderIcon = (gender: String) => (
+			gender == "Male"
 			? <IoMale />
-			: item.gender == "Female"
+			: gender == "Female"
 					? <IoFemale />
-					: item.gender == "" || item.gender == "Unknown"
+					: gender == "" || gender == "Unknown"
 							? <MdQuestionMark />
 							: <IoMaleFemale />
 		);
 
 
-	const houseRelatedStyle = (item.house == "Gryffindor")
-			? "text-chart-2 text-shadow-chart-2"
-			: item.house == "Slytherin"
-				? "text-chart-4 text-shadow-chart-4"
-				: item.house == "Ravenclaw"
-					? "text-chart-1 text-shadow-chart-1"
-					: item.house == "Hufflepuff"
-						? "text-chart-3 text-shadow-chart-3"
-						: "text-muted-foreground text-shadow-muted-foreground font-light";
+export function ItemCard( item: ItemCardProps ) {
+	const GenderIcon = () => getGenderIcon(item.gender);
 
+	const houseRelatedStyle = getHouseRelatedStyle(item.house);
 	
 	const nonHouseSubtitle = joinWithMiddot([item.nationality, item.species, item.blood_status]);
-
-	// TODO: use willTruncate() in conjunction with this
-	const ResultingSubtitle = () => (
-		true
-			?
-				<h5 className="items-baseline" >
-					<span className={`text-shadow-xs/20 ${houseRelatedStyle}`}>
-						{item.house ? item.house : "No house"}
-					</span>
-					{nonHouseSubtitle ?
-						<span className="font-light tracking-tight text-muted-foreground">
-							&nbsp; &middot; {nonHouseSubtitle}
-						</span>
-					: <></>}
-				</h5>
-			:
-				<>
-					<h6 className={`flex items-center text-shadow-xs/20 ${houseRelatedStyle}`} >
-						{item.house ? item.house : "No house"}
-					</h6>
-					<h6 className="flex flex-row items-baseline font-light tracking-tight text-muted-foreground">
-						{nonHouseSubtitle}
-					</h6>
-				</>
-	);
 
 
 	return (
@@ -88,11 +43,27 @@ export function ItemCard( item: ItemCardProps ) {
 				)}
 			</span>
 			<div className="px-3 pb-3">
-				<h3 className="text-foreground/80 decoration-1 underline-offset-2 flex items-center gap-1.5">
-					<GenderIcon />
-					<Link to={`/character/${item.slug}`} className="truncate w-full hover:underline">{item.name}</Link>
-				</h3>
-				<ResultingSubtitle />
+				<Dialog>
+					<DialogTrigger asChild>
+						<button className="flex items-center gap-1.5 w-full">
+							<GenderIcon />
+							<h3 className="text-left text-foreground/80 underline-offset-2 decoration-1 truncate hover:underline w-full cursor-pointer">
+								{item.name}
+							</h3>
+						</button>
+					</DialogTrigger>
+					<ItemModal {...item}/>
+				</Dialog>
+				<h5 className="items-baseline" >
+					<span className={`text-shadow-xs/20 ${houseRelatedStyle}`}>
+						{item.house ? item.house : "No house"}
+					</span>
+					{nonHouseSubtitle && (
+						<span className="font-light tracking-tight text-muted-foreground">
+							&nbsp; &middot; {nonHouseSubtitle}
+						</span>
+					)}
+				</h5>
 			</div>
 		</div>
 	);

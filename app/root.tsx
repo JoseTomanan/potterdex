@@ -12,6 +12,7 @@ import "./app.css";
 import { NavBar } from "./components/navbar/Navbar";
 import Footer from "./_footer";
 import { SearchProvider } from "./lib/context/SearchContext";
+import { ModalableProvider } from "./lib/context/ModalableContext";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -42,8 +43,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body className="flex flex-col h-screen">
 				<div className="flex flex-col items-center flex-grow">
 					<SearchProvider>
-						<NavBar />
-						{children}
+            <ModalableProvider>
+						  <NavBar />
+						  {children}
+            </ModalableProvider>
 					</SearchProvider>
 					<ScrollRestoration />
 					<Scripts />

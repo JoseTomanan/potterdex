@@ -4,9 +4,7 @@ import type { Character } from "~/lib/types/character";
 import { Skeleton } from "../ui/skeleton";
 
 
-type ItemDetailsProps = Character;
-
-const Bio = (props: ItemDetailsProps) => (
+const Bio = (props: Character) => (
 		<>
 			<div className="flex justify-center align-middle bg-popover">
 				{props.image ? (
@@ -17,18 +15,18 @@ const Bio = (props: ItemDetailsProps) => (
 				)}
 			</div>
 			<hr />
-			{props.born ? (
+			{props.born && (
 					<span className="flex space-x-1 items-baseline">
 						<h5>Born: </h5>
 						<h6>{props.born}</h6>
 					</span>
-			) : <></>}
-			{props.died ? (
+			)}
+			{props.died && (
 					<span className="flex space-x-1 items-baseline">
 						<h5>Died: </h5>
 						<h6>{props.died}</h6>
 					</span>
-				) : <></>}
+				)}
 			<span className="flex space-x-1 items-baseline">
 				<h5>Aliases: </h5>
 				<h6>
@@ -42,7 +40,7 @@ const Bio = (props: ItemDetailsProps) => (
 		</>
 	);
 
-export function ItemDetails(props: ItemDetailsProps) {
+export function ItemDetails(props: Character) {
 	const attributeNames = ["Blood status", "Marital status", "Nationality", "Skin color", "Wand", "Weight"];
 	const attributeValues = [props.blood_status, props.marital_status, props.nationality, props.skin_color, props.wand, props.weight];
 
@@ -56,18 +54,18 @@ export function ItemDetails(props: ItemDetailsProps) {
 			<h1 className="border-b">{props.name}</h1>
 
 			<span className="text-lg text-muted-foreground">
-				{subtitle ? 
+				{subtitle && (
 						<>{subtitle} &middot; &nbsp;</>
-				: <></>}
-				{props.wiki ?
+				)}
+				{props.wiki && (
 						<a href={props.wiki} target="_blank" className="highlight-link">
 							Visit wiki
 						</a>
-				: <></>}
+				)}
 			</span>
 
 			<div className="flex flex-col lg:flex-row gap-6 mt-2">
-				<div className={`flex flex-col gap-1 ${props.image ? "flex-1/3" : "flex-1/4"} px-4 py-2 bg-popover rounded`}>
+				<div className={`flex flex-col gap-1 ${props.image ? "flex-1/2" : "flex-1/3"} px-4 py-2 bg-popover rounded`}>
 					<Bio {...props} />
 				</div>
 
