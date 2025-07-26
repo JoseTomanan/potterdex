@@ -7,7 +7,7 @@ export default function ItemModal(props: Character) {
 	console.log("--> Modal opened");
 
 	return (
-		<DialogContent className="bg-card rounded sm:max-w-xl">
+		<DialogContent className="bg-card rounded sm:max-w-2xl">
 			<DialogTitle />
 			<DialogDescription />
 			<div className="space-y-4">
