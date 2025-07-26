@@ -2,7 +2,10 @@ import { IoPersonSharp } from "react-icons/io5";
 import { dashIfNone, joinWithMiddot } from "~/lib/utils";
 import type { Character } from "~/lib/types/CharacterItem";
 import { Skeleton } from "../ui/skeleton";
+import { FiArrowUpRight } from "react-icons/fi";
 
+
+const attributeNames = ["Blood status", "Marital status", "Nationality", "Skin color", "Wand", "Weight"];
 
 const Bio = (props: Character) => (
 		<>
@@ -41,34 +44,27 @@ const Bio = (props: Character) => (
 	);
 
 export function ItemDetails(props: Character) {
-	const attributeNames = ["Blood status", "Marital status", "Nationality", "Skin color", "Wand", "Weight"];
 	const attributeValues = [props.blood_status, props.marital_status, props.nationality, props.skin_color, props.wand, props.weight];
-
 	const subtitle: string = joinWithMiddot([props.house, props.gender, props.species]);
 
 	return (
 		<>
-			<p className="font-mono text-muted">
-				slugname: {props.slug}
-			</p>
 			<h1 className="border-b">{props.name}</h1>
-
 			<span className="text-lg text-muted-foreground">
 				{subtitle && (
 						<>{subtitle} &middot; &nbsp;</>
 				)}
 				{props.wiki && (
-						<a href={props.wiki} target="_blank" className="highlight-link">
-							Visit wiki
-						</a>
+					<a href={props.wiki} target="_blank" className="highlight-link space-x-1">
+						<span>Visit wiki</span>
+						<FiArrowUpRight className="inline align-baseline"/>
+					</a>
 				)}
 			</span>
-
 			<div className="flex flex-col lg:flex-row gap-6 mt-2">
-				<div className={`flex flex-col gap-1 ${props.image ? "flex-1/2" : "flex-1/3"} px-4 py-2 bg-popover rounded`}>
+				<div className={`flex flex-col gap-1 ${props.image ? "flex-2/3" : "flex-1/2"} px-4 py-2 bg-popover rounded`}>
 					<Bio {...props} />
 				</div>
-
 				<div className="flex flex-col flex-2/3">
 					{attributeNames.map((name, i) => (
 						<p key={i}>
