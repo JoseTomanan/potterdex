@@ -8,16 +8,11 @@ import { MdQuestionMark } from "react-icons/md";
 import { Skeleton } from "../ui/skeleton";
 import { joinWithMiddot, getHouseRelatedStyle } from "~/lib/utils";
 import type { Character } from "~/lib/types/character";
-import { Dialog, DialogContent, DialogTrigger } from "@radix-ui/react-dialog";
+import { Dialog, DialogTrigger } from "~/components/ui/dialog";
 import ItemModal from "./ItemModal";
-import { useModalableContext } from "~/lib/context/ModalableContext";
 
 
 type ItemCardProps = Character;
-
-
-// for future use
-const willTruncate = (e: HTMLElement) => e.scrollWidth > e.clientWidth;
 
 const getGenderIcon = (gender: String) => (
 			gender == "Male"
@@ -31,38 +26,11 @@ const getGenderIcon = (gender: String) => (
 
 
 export function ItemCard( item: ItemCardProps ) {
-	const { openModal } = useModalableContext();
-
 	const GenderIcon = () => getGenderIcon(item.gender);
 
 	const houseRelatedStyle = getHouseRelatedStyle(item.house);
 	
 	const nonHouseSubtitle = joinWithMiddot([item.nationality, item.species, item.blood_status]);
-
-	// TODO: use willTruncate() in conjunction with this
-	const ResultingSubtitle = () => (
-		true
-			?
-				<h5 className="items-baseline" >
-					<span className={`text-shadow-xs/20 ${houseRelatedStyle}`}>
-						{item.house ? item.house : "No house"}
-					</span>
-					{nonHouseSubtitle ?
-						<span className="font-light tracking-tight text-muted-foreground">
-							&nbsp; &middot; {nonHouseSubtitle}
-						</span>
-					: <></>}
-				</h5>
-			:
-				<>
-					<h6 className={`flex items-center text-shadow-xs/20 ${houseRelatedStyle}`} >
-						{item.house ? item.house : "No house"}
-					</h6>
-					<h6 className="flex flex-row items-baseline font-light tracking-tight text-muted-foreground">
-						{nonHouseSubtitle}
-					</h6>
-				</>
-	);
 
 
 	return (
@@ -75,14 +43,27 @@ export function ItemCard( item: ItemCardProps ) {
 				)}
 			</span>
 			<div className="px-3 pb-3">
-				<button onClick={openModal}
-							className="flex items-center gap-1.5 w-full">
-					<GenderIcon />
-					<h3 className="text-left text-foreground/80 underline-offset-2 decoration-1 truncate hover:underline w-full cursor-pointer">
-						{item.name}
-					</h3>
-				</button>
-				<ResultingSubtitle />
+				<Dialog>
+					<DialogTrigger asChild>
+						<button className="flex items-center gap-1.5 w-full">
+							<GenderIcon />
+							<h3 className="text-left text-foreground/80 underline-offset-2 decoration-1 truncate hover:underline w-full cursor-pointer">
+								{item.name}
+							</h3>
+						</button>
+					</DialogTrigger>
+					<ItemModal {...item}/>
+				</Dialog>
+				<h5 className="items-baseline" >
+					<span className={`text-shadow-xs/20 ${houseRelatedStyle}`}>
+						{item.house ? item.house : "No house"}
+					</span>
+					{nonHouseSubtitle && (
+						<span className="font-light tracking-tight text-muted-foreground">
+							&nbsp; &middot; {nonHouseSubtitle}
+						</span>
+					)}
+				</h5>
 			</div>
 		</div>
 	);
