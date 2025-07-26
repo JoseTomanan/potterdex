@@ -9,9 +9,9 @@ const Bio = (props: Character) => (
 			<div className="flex justify-center align-middle bg-popover">
 				{props.image ? (
 					<img src={props.image}
-								className="object-contain w-3/4" />
+								className="object-contain size-1/2 lg:size-full" />
 				) : (
-					<IoPersonSharp className="fill-muted size-full" />
+					<IoPersonSharp className="fill-muted size-2/5 lg:size-full" />
 				)}
 			</div>
 			<hr />
