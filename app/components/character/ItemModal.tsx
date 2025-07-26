@@ -1,17 +1,18 @@
-import { Dialog, DialogContent } from "@radix-ui/react-dialog";
-import { useModalableContext } from "~/lib/context/ModalableContext";
+import { ItemDetails } from "./ItemDetails";
+import type { Character } from "~/lib/types/character";
+import { DialogContent, DialogDescription, DialogTitle } from "~/components/ui/dialog";
 
 
-export default function ItemModal() {
+export default function ItemModal(props: Character) {
 	console.log("--> Modal opened");
 
-	const { isOpen, closeModal } = useModalableContext();
-
 	return (
-		<Dialog open={isOpen} onOpenChange={closeModal}>
-			<DialogContent className="bg-card z-51">
-				<h1>test</h1>
-			</DialogContent>
-		</Dialog>
+		<DialogContent showCloseButton={false} className="bg-card sm:max-w-xl">
+			<DialogTitle />
+			<DialogDescription />
+			<div className="space-y-4">
+				<ItemDetails {...props} />
+			</div>
+		</DialogContent>
 	);
 }
