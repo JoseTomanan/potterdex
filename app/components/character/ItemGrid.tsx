@@ -1,4 +1,4 @@
-import type { Character as Item } from "~/lib/types/character";
+import type { Character as Item } from "~/lib/types/CharacterItem";
 import { ItemCard, ItemSkeleton, } from "./ItemCard";
 import { ITEMS_PER_PAGE } from "~/lib/constants";
 

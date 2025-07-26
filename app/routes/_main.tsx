@@ -2,7 +2,7 @@ import axios from "axios";
 
 import { useEffect, useState, } from "react";
 import type { Route } from "./+types/_main";
-import type { Character } from "~/lib/types/character";
+import type { Character } from "~/lib/types/CharacterItem";
 
 import { ItemGrid } from "~/components/character/ItemGrid";
 import {

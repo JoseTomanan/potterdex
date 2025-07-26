@@ -1,6 +1,6 @@
 import { IoPersonSharp } from "react-icons/io5";
 import { dashIfNone, joinWithMiddot } from "~/lib/utils";
-import type { Character } from "~/lib/types/character";
+import type { Character } from "~/lib/types/CharacterItem";
 import { Skeleton } from "../ui/skeleton";
 
 

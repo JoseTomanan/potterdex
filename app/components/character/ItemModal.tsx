@@ -1,5 +1,5 @@
 import { ItemDetails } from "./ItemDetails";
-import type { Character } from "~/lib/types/character";
+import type { Character } from "~/lib/types/CharacterItem";
 import { DialogContent, DialogDescription, DialogTitle } from "~/components/ui/dialog";
 
 

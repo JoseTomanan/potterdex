@@ -7,7 +7,7 @@ import {
 import { MdQuestionMark } from "react-icons/md";
 import { Skeleton } from "../ui/skeleton";
 import { joinWithMiddot, getHouseRelatedStyle } from "~/lib/utils";
-import type { Character } from "~/lib/types/character";
+import type { Character } from "~/lib/types/CharacterItem";
 import { Dialog, DialogTrigger } from "~/components/ui/dialog";
 import ItemModal from "./ItemModal";
 
