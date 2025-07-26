@@ -42,7 +42,7 @@ export function ItemCard( props: Character ) {
 			<div className="px-3 pb-3">
 				<Dialog>
 					<DialogTrigger asChild>
-						<button className="flex propss-center gap-1.5 w-full">
+						<button className="flex items-center gap-1.5 w-full">
 							<GenderIcon />
 							<h3 className="text-left text-foreground/80 underline-offset-2 decoration-1 truncate hover:underline w-full cursor-pointer">
 								{props.name}
