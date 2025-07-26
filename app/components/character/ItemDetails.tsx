@@ -20,18 +20,18 @@ const Bio = (props: Character) => (
 			<hr />
 			{props.born && (
 					<span className="flex space-x-1 items-baseline">
-						<h5>Born: </h5>
+						<h6><b>Born: </b></h6>
 						<h6>{props.born}</h6>
 					</span>
 			)}
 			{props.died && (
 					<span className="flex space-x-1 items-baseline">
-						<h5>Died: </h5>
+						<h6><b>Died: </b></h6>
 						<h6>{props.died}</h6>
 					</span>
 				)}
 			<span className="flex space-x-1 items-baseline">
-				<h5>Aliases: </h5>
+				<h6><b>Alias: </b></h6>
 				<h6>
 					{props.alias_names.length !== 0
 						?
