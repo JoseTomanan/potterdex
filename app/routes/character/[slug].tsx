@@ -40,7 +40,7 @@ export default function CharacterSlug() {
 	return (
 		<main className="container">
 			<div className="h-6" />
-			<section className="character-slug-page space-y-4">
+			<section className="rounded-[14px] overflow-hidden border border-border bg-card mx-[min(2em,8%)]">
 				{contents}
 			</section>
 		</main>
