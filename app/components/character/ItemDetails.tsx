@@ -1,93 +1,142 @@
-import { IoPersonSharp } from "react-icons/io5";
-import { dashIfNone, joinWithMiddot } from "~/lib/utils";
-import type { Character } from "~/lib/types/CharacterItem";
-import { Skeleton } from "../ui/skeleton";
 import { FiArrowUpRight } from "react-icons/fi";
+import { dashIfNone, joinWithMiddot, getHouseTokens } from "~/lib/utils";
+import { HousePlaceholder } from "./HousePlaceholder";
+import { Skeleton } from "../ui/skeleton";
+import type { Character } from "~/lib/types/CharacterItem";
 
-
-const attributeNames = ["Blood status", "Marital status", "Nationality", "Skin color", "Wand", "Weight"];
-
-const Bio = (props: Character) => (
-		<>
-			<div className="flex justify-center align-middle bg-popover">
-				{props.image ? (
-					<img src={props.image}
-								className="object-contain size-1/2 lg:size-full" />
-				) : (
-					<IoPersonSharp className="fill-muted size-2/5 lg:size-full" />
-				)}
-			</div>
-			<hr />
-			{props.born && (
-					<span className="flex space-x-1 items-baseline">
-						<h6><b>Born: </b></h6>
-						<h6>{props.born}</h6>
-					</span>
-			)}
-			{props.died && (
-					<span className="flex space-x-1 items-baseline">
-						<h6><b>Died: </b></h6>
-						<h6>{props.died}</h6>
-					</span>
-				)}
-			<span className="flex space-x-1 items-baseline">
-				<h6><b>Alias: </b></h6>
-				<h6>
-					{props.alias_names.length !== 0
-						?
-							props.alias_names.map((i) => (<> {i}<br/> </>))
-						: <>None</>
-					}
-				</h6>
-			</span>
-		</>
-	);
 
 export function ItemDetails(props: Character) {
-	const attributeValues = [props.blood_status, props.marital_status, props.nationality, props.skin_color, props.wand, props.weight];
-	const subtitle: string = joinWithMiddot([props.house, props.gender, props.species]);
+	const h = getHouseTokens(props.house);
+
+	const genderSpecies = joinWithMiddot([
+		props.gender && props.gender !== 'Unknown' ? props.gender : null,
+		props.species && props.species !== 'Human' ? props.species : null,
+	]);
+
+	const bio = (
+		[
+			['Born',           props.born],
+			['Died',           props.died],
+			['Nationality',    props.nationality],
+			['Blood status',   props.blood_status],
+			['Marital status', props.marital_status],
+		] as [string, string | undefined][]
+	).filter(([, v]) => v?.toString().trim());
+
+	const appear = (
+		[
+			['Eye color',  props.eye_color],
+			['Hair color', props.hair_color],
+			['Skin color', props.skin_color],
+			['Height',     props.height ? `${props.height} cm` : undefined],
+			['Weight',     props.weight ? `${props.weight} kg` : undefined],
+		] as [string, string | undefined][]
+	).filter(([, v]) => v?.toString().trim());
+
+	const magic = (
+		[
+			['Patronus', props.patronus],
+			['Animagus', props.animagus],
+			['Boggart',  props.boggart],
+			['Wand',     Array.isArray(props.wand) ? props.wand.filter(Boolean).join(', ') : props.wand],
+		] as [string, string | undefined][]
+	).filter(([, v]) => v?.toString().trim());
+
+	const extra: [string, string][] = [
+		...(props.titles?.filter(Boolean).length        ? [['Titles',   props.titles!.join(', ')] as [string, string]] : []),
+		...(props.alias_names?.filter(Boolean).length   ? [['Aliases',  props.alias_names.filter(Boolean).join(', ')] as [string, string]] : []),
+		...(props.romances?.filter(Boolean).length      ? [['Romances', props.romances.filter(Boolean).join(', ')] as [string, string]] : []),
+		...(props.family_members?.filter(Boolean).length ? [['Family',  props.family_members.filter(Boolean).slice(0, 4).join(', ')] as [string, string]] : []),
+	];
+
+	const sections = [
+		{ title: 'Biography',   fields: bio },
+		{ title: 'Appearance',  fields: appear },
+		{ title: 'Magic',       fields: magic },
+		extra.length ? { title: 'Other', fields: extra } : null,
+	].filter((s): s is { title: string; fields: [string, string | undefined][] } => s !== null && s.fields.length > 0);
 
 	return (
-		<>
-			<h1 className="border-b">{props.name}</h1>
-			<span className="text-lg text-muted-foreground">
-				{subtitle && (
-						<>{subtitle} &middot; &nbsp;</>
-				)}
-				{props.wiki && (
-					<a href={props.wiki} target="_blank" className="highlight-link space-x-1">
-						<span>Visit wiki</span>
-						<FiArrowUpRight className="inline align-baseline"/>
-					</a>
-				)}
-			</span>
-			<div className="flex flex-col lg:flex-row gap-6 mt-2">
-				<div className={`flex flex-col gap-1 ${props.image ? "flex-2/3" : "flex-1/2"} px-4 py-2 bg-popover rounded`}>
-					<Bio {...props} />
-				</div>
-				<div className="flex flex-col flex-2/3">
-					{attributeNames.map((name, i) => (
-						<p key={i}>
-							<span className="font-semibold tracking-wide">{name}:&nbsp;</span>
-							{dashIfNone(attributeValues[i])}
-						</p>
-					))}
+		<div
+			className="item-details"
+			style={{
+				'--house-color': h.color,
+				'--house-bg':    h.dim,
+				'--house-mid':   h.mid,
+			} as React.CSSProperties}
+		>
+			<div className="modal-hero">
+				<div className="modal-hero-stripe" />
+				<div className="modal-hero-bg-letter">{h.letter}</div>
+
+				<div className="modal-hero-content">
+					<div className="modal-hero-img">
+						{props.image
+							? <img src={props.image} alt={props.name} />
+							: <HousePlaceholder house={props.house} size="modal" />
+						}
+					</div>
+
+					<div className="modal-hero-text">
+						{props.house && (
+							<div className="modal-house-label">{props.house}</div>
+						)}
+						<div className="modal-name">{props.name}</div>
+						<div className="modal-subtitle">
+							{genderSpecies && (
+								<span className="modal-subtitle-text">{genderSpecies}</span>
+							)}
+							{props.wiki && (
+								<a href={props.wiki} target="_blank" rel="noopener" className="wiki-link">
+									Visit wiki <FiArrowUpRight className="inline align-baseline" />
+								</a>
+							)}
+						</div>
+					</div>
 				</div>
 			</div>
-		</>
+
+			<div className="modal-body">
+				{sections.map(sec => (
+					<div className="info-section" key={sec.title}>
+						<div className="info-section-title">{sec.title}</div>
+						{sec.fields.map(([label, val]) => (
+							<div className="info-row" key={label}>
+								<div className="info-label">{label}</div>
+								<div className="info-value">{dashIfNone(val as string)}</div>
+							</div>
+						))}
+					</div>
+				))}
+			</div>
+		</div>
 	);
 }
 
+
 export function ItemDetailsSkeleton() {
 	return (
-		<div className="space-y-6">
-			<Skeleton className="w-80 h-4 pb-2" />
-			<Skeleton className="w-4/5 h-10" />
-			<div className="space-y-2">
-				<Skeleton className="w-80 h-5" />
-				<Skeleton className="w-80 h-4" />
-				<Skeleton className="w-60 h-4" />
-				<Skeleton className="w-50 h-4" />
+		<div className="item-details">
+			<div className="modal-hero" style={{ '--house-color': '#6a6460', '--house-bg': 'rgba(106,100,96,0.09)', '--house-mid': 'rgba(106,100,96,0.18)' } as React.CSSProperties}>
+				<div className="modal-hero-stripe" />
+				<div className="modal-hero-content">
+					<div className="modal-hero-img" style={{ background: 'rgba(106,100,96,0.18)' }} />
+					<div className="modal-hero-text">
+						<Skeleton className="h-3 w-20 mb-2" />
+						<Skeleton className="h-8 w-64 mb-3" />
+						<Skeleton className="h-3 w-40" />
+					</div>
+				</div>
+			</div>
+			<div className="modal-body">
+				{[0, 1, 2].map(i => (
+					<div className="info-section" key={i}>
+						<Skeleton className="h-3 w-24 mb-3" />
+						<Skeleton className="h-3 w-full mb-2" />
+						<Skeleton className="h-3 w-4/5 mb-2" />
+						<Skeleton className="h-3 w-3/5" />
+					</div>
+				))}
 			</div>
 		</div>
 	);

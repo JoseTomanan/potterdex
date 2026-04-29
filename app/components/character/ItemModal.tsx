@@ -4,15 +4,13 @@ import { DialogContent, DialogDescription, DialogTitle } from "~/components/ui/d
 
 
 export default function ItemModal(props: Character) {
-	console.log("--> Modal opened");
-
 	return (
-		<DialogContent className="bg-card rounded sm:max-w-2xl">
-			<DialogTitle />
-			<DialogDescription />
-			<div className="space-y-4">
-				<ItemDetails {...props} />
-			</div>
+		<DialogContent className="bg-card rounded-[14px] sm:max-w-3xl p-0 overflow-hidden gap-0 max-h-[92vh]">
+			<DialogTitle className="sr-only">{props.name}</DialogTitle>
+			<DialogDescription className="sr-only">
+				Character details for {props.name}
+			</DialogDescription>
+			<ItemDetails {...props} />
 		</DialogContent>
 	);
 }
