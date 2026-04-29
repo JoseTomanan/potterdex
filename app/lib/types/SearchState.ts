@@ -10,4 +10,5 @@ export type SearchState = {
   database?: DatabaseType;
   sort?: SortType;
   order?: OrderType;
+  houseFilter?: string | null;
 };

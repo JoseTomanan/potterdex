@@ -15,6 +15,7 @@ export function SearchProvider({ children }: { children: React.ReactNode }) {
 		database: "characters",
 		sort: "name",
 		order: "ascending",
+		houseFilter: null,
 	});
 
 	const setSearchState = (newState: SearchState) => {

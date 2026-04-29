@@ -43,6 +43,28 @@
 	--sidebar-ring: var(--ring);
 }
 
+@theme {
+	--house-gryffindor:     #e8503a;
+	--house-gryffindor-dim: rgba(232,80,58,0.12);
+	--house-gryffindor-mid: rgba(232,80,58,0.22);
+
+	--house-slytherin:      #1aad72;
+	--house-slytherin-dim:  rgba(26,173,114,0.11);
+	--house-slytherin-mid:  rgba(26,173,114,0.22);
+
+	--house-ravenclaw:      #4a6ec8;
+	--house-ravenclaw-dim:  rgba(74,110,200,0.12);
+	--house-ravenclaw-mid:  rgba(74,110,200,0.22);
+
+	--house-hufflepuff:     #c9970e;
+	--house-hufflepuff-dim: rgba(201,151,14,0.13);
+	--house-hufflepuff-mid: rgba(201,151,14,0.22);
+
+	--house-none:           #6a6460;
+	--house-none-dim:       rgba(106,100,96,0.09);
+	--house-none-mid:       rgba(106,100,96,0.18);
+}
+
 @theme inline {
 	--radius-sm: calc(var(--radius) - 4px);
 	--radius-md: calc(var(--radius) - 2px);
