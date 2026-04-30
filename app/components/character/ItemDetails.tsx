@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import { dashIfNone, joinWithMiddot, getHouseTokens } from "~/lib/utils";
 import { HousePlaceholder } from "./HousePlaceholder";
@@ -6,6 +7,7 @@ import type { Character } from "~/lib/types/CharacterItem";
 
 
 export function ItemDetails(props: Character) {
+	const [imgError, setImgError] = useState(false);
 	const h = getHouseTokens(props.house);
 
 	const genderSpecies = joinWithMiddot([
@@ -71,8 +73,8 @@ export function ItemDetails(props: Character) {
 
 				<div className="modal-hero-content">
 					<div className="modal-hero-img">
-						{props.image
-							? <img src={props.image} alt={props.name} />
+						{props.image && !imgError
+							? <img src={props.image} alt={props.name} onError={() => setImgError(true)} />
 							: <HousePlaceholder house={props.house} size="modal" />
 						}
 					</div>

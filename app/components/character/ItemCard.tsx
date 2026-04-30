@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Skeleton } from "../ui/skeleton";
 import { joinWithMiddot, getHouseTokens, houseStyleVars } from "~/lib/utils";
 import type { Character } from "~/lib/types/CharacterItem";
@@ -7,6 +8,7 @@ import ItemModal from "./ItemModal";
 
 
 export function ItemCard(props: Character) {
+	const [imgError, setImgError] = useState(false);
 	const h = getHouseTokens(props.house);
 	const sub = joinWithMiddot([
 		props.nationality || null,
@@ -18,8 +20,8 @@ export function ItemCard(props: Character) {
 			<DialogTrigger asChild>
 				<button type="button" className="char-card" style={houseStyleVars(h)}>
 					<div className="card-img-wrap">
-						{props.image
-							? <img src={props.image} alt={props.name} loading="lazy" className="card-img" />
+						{props.image && !imgError
+							? <img src={props.image} alt={props.name} loading="lazy" className="card-img" onError={() => setImgError(true)} />
 							: <HousePlaceholder house={props.house} />
 						}
 					</div>
