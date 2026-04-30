@@ -1,20 +1,11 @@
 import axios from "axios";
-
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Route } from "./+types/_main";
 import type { Character } from "~/lib/types/CharacterItem";
 
 import { ItemGrid } from "~/components/character/ItemGrid";
+import { ItemSkeleton } from "~/components/character/ItemCard";
 import { HouseFilter } from "~/components/character/HouseFilter";
-import {
-	Pagination,
-	PaginationContent,
-	PaginationEllipsis,
-	PaginationItem,
-	PaginationLink,
-	PaginationNext,
-	PaginationPrevious,
-} from "~/components/ui/pagination";
 import { useSearchContext } from "~/lib/context/SearchContext";
 import { ITEMS_PER_PAGE, API_BASE_URL } from "~/lib/constants";
 
@@ -27,27 +18,15 @@ export function meta({}: Route.MetaArgs) {
 }
 
 
-const fetchCharacters = (url: string, setCharacters: Function, setIsLoading: Function) => (
-	axios.get(url)
-		.then(res => {
-			const actualCharacters = res.data.data.map((item: { attributes: any }) => item.attributes);
-			setCharacters(actualCharacters);
-		})
-		.catch(error => {
-			console.error(error);
-		})
-		.finally(() => {
-			setIsLoading(false);
-		})
-);
-
-
 export default function Home() {
 	const { search, database, sort, order, houseFilter } = useSearchContext();
 
 	const [page, setPage] = useState(1);
 	const [characters, setCharacters] = useState<Character[]>([]);
-	const [isLoading, setIsLoading] = useState<boolean>(true);
+	const [isInitialLoading, setIsInitialLoading] = useState(true);
+	const [isLoadingMore, setIsLoadingMore] = useState(false);
+	const [hasMore, setHasMore] = useState(true);
+	const sentinelRef = useRef<HTMLDivElement | null>(null);
 
 	const buildUrl = (pg: number) =>
 		`${API_BASE_URL}/characters` +
@@ -57,79 +36,78 @@ export default function Home() {
 		(search ? `&filter[name_cont]=${encodeURIComponent(search)}` : '') +
 		(houseFilter ? `&filter[house_eq]=${encodeURIComponent(houseFilter)}` : '');
 
-	const isEndOfPage = () => characters.length < ITEMS_PER_PAGE;
+	const load = (pg: number, replace: boolean) => {
+		axios.get(buildUrl(pg))
+			.then(res => {
+				const data: Character[] = res.data.data.map(
+					(item: { attributes: Character }) => item.attributes
+				);
+				setHasMore(data.length === ITEMS_PER_PAGE);
+				if (replace) {
+					setCharacters(data);
+				} else {
+					setCharacters(prev => [...prev, ...data]);
+				}
+			})
+			.catch(error => {
+				console.error(error);
+			})
+			.finally(() => {
+				setIsInitialLoading(false);
+				setIsLoadingMore(false);
+			});
+	};
 
+	// Reset and reload from page 1 when filters/search/sort change
 	useEffect(() => {
-		setIsLoading(true);
-		fetchCharacters(buildUrl(page), setCharacters, setIsLoading);
-	}, [page]);
-
-	useEffect(() => {
-		setIsLoading(true);
 		setPage(1);
-		fetchCharacters(buildUrl(1), setCharacters, setIsLoading);
+		setCharacters([]);
+		setHasMore(true);
+		setIsInitialLoading(true);
+		load(1, true);
 	}, [search, database, sort, order, houseFilter]);
 
-	const PaginationSection = () => (
-		<Pagination className="bg-transparent border-none w-fit">
-			<PaginationContent>
-				<PaginationItem>
-					<PaginationPrevious
-						size="icon"
-						onClick={(e) => { e.preventDefault(); setPage(p => p - 1); }}
-						className={page !== 1 ? "" : "invisible"}
-					/>
-				</PaginationItem>
+	// Append subsequent pages (page 1 is handled by the filter effect above)
+	useEffect(() => {
+		if (page === 1) return;
+		setIsLoadingMore(true);
+		load(page, false);
+	}, [page]);
 
-				<PaginationItem>
-					<PaginationEllipsis className={page > 2 ? "" : "invisible"} />
-				</PaginationItem>
-
-				<PaginationItem>
-					<PaginationLink
-						onClick={(e) => { e.preventDefault(); setPage(p => p - 1); }}
-						className={page > 1 ? "" : "invisible"}
-					>
-						{page - 1}
-					</PaginationLink>
-				</PaginationItem>
-
-				<PaginationItem>
-					<PaginationLink isActive href="#">{page}</PaginationLink>
-				</PaginationItem>
-
-				<PaginationItem>
-					<PaginationLink
-						onClick={(e) => { e.preventDefault(); setPage(p => p + 1); }}
-						className={isEndOfPage() ? "invisible" : ""}
-					>
-						{page + 1}
-					</PaginationLink>
-				</PaginationItem>
-
-				<PaginationItem>
-					<PaginationEllipsis className={isEndOfPage() ? "invisible" : ""} />
-				</PaginationItem>
-
-				<PaginationItem>
-					<PaginationNext
-						onClick={(e) => { e.preventDefault(); setPage(p => p + 1); }}
-						size="icon"
-						className={isEndOfPage() ? "invisible" : ""}
-					/>
-				</PaginationItem>
-			</PaginationContent>
-		</Pagination>
-	);
+	// Trigger next page load when sentinel scrolls into view
+	useEffect(() => {
+		const node = sentinelRef.current;
+		if (!node || !hasMore || isInitialLoading || isLoadingMore) return;
+		const observer = new IntersectionObserver(
+			(entries) => { if (entries[0].isIntersecting) setPage(p => p + 1); },
+			{ rootMargin: "200px" }
+		);
+		observer.observe(node);
+		return () => observer.disconnect();
+	}, [hasMore, isInitialLoading, isLoadingMore]);
 
 	return (
 		<main className="container">
 			<div className="controls-row">
 				<HouseFilter />
-				<PaginationSection />
 			</div>
 			<div className="w-full">
-				<ItemGrid items={characters} isLoading={isLoading} />
+				<ItemGrid items={characters} isLoading={isInitialLoading} />
+				{isLoadingMore && (
+					<div className="card-grid mt-4">
+						{Array.from({ length: ITEMS_PER_PAGE }).map((_, i) => (
+							<ItemSkeleton key={i} />
+						))}
+					</div>
+				)}
+				{hasMore && !isInitialLoading && (
+					<div ref={sentinelRef} aria-hidden className="h-1" />
+				)}
+				{!hasMore && characters.length > 0 && (
+					<p className="text-center text-muted-foreground py-6">
+						You've reached the end.
+					</p>
+				)}
 			</div>
 		</main>
 	);

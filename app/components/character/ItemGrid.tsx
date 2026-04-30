@@ -23,8 +23,8 @@ export function ItemGrid( props: ItemGridProps ) {
 		<div className="card-grid">
 			{props.items.length > 0
 				?
-					props.items.map(({}, i) => (
-						<ItemCard {...props.items[i]} key={i} />
+					props.items.map((item) => (
+						<ItemCard {...item} key={item.slug} />
 					))
 				:
 					<h6>No more results found.</h6>
