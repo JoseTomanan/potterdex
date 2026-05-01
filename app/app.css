@@ -195,7 +195,7 @@
 		display: grid;
 		column-gap: 14px;
 		row-gap: 14px;
-		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(max(200px, 25% - 11px), 1fr));
 
 		@apply px-2 sm:px-0;
 	}
