@@ -24,12 +24,10 @@ export function NavBar() {
 				: () => null;
 
 	return (
-		<nav className="flex flex-row justify-between w-full fixed flex-wrap">
-			<div className="flex items-center gap-6">
-				<Logo onClick={tryClearSearch} />
-				<SearchBar />
-			</div>
-			<div className="flex gap-8 items-center">
+		<nav className="flex flex-wrap md:flex-nowrap flex-row items-center justify-between w-full fixed gap-y-2">
+			<Logo onClick={tryClearSearch} />
+			<SearchBar />
+			<div className="flex gap-4 md:gap-8 items-center ml-auto md:ml-0 order-first md:order-last">
 				<a href="https://potterdb.com/" target="_blank">PotterDB</a>
 				<Link to="/about">About</Link>
 			</div>
