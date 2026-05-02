@@ -104,10 +104,19 @@
 	html {
 		scroll-behavior: smooth;
 		scrollbar-gutter: stable;
+		overflow-y: scroll;
+	}
+
+	/* Radix UI's RemoveScroll adds margin/padding to body when a Select opens to
+	   compensate for scrollbar removal. Since the scrollbar is pinned on <html>,
+	   no compensation is needed — this higher-specificity rule zeroes it out. */
+	html body[data-scroll-locked] {
+		margin-right: 0 !important;
+		padding-right: 0 !important;
 	}
 
 	main {
-		@apply pt-16;
+		@apply pt-24 md:pt-16;
 	}
 
 	body {
