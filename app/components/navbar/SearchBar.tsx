@@ -20,8 +20,8 @@ export function SearchBar() {
 	const isInAbout = useLocation().pathname === "/about"
 
 	return (
-		<form className="flex gap-4">
-			<div className={`relative flex flex-row bg-background rounded rounded-inherit outline-input
+		<form className="flex gap-2 md:gap-4 w-full md:w-auto order-last md:order-none">
+			<div className={`relative flex flex-row bg-background rounded rounded-inherit outline-input flex-1 min-w-0
 						${isInHome ? `outline-2 -outline-offset-2` : `outline -outline-offset-1`}
 						`}>
 				<Input
@@ -31,7 +31,7 @@ export function SearchBar() {
 							placeholder={`Search by ${sort}...`}
 							disabled={isInAbout}
 							onChange={(event) => setSearchState({ search: event.target.value })}
-							className="border-none rounded active:outline-none w-36 md:w-48 lg:w-64"
+							className="border-none rounded active:outline-none w-full md:w-48 lg:w-64"
 							/>
 				<SearchIcon className="grow size-4 m-auto text-muted-foreground absolute top-1/2 -translate-1/2 right-0.5 pointer-events-none"/>
 			</div>
@@ -57,7 +57,7 @@ export function SearchBar() {
 			<Select
 				value={sort}
 				onValueChange={(i: SortType) => setSearchState({ sort: i })}>
-				<SelectTrigger className={`rounded w-20 xl:w-32 ${isInAbout ? `text-muted-foreground` : ``}`} >
+				<SelectTrigger className={`rounded w-20 md:w-24 xl:w-32 ${isInAbout ? `text-muted-foreground` : ``}`} >
 					<SelectValue />
 				</SelectTrigger>
 				<SelectContent>
@@ -74,7 +74,7 @@ export function SearchBar() {
 			<Select
 				value={order}
 				onValueChange={(i: OrderType) => setSearchState({ order: i })}>
-				<SelectTrigger className="rounded w-16 xl:w-16" >
+				<SelectTrigger className="rounded w-16" >
 					<SelectValue />
 				</SelectTrigger>
 				<SelectContent>
